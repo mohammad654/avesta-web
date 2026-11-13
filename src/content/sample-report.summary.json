@@ -5,5 +5,64 @@
   "verdict": "Gaps to close before an audit",
   "findings": 10,
   "started": "2026-11-13T04:31:07+00:00",
-  "fingerprint_sha256": "0e65b3f2d1d0e43cbe7a1b9b15d4066d5e9c9a9d4e3331d0f44dcdb0b38b43d5"
+  "fingerprint_sha256": "0e65b3f2d1d0e43cbe7a1b9b15d4066d5e9c9a9d4e3331d0f44dcdb0b38b43d5",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "3e21fe9e126cd751"
+  },
+  "verdicts": [
+    {
+      "standard": "ISO27001",
+      "statuses": [
+        "partial",
+        "not-assessed",
+        "fail",
+        "partial",
+        "fail",
+        "pass",
+        "not-assessed",
+        "not-assessed",
+        "fail",
+        "fail",
+        "partial",
+        "not-assessed"
+      ]
+    },
+    {
+      "standard": "IEC62443",
+      "statuses": [
+        "warn",
+        "not-assessed",
+        "not-assessed",
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "not-assessed",
+        "pass",
+        "partial",
+        "not-assessed"
+      ]
+    },
+    {
+      "standard": "CRA",
+      "statuses": [
+        "not-assessed",
+        "fail",
+        "not-assessed",
+        "not-assessed",
+        "fail",
+        "warn",
+        "partial",
+        "fail",
+        "not-assessed",
+        "pass",
+        "pass",
+        "not-assessed",
+        "not-assessed",
+        "not-assessed",
+        "not-assessed"
+      ]
+    }
+  ]
 }

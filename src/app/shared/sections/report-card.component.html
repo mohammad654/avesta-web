@@ -1,0 +1,50 @@
+@let r = report();
+<div class="visual">
+  <app-sun-mark class="visual__sun" [size]="360" />
+  <figure class="sheet">
+    <div class="sheet__head">
+      <div>
+        <span class="badge">{{ micro.demoBadge }}</span>
+        <p class="sheet__project">{{ r.project }}</p>
+        <p class="sheet__verdict">{{ r.verdict }}</p>
+      </div>
+      <dl class="sheet__score">
+        <div>
+          <dt>{{ micro.reportScore }}</dt>
+          <dd class="display">{{ r.score }}</dd>
+        </div>
+        <div>
+          <dt>{{ micro.reportGrade }}</dt>
+          <dd class="display">{{ r.grade }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figcaption class="sheet__label">{{ micro.reportVerdicts }}</figcaption>
+    <ul class="sheet__rows">
+      @for (row of rows(); track row.label) {
+        <li class="sheet__row">
+          <span class="sheet__std" aria-hidden="true">{{ row.label }}</span>
+          <span class="weave" aria-hidden="true">
+            @for (s of row.statuses; track $index) {
+              <span class="seg seg--{{ s }}"></span>
+            }
+          </span>
+          <span class="visually-hidden">{{ row.summary }}</span>
+        </li>
+      }
+    </ul>
+    <ul class="sheet__legend" aria-hidden="true">
+      @for (s of legend; track s) {
+        <li><span class="seg seg--{{ s }}"></span>{{ micro.reportStatuses[s] }}</li>
+      }
+    </ul>
+
+    <div class="sheet__belt"></div>
+    <p class="sheet__sig">
+      <span>{{ micro.reportSignature }}</span>
+      <span class="mono">{{ fingerprint() }}…</span>
+      <span>{{ findings() }}</span>
+    </p>
+  </figure>
+</div>

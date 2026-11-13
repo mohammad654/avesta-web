@@ -305,6 +305,21 @@
     "reportGrade": "Grade",
     "reportFindings": "{count} findings",
     "faqFootnoteAria": "Footnote",
-    "tableTopic": "Topic"
+    "tableTopic": "Topic",
+    "reportStandards": {
+      "ISO27001": "ISO/IEC 27001",
+      "IEC62443": "IEC 62443-4-1",
+      "CRA": "EU CRA"
+    },
+    "reportStatuses": {
+      "pass": "Pass",
+      "partial": "Partial",
+      "warn": "Warn",
+      "fail": "Fail",
+      "not-assessed": "Not assessed"
+    },
+    "reportVerdicts": "Verdict per control",
+    "reportSignature": "Ed25519 signature",
+    "reportRow": "{standard}: {counts}"
   }
 }

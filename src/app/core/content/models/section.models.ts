@@ -34,6 +34,8 @@ export interface HeroSection extends SectionBase {
 export interface FeatureGridSection extends SectionBase {
   kind: 'featureGrid';
   heading: string;
+  /** 'cards' (default) or 'strip': plain columns divided by gold rules. */
+  layout?: 'cards' | 'strip';
   intro?: string;
   items: GridItem[];
   columns?: 2 | 3 | 4;

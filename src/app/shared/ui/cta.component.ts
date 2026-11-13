@@ -22,11 +22,8 @@ import { PhTagComponent } from './ph-tag.component';
         [class]="classes()"
         [attr.aria-label]="cta().ariaLabel ?? null"
         [appPreloadOnHover]="t.path"
-        >{{ cta().label }}
-        @if (cta().variant === 'link') {
-          <app-icon name="arrow" />
-        }
-      </a>
+        >{{ cta().label }}</a
+      >
     } @else if (t.kind === 'external') {
       <a
         [href]="t.href"

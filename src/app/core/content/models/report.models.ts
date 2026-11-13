@@ -66,4 +66,8 @@ export interface SampleReport {
 export type SampleReportSummary = Pick<
   SampleReport,
   'project' | 'score' | 'grade' | 'verdict' | 'started' | 'fingerprint_sha256'
-> & { findings: number };
+> & {
+  findings: number;
+  signature: { alg: string; key_id: string };
+  verdicts: { standard: string; statuses: ControlStatus[] }[];
+};

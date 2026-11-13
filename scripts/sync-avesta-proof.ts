@@ -38,6 +38,12 @@ function writeSummary(): void {
     findings: report.findings.length,
     started: report.started,
     fingerprint_sha256: report.fingerprint_sha256,
+    signature: { alg: report.signature?.alg ?? '', key_id: report.signature?.key_id ?? '' },
+    // One status per control, in report order: the hero's verdict bars.
+    verdicts: ['ISO27001', 'IEC62443', 'CRA'].map((standard) => ({
+      standard,
+      statuses: (report.controls[standard]?.items ?? []).map((c: { status: string }) => c.status),
+    })),
   };
   writeFileSync(
     join(root, 'src/content/sample-report.summary.json'),

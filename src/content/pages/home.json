@@ -15,8 +15,16 @@
       "heading": "Proof, not promises.",
       "sub": "Avesta Tech turns your code scans and tests into audit-ready evidence for ISO/IEC 27001, IEC 62443-4-1 and the EU Cyber Resilience Act. Signed, checkable, and with a fix for every finding.",
       "ctas": [
-        { "label": "Run the free CRA check", "href": "/cra-readiness", "variant": "primary" },
-        { "label": "See a sample report", "href": "/product/sample-report", "variant": "ghost" }
+        {
+          "label": "Run the free CRA check",
+          "href": "/cra-readiness",
+          "variant": "primary"
+        },
+        {
+          "label": "See a sample report",
+          "href": "/product/sample-report",
+          "variant": "ghost"
+        }
       ],
       "micro": "8 questions · 3 minutes · no sign-up needed. Your code never leaves your machines.",
       "visual": "reportCard"
@@ -43,7 +51,8 @@
           "icon": "refresh"
         }
       ],
-      "footnote": "* Dates and amounts: verify with counsel."
+      "footnote": "* Dates and amounts: verify with counsel.",
+      "layout": "strip"
     },
     {
       "kind": "featureGrid",
@@ -56,14 +65,22 @@
           "title": "The evidence engine for software regulation.",
           "body": "Scan a repository, get a verdict per control in three standards, a signed report, an SBOM and a CRA technical-file draft. Every week, in your own CI.",
           "icon": "shield",
-          "cta": { "label": "Explore Avesta Proof", "href": "/product", "variant": "primary" }
+          "cta": {
+            "label": "Explore Avesta Proof",
+            "href": "/product",
+            "variant": "primary"
+          }
         },
         {
           "eyebrow": "Engineering services",
           "title": "Quality work, done properly and at a fixed price.",
           "body": "Readiness scans, test automation, accessibility audits and AI assistant testing, delivered by engineers who have built software for high-tech machines.",
           "icon": "wrench",
-          "cta": { "label": "See our services", "href": "/services", "variant": "ghost" }
+          "cta": {
+            "label": "See our services",
+            "href": "/services",
+            "variant": "ghost"
+          }
         }
       ]
     },
@@ -90,7 +107,13 @@
           "body": "The report is signed and linked into a tamper-evident history your auditor can check offline."
         }
       ],
-      "ctas": [{ "label": "See how it works", "href": "/how-it-works", "variant": "ghost" }]
+      "ctas": [
+        {
+          "label": "See how it works",
+          "href": "/how-it-works",
+          "variant": "ghost"
+        }
+      ]
     },
     {
       "kind": "featureGrid",
@@ -150,7 +173,11 @@
         "ISO/IEC 27001:2022 Annex A · IEC 62443-4-1 · EU Cyber Resilience Act (Regulation (EU) 2024/2847)"
       ],
       "ctas": [
-        { "label": "Open the standards explorer", "href": "/product/standards", "variant": "ghost" }
+        {
+          "label": "Open the standards explorer",
+          "href": "/product/standards",
+          "variant": "ghost"
+        }
       ],
       "note": "Mappings are indicative and reviewed against the current standard text. Avesta produces audit-ready evidence; certification comes from accredited bodies."
     },
@@ -191,7 +218,11 @@
           "href": "/contact?topic=cra-scan",
           "variant": "primary"
         },
-        { "label": "Try the free checker first", "href": "/cra-readiness", "variant": "ghost" }
+        {
+          "label": "Try the free checker first",
+          "href": "/cra-readiness",
+          "variant": "ghost"
+        }
       ],
       "priceOf": "cra-readiness-scan",
       "priceTemplate": "Price: {price} excl. BTW."

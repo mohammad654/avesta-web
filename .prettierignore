@@ -1,0 +1,6 @@
+# Verbatim copies from Avesta Proof (npm run sync:proof): never reformat
+src/content/standards.json
+src/content/sample-report.json
+src/content/sample-report.summary.json
+src/content/snippets/
+public/assets/sample-report/

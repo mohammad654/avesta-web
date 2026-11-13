@@ -1,17 +1,18 @@
+// The evidence sheet: cream "paper" on navy, woven verdict bars, a gold belt above the signature.
 .visual {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 320px;
+  padding-block: var(--space-5);
 }
 
 .visual__sun {
   position: absolute;
-  inset: 0;
-  margin: auto;
-  width: min(320px, 80vw);
-  height: min(320px, 80vw);
-  opacity: 0.55;
+  top: -8%;
+  right: -10%;
+  width: min(360px, 70vw);
+  height: min(360px, 70vw);
+  opacity: 0.45;
   animation: sun-fade 4.5s var(--ease) 1 both;
 
   // Rotate the inner SVG, not the positioned host: transforms on the host forced a layout
@@ -28,7 +29,7 @@
     opacity: 0;
   }
   to {
-    opacity: 0.55;
+    opacity: 0.45;
   }
 }
 
@@ -41,56 +42,172 @@
   }
 }
 
-.visual__card {
+.sheet {
   position: relative;
-  width: min(100%, 300px);
-  background: var(--color-navy-2);
-  border-color: var(--color-gold);
-  color: var(--color-cream);
-  text-align: left;
+  width: min(100%, 28rem);
+  margin: 0;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  background: var(--color-cream);
+  color: var(--color-navy);
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 48px -24px rgb(0 0 0 / 55%);
 }
 
-.visual__score {
+.sheet__head {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
   gap: var(--space-4);
-  margin: var(--space-4) 0 var(--space-2);
+  align-items: flex-start;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-line);
 
-  .display {
-    font-size: 4rem;
+  p {
+    margin: 0;
+  }
+}
+
+.sheet__project {
+  margin-top: var(--space-2) !important;
+  font-weight: 600;
+}
+
+.sheet__verdict {
+  color: var(--color-muted);
+  font-size: var(--fs-small);
+}
+
+.sheet__score {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  text-align: right;
+
+  dt {
+    font-family: var(--font-label);
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-gold-text);
+  }
+
+  dd {
+    margin: 0;
+    font-size: 2.5rem;
     line-height: 1;
   }
 }
 
-.visual__label {
-  display: block;
-  font-family: var(--font-label);
-  font-size: var(--fs-label);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-1);
-}
-
-.visual__grade {
-  display: inline-grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 2px solid var(--color-gold);
-  color: var(--color-gold);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.visual__verdict {
+.sheet__label {
+  margin: var(--space-4) 0 var(--space-3);
   font-weight: 600;
-  margin-bottom: var(--space-2);
+  font-size: var(--fs-small);
 }
 
-.visual__meta {
+.sheet__rows {
+  list-style: none;
   margin: 0;
-  color: var(--color-muted-on-dark);
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.sheet__row {
+  display: grid;
+  grid-template-columns: 6.75rem minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.sheet__std {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+// One rounded bar per control, like the logo's woven bars. Fixed widths, so a bar's length
+// is its number of controls (the CRA bar is the longest), as in the logo's stacked bars.
+.weave {
+  display: flex;
+  gap: 3px;
+  --seg: 8px;
+
+  @media (min-width: 480px) {
+    --seg: 14px;
+  }
+}
+
+.seg {
+  display: inline-block;
+  flex: none;
+  width: var(--seg, 14px);
+  height: 8px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+}
+
+.seg--pass {
+  background: var(--status-pass);
+}
+
+.seg--warn {
+  background: var(--status-warn);
+}
+
+.seg--fail {
+  background: var(--status-fail);
+}
+
+.seg--partial {
+  border: 1.5px dashed var(--status-partial);
+}
+
+.seg--not-assessed {
+  border-color: var(--color-muted);
+  background: transparent;
+  opacity: 0.55;
+}
+
+.sheet__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .seg {
+    width: 12px;
+    height: 8px;
+  }
+}
+
+// The gold belt from the logo, between the verdicts and the signature.
+.sheet__belt {
+  height: 8px;
+  margin: var(--space-4) calc(-1 * var(--space-2));
+  border-radius: 4px;
+  background: var(--color-gold);
+}
+
+.sheet__sig {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+
+  .mono {
+    font-size: 0.75rem;
+    color: var(--color-navy);
+  }
 }

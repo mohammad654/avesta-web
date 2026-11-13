@@ -71,5 +71,10 @@ export interface SiteContent {
     reportFindings: string;
     faqFootnoteAria: string;
     tableTopic: string;
+    reportStandards: Record<string, string>;
+    reportStatuses: Record<string, string>;
+    reportVerdicts: string;
+    reportSignature: string;
+    reportRow: string;
   };
 }

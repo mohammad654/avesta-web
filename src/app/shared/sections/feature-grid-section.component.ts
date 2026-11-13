@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { FeatureGridSection } from '../../core/content/content.models';
 import { CtaComponent } from '../ui/cta.component';
@@ -32,15 +32,31 @@ import { SectionComponent } from './section.component';
       margin-top: auto;
       padding-top: var(--space-4);
     }
+    /* Strip: plain columns divided by the logo's gold belt, turned upright. */
+    .strip {
+      gap: var(--space-6);
+    }
+    .strip__item {
+      padding-left: var(--space-5);
+      border-left: 4px solid var(--color-gold);
+      border-radius: 2px;
+    }
+    .strip__item p {
+      margin: 0;
+    }
   `,
   template: `
     @let s = section();
     <app-section [sectionId]="s.id" [tone]="s.tone">
       <app-section-heading [sectionId]="s.id" [heading]="s.heading" [intro]="s.intro" />
-      <ul class="plain-list grid grid--{{ s.columns ?? 3 }}">
+      <ul class="plain-list grid grid--{{ s.columns ?? 3 }}" [class.strip]="strip()">
         @for (item of s.items; track item.title) {
-          <li class="card" [class.card--interactive]="item.cta">
-            @if (item.icon) {
+          <li
+            [class.card]="!strip()"
+            [class.strip__item]="strip()"
+            [class.card--interactive]="item.cta"
+          >
+            @if (item.icon && !strip()) {
               <app-icon class="card__icon" [name]="item.icon" />
             }
             @if (item.eyebrow) {
@@ -68,4 +84,5 @@ import { SectionComponent } from './section.component';
 export class FeatureGridSectionComponent {
   readonly section = input.required<FeatureGridSection>();
   protected readonly exampleTag = inject(CONTENT_PROVIDER).chrome().microcopy.exampleTag;
+  protected readonly strip = computed(() => this.section().layout === 'strip');
 }

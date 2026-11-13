@@ -7,28 +7,28 @@ Brief 8.1 step 18. `npm run build:prod` fails until every item in section 1 is f
 
 Fill each value once; it is applied everywhere it appears. Leave it empty to keep it open.
 
-| Key | What is needed | Appears on |
-| --- | --- | --- |
-| `DOMAIN` | Website domain, without `https://` | Canonical, OG, sitemap, robots, security.txt, JSON-LD |
-| `CONFIRM_HOST` | Apex or www (brief recommends apex) | Hosting redirect (`_redirects`) |
-| `KVK_NUMBER`, `BTW_NUMBER` | Chamber of Commerce number, VAT ID | Footer (every page), About, Imprint, JSON-LD |
-| `CONFIRM_LEGAL_FORM` | Confirm "eenmanszaak" | Imprint |
-| `BUSINESS_ADDRESS` | Business or correspondence address | Contact, Imprint, Privacy, JSON-LD |
-| `EMAIL`, `PHONE`, `SECURITY_EMAIL` | General email, phone, security address | Contact, Imprint, Privacy, Trust, security.txt, form errors |
-| `LINKEDIN_URL`, `FOUNDER_LINKEDIN_URL`, `GITHUB_URL` | Company page, founder profile, GitHub org | Footer, Contact, JSON-LD |
-| `BOOKING_URL`, `FORM_ENDPOINT` | Calendar link; form backend URL (HTTPS, accepts JSON POST) | Contact; contact form and CRA "Email me this result" (CSP `connect-src` follows it) |
-| `PRICE_COMMUNITY`, `PRICE_TEAM`, `PRICE_BUSINESS`, `ANNUAL_DISCOUNT`, `CONFIRM_THRESHOLD` | Plan prices go in `pricing.json` (`monthly`/`yearly` numbers); discount text and threshold confirmation here | Pricing |
-| `PRICE_CRA_SCAN` … `PRICE_AI_TESTING`, `HOURLY_RATE` | Service prices go in `services.json` (`price.amount`); hourly rate here | Services, Pricing, Home CTA, Freelance |
-| `NOTICE_PERIOD`, `CONFIRM_NOTICE_PERIOD`, `PAYMENT_TERMS`, `LIABILITY_CAP`, `CONFIRM_FORUM` | Commercial terms | Pricing FAQ P5, Keep-it-green, Terms |
-| `ROADMAP_DATE`, `TRUST_ROADMAP_STATUS`, `CURRENT_VERSION` | Roadmap dates/status; Avesta Proof version (pyproject says 0.5.0) | Pricing "Coming" tags, Trust, JSON-LD |
-| `LINK_OWN_TRUST_STATEMENT` | Avesta's own trust statement file | Trust |
-| `RETENTION_PERIOD`, `PROCESSORS_LIST`, `RESPONSE_DAYS`, `CONFIRM_RESPONSE_TIME` | Data retention, sub-processors, disclosure reply time (SECURITY.md says 3), contact reply time | Trust, Privacy, Disclosure, Contact |
-| `NAME_STORY` | What "Avesta" means to you | About |
-| `CONFIRM_EMPLOYER_NAMES`, `CONFIRM_TITLE`, `CONFIRM_QUOTE`, `FOUNDER_PHOTO` | Permission to name Capgemini Engineering / ASML and the 70% figure; title; quote; photo path (e.g. `/assets/img/founder.jpg`, 4:5) | About, Freelance |
-| `AVAILABLE_FROM`, `DAYS_PER_WEEK`, `CV_PDF`, `CONFIRM_PLAYWRIGHT`, `ISTQB_STATUS`, `CONFIRM_MODEL_AGREEMENT` | Freelance details; CV path (e.g. `/assets/cv.pdf`); ISTQB stays hidden until filled | Freelance |
-| `CONFIRM_LANGUAGE_REVIEWERS` | Who reviews Dutch, Arabic and Turkish cases | AI assistant testing |
-| `HOSTING_PROVIDER`, `ANALYTICS_TOOL`, `A11Y_STATEMENT_DATE` | Host; analytics (none by default); statement date | Legal |
-| `LEGAL_REVIEW` | New key: replace with the review line once a Dutch lawyer has reviewed the legal pages | All six legal pages |
+| Key                                                                                                          | What is needed                                                                                                                     | Appears on                                                                          |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `DOMAIN`                                                                                                     | Website domain, without `https://`                                                                                                 | Canonical, OG, sitemap, robots, security.txt, JSON-LD                               |
+| `CONFIRM_HOST`                                                                                               | Apex or www (brief recommends apex)                                                                                                | Hosting redirect (`_redirects`)                                                     |
+| `KVK_NUMBER`, `BTW_NUMBER`                                                                                   | Chamber of Commerce number, VAT ID                                                                                                 | Footer (every page), About, Imprint, JSON-LD                                        |
+| `CONFIRM_LEGAL_FORM`                                                                                         | Confirm "eenmanszaak"                                                                                                              | Imprint                                                                             |
+| `BUSINESS_ADDRESS`                                                                                           | Business or correspondence address                                                                                                 | Contact, Imprint, Privacy, JSON-LD                                                  |
+| `EMAIL`, `PHONE`, `SECURITY_EMAIL`                                                                           | General email, phone, security address                                                                                             | Contact, Imprint, Privacy, Trust, security.txt, form errors                         |
+| `LINKEDIN_URL`, `FOUNDER_LINKEDIN_URL`, `GITHUB_URL`                                                         | Company page, founder profile, GitHub org                                                                                          | Footer, Contact, JSON-LD                                                            |
+| `BOOKING_URL`, `FORM_ENDPOINT`                                                                               | Calendar link; form backend URL (HTTPS, accepts JSON POST)                                                                         | Contact; contact form and CRA "Email me this result" (CSP `connect-src` follows it) |
+| `PRICE_COMMUNITY`, `PRICE_TEAM`, `PRICE_BUSINESS`, `ANNUAL_DISCOUNT`, `CONFIRM_THRESHOLD`                    | Plan prices go in `pricing.json` (`monthly`/`yearly` numbers); discount text and threshold confirmation here                       | Pricing                                                                             |
+| `PRICE_CRA_SCAN` … `PRICE_AI_TESTING`, `HOURLY_RATE`                                                         | Service prices go in `services.json` (`price.amount`); hourly rate here                                                            | Services, Pricing, Home CTA, Freelance                                              |
+| `NOTICE_PERIOD`, `CONFIRM_NOTICE_PERIOD`, `PAYMENT_TERMS`, `LIABILITY_CAP`, `CONFIRM_FORUM`                  | Commercial terms                                                                                                                   | Pricing FAQ P5, Keep-it-green, Terms                                                |
+| `ROADMAP_DATE`, `TRUST_ROADMAP_STATUS`, `CURRENT_VERSION`                                                    | Roadmap dates/status; Avesta Proof version (pyproject says 0.5.0)                                                                  | Pricing "Coming" tags, Trust, JSON-LD                                               |
+| `LINK_OWN_TRUST_STATEMENT`                                                                                   | Avesta's own trust statement file                                                                                                  | Trust                                                                               |
+| `RETENTION_PERIOD`, `PROCESSORS_LIST`, `RESPONSE_DAYS`, `CONFIRM_RESPONSE_TIME`                              | Data retention, sub-processors, disclosure reply time (SECURITY.md says 3), contact reply time                                     | Trust, Privacy, Disclosure, Contact                                                 |
+| `NAME_STORY`                                                                                                 | What "Avesta" means to you                                                                                                         | About                                                                               |
+| `CONFIRM_EMPLOYER_NAMES`, `CONFIRM_TITLE`, `CONFIRM_QUOTE`, `FOUNDER_PHOTO`                                  | Permission to name Capgemini Engineering / ASML and the 70% figure; title; quote; photo path (e.g. `/assets/img/founder.jpg`, 4:5) | About, Freelance                                                                    |
+| `AVAILABLE_FROM`, `DAYS_PER_WEEK`, `CV_PDF`, `CONFIRM_PLAYWRIGHT`, `ISTQB_STATUS`, `CONFIRM_MODEL_AGREEMENT` | Freelance details; CV path (e.g. `/assets/cv.pdf`); ISTQB stays hidden until filled                                                | Freelance                                                                           |
+| `CONFIRM_LANGUAGE_REVIEWERS`                                                                                 | Who reviews Dutch, Arabic and Turkish cases                                                                                        | AI assistant testing                                                                |
+| `HOSTING_PROVIDER`, `ANALYTICS_TOOL`, `A11Y_STATEMENT_DATE`                                                  | Host; analytics (none by default); statement date                                                                                  | Legal                                                                               |
+| `LEGAL_REVIEW`                                                                                               | New key: replace with the review line once a Dutch lawyer has reviewed the legal pages                                             | All six legal pages                                                                 |
 
 `CONFIRM_*` keys mark copy that is already written and needs a yes. To confirm, set the value
 to `-`: the token disappears and the sentence stays as written. The same works for any key whose
@@ -50,7 +50,7 @@ Section headings needed for accessibility where the brief had only block labels:
 asked questions", "Services", "Values", "What I do", "What runs", "Control status legend",
 "Credentials", "Company facts" (visually hidden), "From commit to signed evidence in eight steps."
 (from the meta description). Feature UI labels (filters, tabs, sort, "Showing x of y", "Pause"/
-"Play", calculator lines, "Email me this result" form text, error summary heading). One sentence
+"Play", calculator lines, "Email me this result" form text, error summary heading). Home evidence-sheet labels: "Verdict per control", "Ed25519 signature", the status names and short standard names. One sentence
 on About, allowed by the brief: "The logo draws on the Kurdish Farenji (فەرنجی) pattern, woven
 layers and a gold sun." Legal pages are drafts written to the brief's structure.
 

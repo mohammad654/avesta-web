@@ -2,7 +2,10 @@
   "areas": {
     "compliance": {
       "current": 11,
-      "drivers": ["5 of 44 controls passing", "14 control(s) failing"],
+      "drivers": [
+        "5 of 44 controls passing",
+        "14 control(s) failing"
+      ],
       "gap": 69,
       "key": "compliance",
       "measured": true,
@@ -13,7 +16,9 @@
     },
     "design": {
       "current": 0,
-      "drivers": ["not measured"],
+      "drivers": [
+        "not measured"
+      ],
       "gap": 80,
       "key": "design",
       "measured": false,
@@ -24,7 +29,9 @@
     },
     "duplication": {
       "current": 0,
-      "drivers": ["not measured"],
+      "drivers": [
+        "not measured"
+      ],
       "gap": 80,
       "key": "duplication",
       "measured": false,
@@ -35,7 +42,9 @@
     },
     "maintainability": {
       "current": 100,
-      "drivers": ["within every maintainability limit"],
+      "drivers": [
+        "within every maintainability limit"
+      ],
       "gap": 0,
       "key": "maintainability",
       "measured": true,
@@ -46,7 +55,11 @@
     },
     "security": {
       "current": 72,
-      "drivers": ["2 high", "1 medium", "5 low"],
+      "drivers": [
+        "2 high",
+        "1 medium",
+        "5 low"
+      ],
       "gap": 8,
       "key": "security",
       "measured": true,
@@ -57,7 +70,10 @@
     },
     "tests": {
       "current": 0,
-      "drivers": ["0% of source lines are test code", "coverage not measured"],
+      "drivers": [
+        "0% of source lines are test code",
+        "coverage not measured"
+      ],
       "gap": 80,
       "key": "tests",
       "measured": false,
@@ -84,11 +100,18 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 6,
           "id": "I.2(a)",
           "kind": "auto",
-          "missing": ["trivy", "semgrep", "cppcheck", "osv"],
+          "missing": [
+            "trivy",
+            "semgrep",
+            "cppcheck",
+            "osv"
+          ],
           "name": "No known exploitable vulnerabilities at release",
           "note": "",
           "status": "fail"
@@ -98,7 +121,9 @@
           "findings": 0,
           "id": "I.2(b)",
           "kind": "auto",
-          "missing": ["trivy"],
+          "missing": [
+            "trivy"
+          ],
           "name": "Secure by default configuration",
           "note": "",
           "status": "not-assessed"
@@ -108,47 +133,69 @@
           "findings": 0,
           "id": "I.2(d)",
           "kind": "auto",
-          "missing": ["gitleaks", "semgrep"],
+          "missing": [
+            "gitleaks",
+            "semgrep"
+          ],
           "name": "Protection from unauthorised access",
           "note": "",
           "status": "not-assessed"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 2,
           "id": "I.2(e)",
           "kind": "auto",
-          "missing": ["semgrep"],
+          "missing": [
+            "semgrep"
+          ],
           "name": "Confidentiality of data through encryption",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 1,
           "id": "II.1",
           "kind": "auto",
-          "missing": ["trivy", "licenses"],
+          "missing": [
+            "trivy",
+            "licenses"
+          ],
           "name": "Identify and document components, including an SBOM",
           "note": "",
           "status": "warn"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "II.2",
           "kind": "auto",
-          "missing": ["trivy", "osv"],
+          "missing": [
+            "trivy",
+            "osv"
+          ],
           "name": "Address and remediate vulnerabilities without delay",
           "note": "",
           "status": "partial"
         },
         {
-          "evidence": ["coverage", "hygiene"],
+          "evidence": [
+            "coverage",
+            "hygiene"
+          ],
           "findings": 1,
           "id": "II.3",
           "kind": "auto",
-          "missing": ["mutation"],
+          "missing": [
+            "mutation"
+          ],
           "name": "Regular tests and reviews of security",
           "note": "",
           "status": "fail"
@@ -164,7 +211,9 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "II.5",
           "kind": "auto",
@@ -174,7 +223,9 @@
           "status": "pass"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "II.6",
           "kind": "auto",
@@ -218,7 +269,10 @@
           "findings": 0,
           "id": "I.2(h)",
           "kind": "auto",
-          "missing": ["perf", "semgrep"],
+          "missing": [
+            "perf",
+            "semgrep"
+          ],
           "name": "Availability of essential functions, including resilience against denial-of-service",
           "note": "",
           "status": "not-assessed"
@@ -238,11 +292,17 @@
     "IEC62443": {
       "items": [
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 1,
           "id": "SM-9",
           "kind": "auto",
-          "missing": ["trivy", "osv", "licenses"],
+          "missing": [
+            "trivy",
+            "osv",
+            "licenses"
+          ],
           "name": "Security requirements for externally provided components",
           "note": "",
           "status": "warn"
@@ -268,41 +328,69 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 8,
           "id": "SI-1",
           "kind": "auto",
-          "missing": ["semgrep", "gitleaks", "cppcheck"],
+          "missing": [
+            "semgrep",
+            "gitleaks",
+            "cppcheck"
+          ],
           "name": "Security implementation review",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["bandit", "lizard"],
+          "evidence": [
+            "bandit",
+            "lizard"
+          ],
           "findings": 8,
           "id": "SI-2",
           "kind": "auto",
-          "missing": ["semgrep", "cppcheck", "codebase", "cleancode", "clones", "design", "solid"],
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "codebase",
+            "cleancode",
+            "clones",
+            "design",
+            "solid"
+          ],
           "name": "Secure coding standards",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["coverage"],
+          "evidence": [
+            "coverage"
+          ],
           "findings": 1,
           "id": "SVV-1",
           "kind": "auto",
-          "missing": ["mutation"],
+          "missing": [
+            "mutation"
+          ],
           "name": "Security requirements testing",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 6,
           "id": "SVV-3",
           "kind": "auto",
-          "missing": ["trivy", "semgrep", "cppcheck", "osv"],
+          "missing": [
+            "trivy",
+            "semgrep",
+            "cppcheck",
+            "osv"
+          ],
           "name": "Vulnerability testing",
           "note": "",
           "status": "fail"
@@ -318,7 +406,9 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "DM-1",
           "kind": "auto",
@@ -328,11 +418,15 @@
           "status": "pass"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "SUM-1",
           "kind": "auto",
-          "missing": ["trivy"],
+          "missing": [
+            "trivy"
+          ],
           "name": "Security update qualification",
           "note": "",
           "status": "partial"
@@ -342,7 +436,11 @@
           "findings": 0,
           "id": "SD-4",
           "kind": "auto",
-          "missing": ["design", "solid", "cleancode"],
+          "missing": [
+            "design",
+            "solid",
+            "cleancode"
+          ],
           "name": "Secure design best practices",
           "note": "",
           "status": "not-assessed"
@@ -362,11 +460,15 @@
     "ISO27001": {
       "items": [
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "A.5.17",
           "kind": "auto",
-          "missing": ["gitleaks"],
+          "missing": [
+            "gitleaks"
+          ],
           "name": "Authentication information",
           "note": "",
           "status": "partial"
@@ -382,37 +484,54 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 6,
           "id": "A.8.8",
           "kind": "auto",
-          "missing": ["trivy", "semgrep", "cppcheck", "osv"],
+          "missing": [
+            "trivy",
+            "semgrep",
+            "cppcheck",
+            "osv"
+          ],
           "name": "Management of technical vulnerabilities",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "A.8.9",
           "kind": "auto",
-          "missing": ["trivy"],
+          "missing": [
+            "trivy"
+          ],
           "name": "Configuration management",
           "note": "",
           "status": "partial"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 2,
           "id": "A.8.24",
           "kind": "auto",
-          "missing": ["semgrep"],
+          "missing": [
+            "semgrep"
+          ],
           "name": "Use of cryptography",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "A.8.25",
           "kind": "auto",
@@ -442,31 +561,53 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["bandit", "lizard"],
+          "evidence": [
+            "bandit",
+            "lizard"
+          ],
           "findings": 8,
           "id": "A.8.28",
           "kind": "auto",
-          "missing": ["semgrep", "cppcheck", "codebase", "cleancode", "clones", "design", "solid"],
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "codebase",
+            "cleancode",
+            "clones",
+            "design",
+            "solid"
+          ],
           "name": "Secure coding",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["coverage", "bandit"],
+          "evidence": [
+            "coverage",
+            "bandit"
+          ],
           "findings": 7,
           "id": "A.8.29",
           "kind": "auto",
-          "missing": ["semgrep", "cppcheck", "mutation"],
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "mutation"
+          ],
           "name": "Security testing in development and acceptance",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "A.8.32",
           "kind": "auto",
-          "missing": ["churn"],
+          "missing": [
+            "churn"
+          ],
           "name": "Change management",
           "note": "",
           "status": "partial"
@@ -476,7 +617,9 @@
           "findings": 0,
           "id": "A.5.32",
           "kind": "auto",
-          "missing": ["licenses"],
+          "missing": [
+            "licenses"
+          ],
           "name": "Intellectual property rights",
           "note": "",
           "status": "not-assessed"
@@ -506,7 +649,9 @@
           "status": "not-assessed"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "Art.21(2)(b)",
           "kind": "auto",
@@ -516,41 +661,64 @@
           "status": "pass"
         },
         {
-          "evidence": ["hygiene"],
+          "evidence": [
+            "hygiene"
+          ],
           "findings": 0,
           "id": "Art.21(2)(d)",
           "kind": "auto",
-          "missing": ["trivy", "osv", "licenses"],
+          "missing": [
+            "trivy",
+            "osv",
+            "licenses"
+          ],
           "name": "Supply chain security, including the security of suppliers",
           "note": "",
           "status": "partial"
         },
         {
-          "evidence": ["bandit", "hygiene"],
+          "evidence": [
+            "bandit",
+            "hygiene"
+          ],
           "findings": 6,
           "id": "Art.21(2)(e)",
           "kind": "auto",
-          "missing": ["semgrep", "cppcheck", "cleancode", "design"],
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "cleancode",
+            "design"
+          ],
           "name": "Security in acquisition, development and maintenance, including vulnerability handling and disclosure",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["coverage"],
+          "evidence": [
+            "coverage"
+          ],
           "findings": 1,
           "id": "Art.21(2)(f)",
           "kind": "auto",
-          "missing": ["mutation"],
+          "missing": [
+            "mutation"
+          ],
           "name": "Policies to assess the effectiveness of risk-management measures",
           "note": "",
           "status": "fail"
         },
         {
-          "evidence": ["bandit"],
+          "evidence": [
+            "bandit"
+          ],
           "findings": 2,
           "id": "Art.21(2)(h)",
           "kind": "auto",
-          "missing": ["semgrep", "gitleaks"],
+          "missing": [
+            "semgrep",
+            "gitleaks"
+          ],
           "name": "Policies on the use of cryptography and encryption",
           "note": "",
           "status": "fail"
@@ -636,7 +804,10 @@
       "kev": false,
       "line": 30,
       "new": null,
-      "references": ["https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html", "CWE-327"],
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+        "CWE-327"
+      ],
       "remediation": "Replace MD5/SHA-1 with SHA-256 (hashlib.sha256) or a password KDF. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
       "rule_id": "B324",
       "scanner": "bandit",
@@ -680,7 +851,12 @@
       "accepted": null,
       "category": "testing",
       "confidence": "",
-      "controls": ["ISO27001:A.8.29", "IEC62443:SVV-1", "CRA:II.3", "NIS2:Art.21(2)(f)"],
+      "controls": [
+        "ISO27001:A.8.29",
+        "IEC62443:SVV-1",
+        "CRA:II.3",
+        "NIS2:Art.21(2)(f)"
+      ],
       "cve": null,
       "description": "No coverage report (coverage.xml, coverage.json, lcov.info) was found.",
       "effort_minutes": null,
@@ -864,7 +1040,10 @@
       "accepted": null,
       "category": "process",
       "confidence": "",
-      "controls": ["CRA:II.1", "IEC62443:SM-9"],
+      "controls": [
+        "CRA:II.1",
+        "IEC62443:SM-9"
+      ],
       "cve": null,
       "description": "",
       "effort_minutes": null,
@@ -921,7 +1100,11 @@
     "audit_date": "",
     "coverage_target": 80.0,
     "custom": false,
-    "frameworks": ["ISO27001", "IEC62443", "CRA"],
+    "frameworks": [
+      "ISO27001",
+      "IEC62443",
+      "CRA"
+    ],
     "hours_per_day": 6.0,
     "language": "en",
     "mutation_target": 60.0,
