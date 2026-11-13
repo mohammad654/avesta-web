@@ -36,7 +36,7 @@ const COMPRESS = new Set([
   '.sarif',
 ]);
 
-/** Parses _headers into [pattern, headers] rules. */
+/** Parses _headers into [pattern, headers] rules (re-read per request, so rebuilds apply). */
 function rules(): [RegExp, [string, string][]][] {
   const file = join(DIST, '_headers');
   if (!existsSync(file)) return [];
@@ -57,7 +57,6 @@ function rules(): [RegExp, [string, string][]][] {
   }
   return out;
 }
-const RULES = rules();
 
 function resolveFile(urlPath: string): { file: string; status: number } {
   const clean = normalize(decodeURIComponent(urlPath)).replace(/^(\.\.[/\\])+/, '');
@@ -78,7 +77,7 @@ createServer((req, res) => {
   let body: Buffer = readFileSync(file);
   res.statusCode = status;
   res.setHeader('Content-Type', TYPES[ext] ?? 'application/octet-stream');
-  for (const [re, headers] of RULES) {
+  for (const [re, headers] of rules()) {
     if (re.test(url.pathname))
       for (const [k, v] of headers)
         if (k !== 'Strict-Transport-Security' && !v.includes('upgrade-insecure'))
