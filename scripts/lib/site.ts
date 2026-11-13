@@ -29,10 +29,10 @@ export function readJson<T>(file: string): T {
 /** Applies the founder's filled values from site.json, like the app does. */
 export function resolveValues(text: string): string {
   const site = readJson<SiteJson>(join(CONTENT, 'site.json'));
-  return text.replace(
-    /\[([A-Z0-9_]+)\]/g,
-    (token, key: string) => site.placeholders[key]?.trim() || token,
-  );
+  return text.replace(/\[([A-Z0-9_]+)\]/g, (token, key: string) => {
+    const value = site.placeholders[key]?.trim();
+    return value === '-' ? '' : value || token;
+  });
 }
 
 export function domain(): string {

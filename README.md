@@ -1,59 +1,41 @@
-# AvestaWeb
+# Avesta Tech website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.6.
+Company website for Avesta Tech: front end only, Angular 22 (standalone, zoneless, signals,
+OnPush), every route prerendered to static HTML. Built to the *Avesta Tech website build brief
+v1.0*. Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). What the founder still has to
+fill in or confirm: [docs/OWNER-REVIEW.md](docs/OWNER-REVIEW.md).
 
-## Development server
+## Editing content
 
-To start a local development server, run:
+All copy and data live in `src/content/` (JSON). Never edit text in components.
 
-```bash
-ng serve
-```
+| File | Holds |
+| --- | --- |
+| `site.json` | Navigation, footer, shared microcopy, **placeholder values** |
+| `pages/*.json` | One file per page: SEO and sections |
+| `services.json`, `pricing.json`, `faq.json`, `cra-checker.json` | Services, plans, FAQ, CRA checker |
+| `features/*.json` | Labels for the interactive features |
+| `standards.json`, `sample-report.json`, `snippets/` | Copied from Avesta Proof by `npm run sync:proof` |
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Placeholders such as `[KVK_NUMBER]` are filled once in `site.json → placeholders`. Set a
+`CONFIRM_*` key to `-` to confirm the sentence it flags. `npm run placeholders` lists what is open.
 
-## Code scaffolding
+## Commands
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Command | Does |
+| --- | --- |
+| `npm start` | Dev server with live reload (placeholders get a dashed outline) |
+| `npm run build` | Prerender, then sitemap, robots, security.txt, OG images, `_headers`, budget and copy-rule checks |
+| `npm run build:prod` | Same, and **fails while any placeholder remains** (brief 8.2) |
+| `npm run build:staging` | Same as build, with `noindex` robots and `X-Robots-Tag` |
+| `npm run serve` | Serve `dist/` like the CDN (clean URLs, 404 status, headers, Brotli) on :4300 |
+| `npm run lint` / `npm test` / `npm run test:coverage` | ESLint (angular-eslint) / Vitest / coverage (≥ 90% on core and domain) |
+| `npm run e2e` | Playwright: smoke, axe, SEO and feature tests against the built site |
+| `npm run lighthouse` | Lighthouse (mobile) on every route; writes `lighthouse/summary.json` |
+| `npm run sync:proof` | Copy `frameworks.json`, the CI example and (with `SAMPLE_REPORT_DIR`) the demo report from Avesta Proof |
 
-```bash
-ng generate component component-name
-```
+## Deploying
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+`dist/avesta-web/browser` is a static site. `_headers` (CSP with script hashes, HSTS, caching) and
+`_redirects` use the Netlify / Cloudflare Pages format; translate them if the host differs.
+Serve `404.html` with status 404 for unknown paths.

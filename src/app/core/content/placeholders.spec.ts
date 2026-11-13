@@ -6,8 +6,11 @@ describe('placeholders (brief 7.4)', () => {
     expect(hasPlaceholder('no [placeholder] here')).toBe(false);
   });
 
-  it('only counts filled values', () => {
+  it('only counts filled values, and "-" confirms by removing the token', () => {
     expect([...filledValues({ A: 'x', B: '', C: '  ' }).keys()]).toEqual(['A']);
+    const values = filledValues({ CONFIRM_TITLE: '-' });
+    expect(resolvePlaceholders('Founder [CONFIRM_TITLE]', values)).toBe('Founder ');
+    expect(resolvePlaceholders('one month [CONFIRM_TITLE].', values)).toBe('one month.');
   });
 
   it('replaces filled keys deeply and leaves open ones visible', () => {

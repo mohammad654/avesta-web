@@ -1,0 +1,35 @@
+# Quality gates (brief 8.1 step 17): lint, unit tests with coverage, build with copy rules,
+# Playwright e2e + axe, Lighthouse CI. build:prod (strict placeholder check) runs on main only,
+# so pull requests stay green while the founder is still filling placeholders.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # sitemap lastmod reads git dates
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium chrome
+      - run: npm run lint
+      - run: npm run test:coverage
+      - run: npm run build
+      - run: npm run e2e
+      - name: Lighthouse CI
+        run: npx @lhci/cli@0.14.x autorun
+      - name: Production build (fails while placeholders remain)
+        if: github.ref == 'refs/heads/main'
+        run: npm run build:prod

@@ -38,8 +38,9 @@
             <ol class="days">
               @for (step of s.steps; track step.day) {
                 <li>
-                  <span class="days__marker">{{ step.day }}</span
-                  ><span><app-text [text]="step.text" /></span>
+                  <span class="days__marker">{{ step.day }}</span><span
+                    ><app-text [text]="step.text"
+                  /></span>
                 </li>
               }
             </ol>
