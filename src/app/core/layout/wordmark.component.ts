@@ -15,7 +15,7 @@ import { LogoMarkComponent } from '../../shared/ui/logo-mark.component';
   `,
   template: `
     <app-logo-mark [size]="size()" />
-    <span class="wm"><span class="wm__name">AVESTA</span><span class="wm__tag">TECH</span></span>
+    <span class="wm"><span class="wm__name">AVESTA</span>{{ ' ' }}<span class="wm__tag">TECH</span></span>
   `,
 })
 export class WordmarkComponent {

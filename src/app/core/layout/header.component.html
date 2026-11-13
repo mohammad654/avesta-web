@@ -35,15 +35,15 @@
       }
     </div>
 
-    <button type="button" class="btn btn--ghost btn--small header__menu-btn" aria-controls="mobile-menu"
+    <button #menuBtn type="button" class="btn btn--ghost btn--small header__menu-btn" aria-controls="mobile-menu"
       [attr.aria-expanded]="menuOpen()" (click)="menuOpen.set(true)">
       <app-icon name="menu" />{{ nav.menu }}
     </button>
   </div>
 </header>
 
-@if (menuOpen()) {
-  @defer (on immediate) {
+@defer (on interaction(menuBtn); prefetch on idle) {
+  @if (menuOpen()) {
     <app-mobile-menu [nav]="nav" (closed)="closeMenu()" />
   }
 }

@@ -12,7 +12,6 @@ import { SectionComponent } from './section.component';
   styles: `
     td:last-child { font-weight: 500; }
     th[scope='row'] { white-space: nowrap; }
-    thead th:last-child { color: var(--color-gold-text); }
   `,
   template: `
     @let s = section();

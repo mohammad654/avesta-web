@@ -1,11 +1,7 @@
 // Design tokens (brief 9.1–9.4). Every colour pair used on the site is listed in /dev/tokens
 // with its calculated contrast ratio.
 
-// Breakpoints (Sass, for media queries)
-$bp-sm: 480px;
-$bp-md: 768px;
-$bp-lg: 960px;
-$bp-xl: 1200px;
+@use 'breakpoints' as *;
 
 :root {
   // Colour

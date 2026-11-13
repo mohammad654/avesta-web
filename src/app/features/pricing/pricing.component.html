@@ -1,3 +1,4 @@
+<h2 class="visually-hidden">{{ labels.viewLabel }}</h2>
 <app-tabs [tabs]="tabs" [label]="labels.viewLabel" prefix="pricing" [(selected)]="view">
   @if (view() === 'plans') {
     <div class="toggle" role="radiogroup" [attr.aria-label]="labels.billingLegend" tabindex="-1" (keydown)="onKey($event)">
