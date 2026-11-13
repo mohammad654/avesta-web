@@ -1,0 +1,21 @@
+{
+  "id": "contact",
+  "seo": {
+    "title": "Contact Avesta Tech | Book a call",
+    "description": "Tell us about your product and what you need to prove. Book a call or send a message; we reply within one working day.",
+    "path": "/contact",
+    "breadcrumb": "Contact",
+    "priority": 0.7
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Let's talk about your product.",
+      "sub": "Tell us what you build and what you need to prove. You will hear back within one working day [CONFIRM_RESPONSE_TIME].",
+      "ctas": []
+    },
+    { "kind": "feature", "id": "form", "feature": "contactForm" }
+  ]
+}

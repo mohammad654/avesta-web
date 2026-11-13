@@ -1,0 +1,59 @@
+{
+  "id": "legal-accessibility",
+  "seo": {
+    "title": "Accessibility statement | Avesta Tech",
+    "description": "Avesta Tech aims for WCAG 2.2 AA on this website. Read how we test accessibility, the known limits and how to report a barrier you find.",
+    "path": "/legal/accessibility",
+    "breadcrumb": "Accessibility statement",
+    "priority": 0.2
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Accessibility statement",
+      "sub": "We want everyone to be able to use this website.",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "review",
+      "paragraphs": [
+        "[LEGAL_REVIEW]"
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s1",
+      "heading": "Our target",
+      "paragraphs": [
+        "This website aims to meet WCAG 2.2 level AA, and at least WCAG 2.1 level AA."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s2",
+      "heading": "How we test",
+      "paragraphs": [
+        "Automated accessibility checks with axe-core run on every page in our build pipeline. Manual checks with a keyboard only and with screen readers (NVDA with Firefox, VoiceOver with Safari) on the home page, the CRA readiness checker, the sample report and the contact page are part of our release checklist."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s3",
+      "heading": "Report a barrier",
+      "paragraphs": [
+        "Found something that does not work for you? Email [EMAIL] and we will help and fix it."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s4",
+      "heading": "Date",
+      "paragraphs": [
+        "This statement was last reviewed on [A11Y_STATEMENT_DATE]."
+      ]
+    }
+  ]
+}

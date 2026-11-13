@@ -1,0 +1,316 @@
+@use 'tokens' as *;
+
+// Buttons (brief 9.4)
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-sm);
+  border: 1.5px solid transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-navy);
+  --focus-color: var(--color-navy);
+
+  &:hover:not(:disabled) {
+    background: var(--color-gold-hover);
+  }
+}
+
+.section--navy .btn--primary,
+.on-dark .btn--primary {
+  --focus-color: var(--color-cream);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+
+  &:hover:not(:disabled) {
+    background: rgb(201 164 97 / 12%);
+  }
+}
+
+.btn--link {
+  min-height: 44px;
+  padding: 0 var(--space-2);
+  color: var(--color-gold-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  font-weight: 500;
+}
+
+.section--navy .btn--link {
+  color: var(--color-gold);
+}
+
+.btn--small {
+  min-height: 36px;
+  padding: 0 var(--space-4);
+  font-size: var(--fs-small);
+}
+
+// Cards
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition:
+    border-color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card--interactive:hover,
+.card--interactive:focus-within {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.section--navy .card {
+  background: var(--color-navy-2);
+  border-color: var(--color-line-on-dark);
+}
+
+.card__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-gold-ink);
+  margin-bottom: var(--space-4);
+}
+
+.section--navy .card__icon {
+  color: var(--color-gold);
+}
+
+// Chips (pill, 28px, gold-soft when selected)
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 28px;
+  padding: 2px var(--space-3);
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-size: 0.875rem;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+
+  &[aria-pressed='true'],
+  &[aria-checked='true'],
+  &.is-selected {
+    background: var(--color-gold-soft);
+    border-color: var(--color-gold-ink);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.chip__check {
+  width: 14px;
+  height: 14px;
+}
+
+// Badges and tags
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--color-gold-soft);
+  color: var(--color-navy);
+  white-space: nowrap;
+}
+
+.badge--dark {
+  background: var(--color-navy-2);
+  color: var(--color-cream);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 1px var(--space-2);
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--color-white);
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.status--pass {
+  color: var(--status-pass);
+}
+.status--warn {
+  color: var(--status-warn);
+}
+.status--fail {
+  color: var(--status-fail);
+}
+.status--partial {
+  color: var(--status-partial);
+  border-style: dashed;
+}
+.status--not-assessed {
+  color: var(--status-not-assessed);
+}
+
+// Form controls
+.field {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+
+  label,
+  legend {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--color-muted);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-navy);
+
+  &[aria-invalid='true'] {
+    border-color: var(--status-fail);
+  }
+}
+
+textarea.input {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.field-error {
+  color: var(--status-fail);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  margin: 0;
+}
+
+.checkbox {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+
+  input {
+    width: 24px;
+    height: 24px;
+    margin: 2px 0 0;
+    accent-color: var(--color-navy);
+    flex: none;
+  }
+}
+
+// Placeholders: visible in content, dashed outline in development (brief 7.4)
+.ph {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+}
+
+.ph--dev {
+  outline: 1.5px dashed var(--status-warn);
+  outline-offset: 1px;
+  background: rgb(154 91 18 / 10%);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.section--navy .ph--dev {
+  outline-color: var(--color-gold);
+  background: rgb(201 164 97 / 14%);
+}
+
+// Disclosure (native details/summary)
+.disclosure {
+  border-top: 1px solid var(--color-line);
+
+  &:last-child {
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: 56px;
+    padding: var(--space-3) 0;
+    font-weight: 600;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform var(--duration) var(--ease);
+      margin-right: var(--space-2);
+    }
+  }
+
+  &[open] > summary::after {
+    transform: rotate(-135deg);
+  }
+}
+
+.section--navy .disclosure {
+  border-color: var(--color-line-on-dark);
+}

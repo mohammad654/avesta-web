@@ -1,0 +1,140 @@
+{
+  "heading": "How ready is your product for the Cyber Resilience Act?",
+  "sub": "Eight questions. Three minutes. An honest picture of where you stand and what to do next.",
+  "start": "Start the check",
+  "micro": "Your answers stay in your browser. This is a self-check, not legal advice.",
+  "progress": "Question {current} of {total}",
+  "back": "Back",
+  "next": "Next",
+  "seeResult": "See my result",
+  "hintLabel": "Why we ask",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Do you sell software, or a product with software in it, to customers in the EU?",
+      "hint": "The CRA covers products with digital elements made available on the EU market.",
+      "options": [
+        { "label": "Yes", "points": 0 },
+        { "label": "Not yet, but we plan to", "points": 0 },
+        { "label": "No", "points": 0, "exit": true }
+      ],
+      "action": ""
+    },
+    {
+      "id": 2,
+      "text": "Do you have an up-to-date list of the third-party components in your product (an SBOM)?",
+      "hint": "Manufacturers must identify and document components, including in a software bill of materials.",
+      "options": [
+        { "label": "Yes, generated automatically on every build", "points": 3 },
+        { "label": "Yes, but made by hand or out of date", "points": 1 },
+        { "label": "No", "points": 0 }
+      ],
+      "action": "Generate an SBOM automatically on every build."
+    },
+    {
+      "id": 3,
+      "text": "How do you find known vulnerabilities in your dependencies?",
+      "hint": "Products should ship without known exploitable vulnerabilities.",
+      "options": [
+        { "label": "Automated scan on every change and on a schedule", "points": 3 },
+        { "label": "Occasional manual checks", "points": 1 },
+        { "label": "We don't, yet", "points": 0 }
+      ],
+      "action": "Scan dependencies on every change and every week, and fix exploited CVEs first."
+    },
+    {
+      "id": 4,
+      "text": "Can someone outside your company report a vulnerability to you easily?",
+      "hint": "A coordinated disclosure policy and a contact address are expected.",
+      "options": [
+        { "label": "Yes, a published policy and contact address", "points": 3 },
+        { "label": "Only a general contact address", "points": 1 },
+        { "label": "No", "points": 0 }
+      ],
+      "action": "Publish a vulnerability disclosure policy and a security.txt file."
+    },
+    {
+      "id": 5,
+      "text": "Could you report an actively exploited vulnerability to the authorities within 24 hours?",
+      "hint": "Reporting duties under the CRA have applied since 11 September 2026.*",
+      "hintFootnote": "* Dates and amounts: verify with counsel.",
+      "options": [
+        { "label": "Yes, we have a tested process", "points": 3 },
+        { "label": "We would figure it out", "points": 1 },
+        { "label": "We did not know this was required", "points": 0 }
+      ],
+      "action": "Write and rehearse a 24-hour reporting process."
+    },
+    {
+      "id": 6,
+      "text": "Have you decided and published how long you will provide security updates?",
+      "hint": "Manufacturers must set a support period and provide security updates during it.",
+      "options": [
+        { "label": "Yes, a defined support period", "points": 3 },
+        { "label": "We have an idea, not published", "points": 1 },
+        { "label": "No", "points": 0 }
+      ],
+      "action": "Decide your support period and publish it."
+    },
+    {
+      "id": 7,
+      "text": "Do you have a documented risk assessment or threat model for the product?",
+      "hint": "Security must be based on a risk assessment, and that assessment must stay current.",
+      "options": [
+        { "label": "Yes, reviewed in the last 12 months", "points": 3 },
+        { "label": "Yes, but older than 12 months", "points": 1 },
+        { "label": "No", "points": 0 }
+      ],
+      "action": "Write or refresh your threat model, and set a review date."
+    },
+    {
+      "id": 8,
+      "text": "Is security testing part of your normal release process?",
+      "hint": "Regular tests and reviews of security are part of vulnerability handling.",
+      "options": [
+        { "label": "Yes, automated tests and scans gate every release", "points": 3 },
+        { "label": "Some testing, not every release", "points": 1 },
+        { "label": "No", "points": 0 }
+      ],
+      "action": "Add security scans as a gate in your release pipeline."
+    }
+  ],
+  "bands": {
+    "strong": {
+      "headline": "You have a strong foundation.",
+      "body": "Most of the practices the CRA expects are already in place. The next step is turning them into evidence an auditor can check: signed reports, a technical file and a current SBOM."
+    },
+    "progress": {
+      "headline": "You are on your way, with clear gaps to close.",
+      "body": "Several important practices exist, but not all of them are automated or documented. A readiness scan will show exactly which controls are missing evidence, and in what order to fix them."
+    },
+    "early": {
+      "headline": "You are at the start, and that's a fine place to start.",
+      "body": "Many teams are here. The good news: the first steps, such as an SBOM, automated dependency scanning and a disclosure policy, are quick wins. Start there."
+    }
+  },
+  "critical": "Two things need attention first: knowing your vulnerable dependencies and being able to report an exploited vulnerability fast. These carry the most risk today.",
+  "actionsHeading": "Your three priority actions",
+  "scoreLabel": "Readiness score: {percent}%",
+  "exit": {
+    "body": "The CRA may not apply to you. Check with counsel.",
+    "cta": { "label": "See the Quality Scan", "href": "/services/quality-scan", "variant": "primary" }
+  },
+  "ctas": {
+    "book": { "label": "Book a CRA Readiness Scan", "href": "/services/cra-readiness-scan", "variant": "primary" },
+    "email": "Email me this result",
+    "restart": "Start again"
+  },
+  "disclaimer": "This self-check is a starting point, not legal advice or an assessment of conformity.",
+  "email": {
+    "legend": "Email me this result",
+    "emailLabel": "Work email",
+    "consent": "I agree that Avesta Tech may use these details to reply to me. See the [privacy policy](/legal/privacy).",
+    "submit": "Send my result",
+    "sending": "Sending…",
+    "success": "Thank you. Your result is on its way.",
+    "error": "That did not go through. Please try again, or email us at [EMAIL].",
+    "emailError": "Please enter a valid email address.",
+    "consentError": "Please accept the privacy note so we can reply."
+  }
+}

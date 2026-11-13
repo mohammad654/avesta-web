@@ -1,0 +1,35 @@
+@let r = result();
+@let c = copy();
+<div class="result">
+  <div class="result__ring" role="img" [attr.aria-label]="scoreLabel()">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="52" class="ring__track" />
+      <circle cx="60" cy="60" r="52" class="ring__value" [attr.stroke-dasharray]="dash()" />
+    </svg>
+    <span class="result__percent display" aria-hidden="true">{{ r.percent }}%</span>
+  </div>
+  <div>
+    <h2 class="result__headline" tabindex="-1" id="cra-result-title">{{ band().headline }}</h2>
+    <p class="lead">{{ band().body }}</p>
+    @if (r.critical) {
+      <p class="result__critical" role="note">{{ c.critical }}</p>
+    }
+    <h3>{{ c.actionsHeading }}</h3>
+    <ol class="result__actions">
+      @for (action of r.actions; track action) {
+        <li>{{ action }}</li>
+      }
+    </ol>
+    <div class="actions">
+      <app-cta [cta]="c.ctas.book" />
+      <button type="button" class="btn btn--ghost" [attr.aria-expanded]="emailOpen()" aria-controls="cra-email" (click)="emailOpen.set(!emailOpen())">
+        {{ c.ctas.email }}
+      </button>
+      <button type="button" class="btn btn--link" (click)="restart.emit()">{{ c.ctas.restart }}</button>
+    </div>
+    @if (emailOpen()) {
+      <app-cra-email-form id="cra-email" [copy]="c.email" [payload]="{ band: r.band, percent: r.percent, answers: answers() }" />
+    }
+    <p class="footnote">{{ c.disclaimer }}</p>
+  </div>
+</div>

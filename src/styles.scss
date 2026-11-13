@@ -1,0 +1,10 @@
+@use 'tokens';
+@use 'fonts';
+@use 'base';
+@use 'typography';
+@use 'utilities';
+@use 'components';
+@use '@angular/cdk' as cdk;
+
+// LiveAnnouncer's live region must be visually hidden (brief 6.4).
+@include cdk.a11y-visually-hidden();

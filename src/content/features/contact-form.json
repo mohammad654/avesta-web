@@ -1,0 +1,97 @@
+{
+  "fields": {
+    "name": "Name",
+    "email": "Work email",
+    "company": "Company",
+    "need": "What do you need?",
+    "needPlaceholder": "Choose one",
+    "message": "Message",
+    "messagePlaceholder": "A few lines about your product and timeline",
+    "consent": "I agree that Avesta Tech may use these details to reply to me. See the [privacy policy](/legal/privacy).",
+    "honeypot": "Leave this field empty",
+    "required": "required"
+  },
+  "needs": [
+    {
+      "value": "cra-scan",
+      "label": "CRA Readiness Scan"
+    },
+    {
+      "value": "demo",
+      "label": "Avesta Proof demo"
+    },
+    {
+      "value": "quality-scan",
+      "label": "Quality Scan"
+    },
+    {
+      "value": "test-automation",
+      "label": "Test automation"
+    },
+    {
+      "value": "accessibility",
+      "label": "Accessibility audit"
+    },
+    {
+      "value": "ai-testing",
+      "label": "AI assistant testing"
+    },
+    {
+      "value": "freelance",
+      "label": "Freelance engineer"
+    },
+    {
+      "value": "other",
+      "label": "Something else"
+    }
+  ],
+  "topicAliases": {
+    "call": "other"
+  },
+  "submit": "Send message",
+  "sending": "Sending…",
+  "success": "Thank you. Your message is with us and we will reply within one working day.",
+  "error": "That did not go through. Please try again, or email us at [EMAIL].",
+  "errorSummary": "Please fix these fields:",
+  "errors": {
+    "name": "Please enter your name.",
+    "email": "Please enter a valid email address.",
+    "need": "Please choose what you need.",
+    "message": "Please tell us a little about your project.",
+    "consent": "Please accept the privacy note so we can reply."
+  },
+  "side": {
+    "heading": "Prefer to pick a time?",
+    "book": {
+      "label": "Book a call",
+      "href": "[BOOKING_URL]",
+      "variant": "primary"
+    },
+    "details": [
+      {
+        "label": "Email",
+        "value": "[EMAIL]",
+        "href": "mailto:[EMAIL]"
+      },
+      {
+        "label": "Phone",
+        "value": "[PHONE]",
+        "href": "tel:[PHONE]"
+      },
+      {
+        "label": "Address",
+        "value": "[BUSINESS_ADDRESS], Utrecht"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "[LINKEDIN_URL]",
+        "href": "[LINKEDIN_URL]"
+      },
+      {
+        "label": "Security reports",
+        "value": "[SECURITY_EMAIL]",
+        "href": "mailto:[SECURITY_EMAIL]"
+      }
+    ]
+  }
+}

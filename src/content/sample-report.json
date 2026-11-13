@@ -1,0 +1,1217 @@
+{
+  "areas": {
+    "compliance": {
+      "current": 11,
+      "drivers": [
+        "5 of 44 controls passing",
+        "14 control(s) failing"
+      ],
+      "gap": 69,
+      "key": "compliance",
+      "measured": true,
+      "note": "The share of mapped controls that pass. A control whose evidence tool did not run counts as not passing.",
+      "status": "fail",
+      "target": 80,
+      "title": "Compliance evidence"
+    },
+    "design": {
+      "current": 0,
+      "drivers": [
+        "not measured"
+      ],
+      "gap": 80,
+      "key": "design",
+      "measured": false,
+      "note": "No source files in a language the design model understands.",
+      "status": "not-assessed",
+      "target": 80,
+      "title": "Design (classes, SOLID)"
+    },
+    "duplication": {
+      "current": 0,
+      "drivers": [
+        "not measured"
+      ],
+      "gap": 80,
+      "key": "duplication",
+      "measured": false,
+      "note": "Duplication was not measured.",
+      "status": "not-assessed",
+      "target": 80,
+      "title": "Duplication"
+    },
+    "maintainability": {
+      "current": 100,
+      "drivers": [
+        "within every maintainability limit"
+      ],
+      "gap": 0,
+      "key": "maintainability",
+      "measured": true,
+      "note": "100 minus penalties for the share of functions above the cognitive complexity limit, comment density below the profile target, oversized files and average cyclomatic complexity.",
+      "status": "pass",
+      "target": 80,
+      "title": "Maintainability"
+    },
+    "security": {
+      "current": 72,
+      "drivers": [
+        "2 high",
+        "1 medium",
+        "5 low"
+      ],
+      "gap": 8,
+      "key": "security",
+      "measured": true,
+      "note": "100 minus the capped severity penalty for security findings, minus 15 per actively exploited vulnerability (maximum 45). Measured by: bandit.",
+      "status": "warn",
+      "target": 80,
+      "title": "Security"
+    },
+    "tests": {
+      "current": 0,
+      "drivers": [
+        "0% of source lines are test code",
+        "coverage not measured"
+      ],
+      "gap": 80,
+      "key": "tests",
+      "measured": false,
+      "note": "No coverage report was found, so this is only what the share of test code suggests. Produce coverage.xml, lcov.info or a coverage JSON file, or scan with --run-tests.",
+      "status": "not-assessed",
+      "target": 80,
+      "title": "Tests"
+    }
+  },
+  "attestations": [],
+  "baseline": null,
+  "config_errors": [],
+  "controls": {
+    "CRA": {
+      "items": [
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "I.1",
+          "kind": "manual",
+          "missing": [],
+          "name": "Designed with appropriate cybersecurity based on a risk assessment (Annex I Part I(1))",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 6,
+          "id": "I.2(a)",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "semgrep",
+            "cppcheck",
+            "osv"
+          ],
+          "name": "No known exploitable vulnerabilities at release",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "I.2(b)",
+          "kind": "auto",
+          "missing": [
+            "trivy"
+          ],
+          "name": "Secure by default configuration",
+          "note": "",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "I.2(d)",
+          "kind": "auto",
+          "missing": [
+            "gitleaks",
+            "semgrep"
+          ],
+          "name": "Protection from unauthorised access",
+          "note": "",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 2,
+          "id": "I.2(e)",
+          "kind": "auto",
+          "missing": [
+            "semgrep"
+          ],
+          "name": "Confidentiality of data through encryption",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 1,
+          "id": "II.1",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "licenses"
+          ],
+          "name": "Identify and document components, including an SBOM",
+          "note": "",
+          "status": "warn"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "II.2",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "osv"
+          ],
+          "name": "Address and remediate vulnerabilities without delay",
+          "note": "",
+          "status": "partial"
+        },
+        {
+          "evidence": [
+            "coverage",
+            "hygiene"
+          ],
+          "findings": 1,
+          "id": "II.3",
+          "kind": "auto",
+          "missing": [
+            "mutation"
+          ],
+          "name": "Regular tests and reviews of security",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "II.4",
+          "kind": "manual",
+          "missing": [],
+          "name": "Publicly disclose fixed vulnerabilities after an update",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "II.5",
+          "kind": "auto",
+          "missing": [],
+          "name": "Coordinated vulnerability disclosure policy",
+          "note": "",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "II.6",
+          "kind": "auto",
+          "missing": [],
+          "name": "Contact address for reporting vulnerabilities",
+          "note": "",
+          "status": "pass"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "II.7",
+          "kind": "manual",
+          "missing": [],
+          "name": "Mechanisms to distribute security updates securely",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "Art.13(8)",
+          "kind": "derived",
+          "missing": [],
+          "name": "Support period defined (normally at least 5 years)",
+          "note": "Set product.support_until in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "Annex II",
+          "kind": "derived",
+          "missing": [],
+          "name": "Manufacturer identity, contact point and intended use documented",
+          "note": "Fill in the [product] section of avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "I.2(h)",
+          "kind": "auto",
+          "missing": [
+            "perf",
+            "semgrep"
+          ],
+          "name": "Availability of essential functions, including resilience against denial-of-service",
+          "note": "",
+          "status": "not-assessed"
+        }
+      ],
+      "readiness": {
+        "fail": 3,
+        "not-assessed": 8,
+        "partial": 1,
+        "pass": 2,
+        "percent": 13,
+        "total": 15,
+        "warn": 1
+      },
+      "title": "EU Cyber Resilience Act (Regulation (EU) 2024/2847)"
+    },
+    "IEC62443": {
+      "items": [
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 1,
+          "id": "SM-9",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "osv",
+            "licenses"
+          ],
+          "name": "Security requirements for externally provided components",
+          "note": "",
+          "status": "warn"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "SR-2",
+          "kind": "manual",
+          "missing": [],
+          "name": "Threat model",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "SD-3",
+          "kind": "manual",
+          "missing": [],
+          "name": "Security design review",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 8,
+          "id": "SI-1",
+          "kind": "auto",
+          "missing": [
+            "semgrep",
+            "gitleaks",
+            "cppcheck"
+          ],
+          "name": "Security implementation review",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "bandit",
+            "lizard"
+          ],
+          "findings": 8,
+          "id": "SI-2",
+          "kind": "auto",
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "codebase",
+            "cleancode",
+            "clones",
+            "design",
+            "solid"
+          ],
+          "name": "Secure coding standards",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "coverage"
+          ],
+          "findings": 1,
+          "id": "SVV-1",
+          "kind": "auto",
+          "missing": [
+            "mutation"
+          ],
+          "name": "Security requirements testing",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 6,
+          "id": "SVV-3",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "semgrep",
+            "cppcheck",
+            "osv"
+          ],
+          "name": "Vulnerability testing",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "SVV-4",
+          "kind": "manual",
+          "missing": [],
+          "name": "Penetration testing",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "DM-1",
+          "kind": "auto",
+          "missing": [],
+          "name": "Receiving notifications of security-related issues",
+          "note": "",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "SUM-1",
+          "kind": "auto",
+          "missing": [
+            "trivy"
+          ],
+          "name": "Security update qualification",
+          "note": "",
+          "status": "partial"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "SD-4",
+          "kind": "auto",
+          "missing": [
+            "design",
+            "solid",
+            "cleancode"
+          ],
+          "name": "Secure design best practices",
+          "note": "",
+          "status": "not-assessed"
+        }
+      ],
+      "readiness": {
+        "fail": 4,
+        "not-assessed": 4,
+        "partial": 1,
+        "pass": 1,
+        "percent": 9,
+        "total": 11,
+        "warn": 1
+      },
+      "title": "IEC 62443-4-1 Secure product development lifecycle"
+    },
+    "ISO27001": {
+      "items": [
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "A.5.17",
+          "kind": "auto",
+          "missing": [
+            "gitleaks"
+          ],
+          "name": "Authentication information",
+          "note": "",
+          "status": "partial"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "A.5.24",
+          "kind": "manual",
+          "missing": [],
+          "name": "Incident management planning and preparation",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 6,
+          "id": "A.8.8",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "semgrep",
+            "cppcheck",
+            "osv"
+          ],
+          "name": "Management of technical vulnerabilities",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "A.8.9",
+          "kind": "auto",
+          "missing": [
+            "trivy"
+          ],
+          "name": "Configuration management",
+          "note": "",
+          "status": "partial"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 2,
+          "id": "A.8.24",
+          "kind": "auto",
+          "missing": [
+            "semgrep"
+          ],
+          "name": "Use of cryptography",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "A.8.25",
+          "kind": "auto",
+          "missing": [],
+          "name": "Secure development life cycle",
+          "note": "",
+          "status": "pass"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "A.8.26",
+          "kind": "manual",
+          "missing": [],
+          "name": "Application security requirements",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "A.8.27",
+          "kind": "manual",
+          "missing": [],
+          "name": "Secure system architecture and engineering principles",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "bandit",
+            "lizard"
+          ],
+          "findings": 8,
+          "id": "A.8.28",
+          "kind": "auto",
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "codebase",
+            "cleancode",
+            "clones",
+            "design",
+            "solid"
+          ],
+          "name": "Secure coding",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "coverage",
+            "bandit"
+          ],
+          "findings": 7,
+          "id": "A.8.29",
+          "kind": "auto",
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "mutation"
+          ],
+          "name": "Security testing in development and acceptance",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "A.8.32",
+          "kind": "auto",
+          "missing": [
+            "churn"
+          ],
+          "name": "Change management",
+          "note": "",
+          "status": "partial"
+        },
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "A.5.32",
+          "kind": "auto",
+          "missing": [
+            "licenses"
+          ],
+          "name": "Intellectual property rights",
+          "note": "",
+          "status": "not-assessed"
+        }
+      ],
+      "readiness": {
+        "fail": 4,
+        "not-assessed": 4,
+        "partial": 3,
+        "pass": 1,
+        "percent": 8,
+        "total": 12,
+        "warn": 0
+      },
+      "title": "ISO/IEC 27001:2022 Annex A"
+    },
+    "NIS2": {
+      "items": [
+        {
+          "evidence": [],
+          "findings": 0,
+          "id": "Art.21(2)(a)",
+          "kind": "manual",
+          "missing": [],
+          "name": "Risk analysis and information security policies",
+          "note": "Needs evidence: add an [[attestation]] in avesta-proof.toml.",
+          "status": "not-assessed"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "Art.21(2)(b)",
+          "kind": "auto",
+          "missing": [],
+          "name": "Incident handling",
+          "note": "",
+          "status": "pass"
+        },
+        {
+          "evidence": [
+            "hygiene"
+          ],
+          "findings": 0,
+          "id": "Art.21(2)(d)",
+          "kind": "auto",
+          "missing": [
+            "trivy",
+            "osv",
+            "licenses"
+          ],
+          "name": "Supply chain security, including the security of suppliers",
+          "note": "",
+          "status": "partial"
+        },
+        {
+          "evidence": [
+            "bandit",
+            "hygiene"
+          ],
+          "findings": 6,
+          "id": "Art.21(2)(e)",
+          "kind": "auto",
+          "missing": [
+            "semgrep",
+            "cppcheck",
+            "cleancode",
+            "design"
+          ],
+          "name": "Security in acquisition, development and maintenance, including vulnerability handling and disclosure",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "coverage"
+          ],
+          "findings": 1,
+          "id": "Art.21(2)(f)",
+          "kind": "auto",
+          "missing": [
+            "mutation"
+          ],
+          "name": "Policies to assess the effectiveness of risk-management measures",
+          "note": "",
+          "status": "fail"
+        },
+        {
+          "evidence": [
+            "bandit"
+          ],
+          "findings": 2,
+          "id": "Art.21(2)(h)",
+          "kind": "auto",
+          "missing": [
+            "semgrep",
+            "gitleaks"
+          ],
+          "name": "Policies on the use of cryptography and encryption",
+          "note": "",
+          "status": "fail"
+        }
+      ],
+      "readiness": {
+        "fail": 3,
+        "not-assessed": 1,
+        "partial": 1,
+        "pass": 1,
+        "percent": 17,
+        "total": 6,
+        "warn": 0
+      },
+      "title": "NIS2 and the Dutch Cybersecurity Act (supplier view)"
+    }
+  },
+  "counts": {
+    "CRITICAL": 0,
+    "HIGH": 2,
+    "INFO": 0,
+    "LOW": 6,
+    "MEDIUM": 2
+  },
+  "enrichment": {
+    "epss": "not-needed",
+    "escalated": 0,
+    "kev": "not-needed",
+    "kev_hits": 0
+  },
+  "findings": [
+    {
+      "accepted": null,
+      "category": "code-vulnerability",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.28",
+        "ISO27001:A.8.8",
+        "ISO27001:A.8.29",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "IEC62443:SVV-3",
+        "CRA:I.2(a)",
+        "NIS2:Art.21(2)(e)"
+      ],
+      "cve": null,
+      "description": "subprocess call with shell=True identified, security issue.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/control.py",
+      "id": "8a64ea906c3a9f3a",
+      "kev": false,
+      "line": 26,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+        "CWE-78"
+      ],
+      "remediation": "Pass the command as a list of arguments and drop shell=True. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html",
+      "rule_id": "B602",
+      "scanner": "bandit",
+      "severity": "HIGH",
+      "title": "subprocess call with shell=True identified, security issue."
+    },
+    {
+      "accepted": null,
+      "category": "crypto",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.24",
+        "ISO27001:A.8.28",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "CRA:I.2(e)",
+        "NIS2:Art.21(2)(h)"
+      ],
+      "cve": null,
+      "description": "Use of weak MD5 hash for security. Consider usedforsecurity=False",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/control.py",
+      "id": "c47194e355bd1d37",
+      "kev": false,
+      "line": 30,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+        "CWE-327"
+      ],
+      "remediation": "Replace MD5/SHA-1 with SHA-256 (hashlib.sha256) or a password KDF. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "rule_id": "B324",
+      "scanner": "bandit",
+      "severity": "HIGH",
+      "title": "Use of weak MD5 hash for security. Consider usedforsecurity=False"
+    },
+    {
+      "accepted": null,
+      "category": "code-vulnerability",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.28",
+        "ISO27001:A.8.8",
+        "ISO27001:A.8.29",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "IEC62443:SVV-3",
+        "CRA:I.2(a)",
+        "NIS2:Art.21(2)(e)"
+      ],
+      "cve": null,
+      "description": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/config.py",
+      "id": "65ffe8c2220da81d",
+      "kev": false,
+      "line": 13,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle",
+        "CWE-502"
+      ],
+      "remediation": "Do not unpickle untrusted data; use JSON or a schema-validated format. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle",
+      "rule_id": "B301",
+      "scanner": "bandit",
+      "severity": "MEDIUM",
+      "title": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue."
+    },
+    {
+      "accepted": null,
+      "category": "testing",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.29",
+        "IEC62443:SVV-1",
+        "CRA:II.3",
+        "NIS2:Art.21(2)(f)"
+      ],
+      "cve": null,
+      "description": "No coverage report (coverage.xml, coverage.json, lcov.info) was found.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": null,
+      "id": "43c3a198c4064621",
+      "kev": false,
+      "line": null,
+      "new": null,
+      "references": [],
+      "remediation": "Produce a coverage report in CI, or run avesta-proof with --run-tests.",
+      "rule_id": "no-coverage-report",
+      "scanner": "coverage",
+      "severity": "MEDIUM",
+      "title": "Tests exist but coverage is not measured"
+    },
+    {
+      "accepted": null,
+      "category": "code-vulnerability",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.28",
+        "ISO27001:A.8.8",
+        "ISO27001:A.8.29",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "IEC62443:SVV-3",
+        "CRA:I.2(a)",
+        "NIS2:Art.21(2)(e)"
+      ],
+      "cve": null,
+      "description": "Consider possible security implications associated with pickle module.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/config.py",
+      "id": "e3c647862ec148f5",
+      "kev": false,
+      "line": 1,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+        "CWE-502"
+      ],
+      "remediation": "Replace the flagged call with its safe alternative. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+      "rule_id": "B403",
+      "scanner": "bandit",
+      "severity": "LOW",
+      "title": "Consider possible security implications associated with pickle module."
+    },
+    {
+      "accepted": null,
+      "category": "code-vulnerability",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.28",
+        "ISO27001:A.8.8",
+        "ISO27001:A.8.29",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "IEC62443:SVV-3",
+        "CRA:I.2(a)",
+        "NIS2:Art.21(2)(e)"
+      ],
+      "cve": null,
+      "description": "Possible hardcoded password: 'demo-controller-token-123456'",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/config.py",
+      "id": "d41297a3a6fee808",
+      "kev": false,
+      "line": 4,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+        "CWE-259"
+      ],
+      "remediation": "Move the hard-coded password to a secret manager or environment variable. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "rule_id": "B105",
+      "scanner": "bandit",
+      "severity": "LOW",
+      "title": "Possible hardcoded password: 'demo-controller-token-123456'"
+    },
+    {
+      "accepted": null,
+      "category": "code-vulnerability",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.28",
+        "ISO27001:A.8.8",
+        "ISO27001:A.8.29",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "IEC62443:SVV-3",
+        "CRA:I.2(a)",
+        "NIS2:Art.21(2)(e)"
+      ],
+      "cve": null,
+      "description": "Consider possible security implications associated with the subprocess module.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/control.py",
+      "id": "59c7818af7b1185b",
+      "kev": false,
+      "line": 2,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+        "CWE-78"
+      ],
+      "remediation": "Only a review item: make sure subprocess is never called with untrusted input. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+      "rule_id": "B404",
+      "scanner": "bandit",
+      "severity": "LOW",
+      "title": "Consider possible security implications associated with the subprocess module."
+    },
+    {
+      "accepted": null,
+      "category": "crypto",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.24",
+        "ISO27001:A.8.28",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "CRA:I.2(e)",
+        "NIS2:Art.21(2)(h)"
+      ],
+      "cve": null,
+      "description": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/control.py",
+      "id": "0759ac51dd760af6",
+      "kev": false,
+      "line": 39,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+        "CWE-330"
+      ],
+      "remediation": "Use the secrets module for tokens, keys and anything security-related. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "rule_id": "B311",
+      "scanner": "bandit",
+      "severity": "LOW",
+      "title": "Standard pseudo-random generators are not suitable for security/cryptographic purposes."
+    },
+    {
+      "accepted": null,
+      "category": "code-vulnerability",
+      "confidence": "",
+      "controls": [
+        "ISO27001:A.8.28",
+        "ISO27001:A.8.8",
+        "ISO27001:A.8.29",
+        "IEC62443:SI-1",
+        "IEC62443:SI-2",
+        "IEC62443:SVV-3",
+        "CRA:I.2(a)",
+        "NIS2:Art.21(2)(e)"
+      ],
+      "cve": null,
+      "description": "Try, Except, Pass detected.",
+      "effort_minutes": null,
+      "epss": null,
+      "file": "demo_controller/control.py",
+      "id": "ee87dc0778325edf",
+      "kev": false,
+      "line": 45,
+      "new": null,
+      "references": [
+        "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+        "CWE-703"
+      ],
+      "remediation": "Handle or log the exception instead of silently passing. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "rule_id": "B110",
+      "scanner": "bandit",
+      "severity": "LOW",
+      "title": "Try, Except, Pass detected."
+    },
+    {
+      "accepted": null,
+      "category": "process",
+      "confidence": "",
+      "controls": [
+        "CRA:II.1",
+        "IEC62443:SM-9"
+      ],
+      "cve": null,
+      "description": "",
+      "effort_minutes": null,
+      "epss": null,
+      "file": null,
+      "id": "912e593be6bd2535",
+      "kev": false,
+      "line": null,
+      "new": null,
+      "references": [],
+      "remediation": "Avesta Proof generated sbom.cdx.json (2 components). Commit or attach it to every release (CRA Annex I Part II(1)).",
+      "rule_id": "sbom",
+      "scanner": "hygiene",
+      "severity": "LOW",
+      "title": "SBOM exists only as a generated file, not published with the repository"
+    }
+  ],
+  "fingerprint_sha256": "0e65b3f2d1d0e43cbe7a1b9b15d4066d5e9c9a9d4e3331d0f44dcdb0b38b43d5",
+  "fixed": [],
+  "git": {
+    "branch": "master",
+    "commit": "802d2bcf5dd306e22426a213be26b8f2a480837e"
+  },
+  "grade": "C",
+  "host": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+  "metrics": {
+    "coverage.has_tests": true,
+    "hygiene.passed": [
+      "security-policy",
+      "ci",
+      "lockfile",
+      "dependency-updates",
+      "license",
+      "readme",
+      "codeowners"
+    ],
+    "lizard.avg_ccn": 1.9,
+    "lizard.functions": 10,
+    "lizard.functions_over_limit": 0,
+    "lizard.max_ccn": 9
+  },
+  "product": {
+    "address": "",
+    "cra_class": "default",
+    "eu_market": true,
+    "intended_use": "",
+    "manufacturer": "",
+    "name": "",
+    "security_contact": "",
+    "support_until": "",
+    "version": ""
+  },
+  "profile": {
+    "audit_date": "",
+    "coverage_target": 80.0,
+    "custom": false,
+    "frameworks": [
+      "ISO27001",
+      "IEC62443",
+      "CRA"
+    ],
+    "hours_per_day": 6.0,
+    "language": "en",
+    "mutation_target": 60.0,
+    "notes": "",
+    "quality": {},
+    "rate_eur": 85.0,
+    "release_date": "",
+    "rule_packs": [],
+    "sector": "default",
+    "standards": [],
+    "summary": "",
+    "targets": {
+      "compliance": 80,
+      "design": 80,
+      "duplication": 80,
+      "maintainability": 80,
+      "security": 80,
+      "tests": 80
+    },
+    "title": "General software product",
+    "watch": []
+  },
+  "project": "Demo Controller",
+  "report_theme": {},
+  "sbom": {
+    "components": 2,
+    "sha256": "a815c870734a9c9950dc11f2619357520093c3fd422f4212f8f4ec9556e74e55"
+  },
+  "scanners": [
+    {
+      "duration_s": 3.26,
+      "findings": 0,
+      "message": "exit 2: ",
+      "name": "semgrep",
+      "status": "error",
+      "version": "1.184.0"
+    },
+    {
+      "duration_s": 0.53,
+      "findings": 8,
+      "message": "",
+      "name": "bandit",
+      "status": "ok",
+      "version": "bandit 1.9.4"
+    },
+    {
+      "duration_s": 0.0,
+      "findings": 0,
+      "message": "'cppcheck' not found. Install cppcheck (apt install cppcheck / brew install cppcheck)",
+      "name": "cppcheck",
+      "status": "skipped",
+      "version": ""
+    },
+    {
+      "duration_s": 0.19,
+      "findings": 0,
+      "message": "",
+      "name": "lizard",
+      "status": "ok",
+      "version": "1.25.0"
+    },
+    {
+      "duration_s": 0.0,
+      "findings": 0,
+      "message": "'trivy' not found. See https://trivy.dev/latest/getting-started/installation/",
+      "name": "trivy",
+      "status": "skipped",
+      "version": ""
+    },
+    {
+      "duration_s": 0.0,
+      "findings": 0,
+      "message": "'gitleaks' not found. See https://github.com/gitleaks/gitleaks#installing",
+      "name": "gitleaks",
+      "status": "skipped",
+      "version": ""
+    },
+    {
+      "duration_s": 0.0,
+      "findings": 1,
+      "message": "no coverage report found",
+      "name": "coverage",
+      "status": "ok",
+      "version": ""
+    },
+    {
+      "duration_s": 0.0,
+      "findings": 1,
+      "message": "",
+      "name": "hygiene",
+      "status": "ok",
+      "version": "builtin"
+    }
+  ],
+  "score": 68,
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "3e21fe9e126cd751",
+    "payload_sha256": "0e65b3f2d1d0e43cbe7a1b9b15d4066d5e9c9a9d4e3331d0f44dcdb0b38b43d5",
+    "public_key": "vHttHsMyfTBA+G2747SGXhOYReiwxNgmrl633t90+mc=",
+    "signature": "eKfQc4zoEbfnu53Z2+7op8k1k6E9XwaYt+OqB7lSpLNaH+OSho1ogQ8alJI6acfeAANj754Kk6P1t+jMYdkFBQ=="
+  },
+  "started": "2026-11-13T04:31:07+00:00",
+  "target": "/mnt/Demo Controller",
+  "tool": {
+    "name": "avesta-proof",
+    "version": "0.5.0"
+  },
+  "verdict": "Gaps to close before an audit"
+}

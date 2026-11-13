@@ -1,0 +1,310 @@
+{
+  "settings": {
+    "company": "Avesta Tech",
+    "kvk": "[KVK_NUMBER]",
+    "btw": "[BTW_NUMBER]",
+    "address": "[BUSINESS_ADDRESS]",
+    "email": "[EMAIL]",
+    "phone": "[PHONE]",
+    "securityEmail": "[SECURITY_EMAIL]",
+    "bookingUrl": "[BOOKING_URL]",
+    "formEndpoint": "[FORM_ENDPOINT]",
+    "social": {
+      "linkedin": "[LINKEDIN_URL]",
+      "github": "[GITHUB_URL]",
+      "founderLinkedin": "[FOUNDER_LINKEDIN_URL]"
+    },
+    "domain": "[DOMAIN]",
+    "foundingDate": "2026-10",
+    "currentVersion": "[CURRENT_VERSION]",
+    "founderPhoto": "[FOUNDER_PHOTO]"
+  },
+  "placeholders": {
+    "DOMAIN": "",
+    "CONFIRM_HOST": "",
+    "KVK_NUMBER": "",
+    "BTW_NUMBER": "",
+    "CONFIRM_LEGAL_FORM": "",
+    "BUSINESS_ADDRESS": "",
+    "EMAIL": "",
+    "PHONE": "",
+    "SECURITY_EMAIL": "",
+    "LINKEDIN_URL": "",
+    "FOUNDER_LINKEDIN_URL": "",
+    "GITHUB_URL": "",
+    "BOOKING_URL": "",
+    "FORM_ENDPOINT": "",
+    "PRICE_COMMUNITY": "",
+    "PRICE_TEAM": "",
+    "PRICE_BUSINESS": "",
+    "ANNUAL_DISCOUNT": "",
+    "CONFIRM_THRESHOLD": "",
+    "PRICE_CRA_SCAN": "",
+    "PRICE_QUALITY_SCAN": "",
+    "PRICE_TEST_SUITE": "",
+    "PRICE_RETAINER": "",
+    "PRICE_A11Y": "",
+    "PRICE_AI_TESTING": "",
+    "HOURLY_RATE": "",
+    "NOTICE_PERIOD": "",
+    "CONFIRM_NOTICE_PERIOD": "",
+    "PAYMENT_TERMS": "",
+    "LIABILITY_CAP": "",
+    "CONFIRM_FORUM": "",
+    "ROADMAP_DATE": "",
+    "TRUST_ROADMAP_STATUS": "",
+    "CURRENT_VERSION": "",
+    "LINK_OWN_TRUST_STATEMENT": "",
+    "RETENTION_PERIOD": "",
+    "PROCESSORS_LIST": "",
+    "RESPONSE_DAYS": "",
+    "CONFIRM_RESPONSE_TIME": "",
+    "NAME_STORY": "",
+    "CONFIRM_EMPLOYER_NAMES": "",
+    "CONFIRM_TITLE": "",
+    "CONFIRM_QUOTE": "",
+    "FOUNDER_PHOTO": "",
+    "AVAILABLE_FROM": "",
+    "DAYS_PER_WEEK": "",
+    "CV_PDF": "",
+    "CONFIRM_PLAYWRIGHT": "",
+    "ISTQB_STATUS": "",
+    "CONFIRM_MODEL_AGREEMENT": "",
+    "CONFIRM_LANGUAGE_REVIEWERS": "",
+    "HOSTING_PROVIDER": "",
+    "ANALYTICS_TOOL": "",
+    "A11Y_STATEMENT_DATE": "",
+    "LEGAL_REVIEW": ""
+  },
+  "nav": {
+    "label": "Main",
+    "menu": "Menu",
+    "close": "Close menu",
+    "submenu": "{label} pages",
+    "items": [
+      {
+        "label": "Product",
+        "href": "/product",
+        "children": [
+          {
+            "label": "Avesta Proof",
+            "href": "/product"
+          },
+          {
+            "label": "Sample report",
+            "href": "/product/sample-report"
+          },
+          {
+            "label": "Standards explorer",
+            "href": "/product/standards"
+          },
+          {
+            "label": "How it works",
+            "href": "/how-it-works"
+          }
+        ]
+      },
+      {
+        "label": "Services",
+        "href": "/services",
+        "children": [
+          {
+            "label": "CRA Readiness Scan",
+            "href": "/services/cra-readiness-scan"
+          },
+          {
+            "label": "Quality Scan",
+            "href": "/services/quality-scan"
+          },
+          {
+            "label": "Test suite in a week",
+            "href": "/services/test-suite-in-a-week"
+          },
+          {
+            "label": "Keep-it-green",
+            "href": "/services/keep-it-green"
+          },
+          {
+            "label": "Accessibility audit",
+            "href": "/services/accessibility-audit"
+          },
+          {
+            "label": "AI assistant testing",
+            "href": "/services/ai-assistant-testing"
+          }
+        ]
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "Trust",
+        "href": "/trust"
+      },
+      {
+        "label": "About",
+        "href": "/about",
+        "children": [
+          {
+            "label": "About Avesta",
+            "href": "/about"
+          },
+          {
+            "label": "Freelance engineering",
+            "href": "/freelance"
+          }
+        ]
+      }
+    ],
+    "ctas": [
+      {
+        "label": "CRA check",
+        "href": "/cra-readiness",
+        "variant": "ghost"
+      },
+      {
+        "label": "Book a call",
+        "href": "/contact",
+        "variant": "primary"
+      }
+    ]
+  },
+  "footer": {
+    "brandLine": "Proof, not promises. Software quality, security and test automation from Utrecht.",
+    "ctas": [
+      {
+        "label": "Book a call",
+        "href": "/contact",
+        "variant": "primary"
+      }
+    ],
+    "columns": [
+      {
+        "heading": "Product & services",
+        "links": [
+          {
+            "label": "Avesta Proof",
+            "href": "/product"
+          },
+          {
+            "label": "Sample report",
+            "href": "/product/sample-report"
+          },
+          {
+            "label": "Standards explorer",
+            "href": "/product/standards"
+          },
+          {
+            "label": "CRA readiness checker",
+            "href": "/cra-readiness"
+          },
+          {
+            "label": "Services",
+            "href": "/services"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          }
+        ]
+      },
+      {
+        "heading": "Company",
+        "links": [
+          {
+            "label": "About",
+            "href": "/about"
+          },
+          {
+            "label": "Freelance",
+            "href": "/freelance"
+          },
+          {
+            "label": "Trust",
+            "href": "/trust"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          },
+          {
+            "label": "Vulnerability disclosure",
+            "href": "/legal/disclosure"
+          }
+        ]
+      }
+    ],
+    "bottom": "© 2026 Avesta Tech · KvK [KVK_NUMBER] · BTW [BTW_NUMBER] · Utrecht, the Netherlands",
+    "legal": [
+      {
+        "label": "Privacy",
+        "href": "/legal/privacy"
+      },
+      {
+        "label": "Terms",
+        "href": "/legal/terms"
+      },
+      {
+        "label": "Cookies",
+        "href": "/legal/cookies"
+      },
+      {
+        "label": "Imprint",
+        "href": "/legal/imprint"
+      },
+      {
+        "label": "Accessibility",
+        "href": "/legal/accessibility"
+      }
+    ],
+    "social": [
+      {
+        "label": "LinkedIn",
+        "href": "[LINKEDIN_URL]"
+      },
+      {
+        "label": "GitHub",
+        "href": "[GITHUB_URL]"
+      }
+    ],
+    "languageLabel": "Language",
+    "languages": [
+      {
+        "label": "English",
+        "active": true
+      },
+      {
+        "label": "Nederlands (coming soon)",
+        "active": false
+      }
+    ],
+    "disclaimer": "Avesta Proof produces audit-ready evidence. Certification is issued only by accredited bodies.",
+    "backToTop": "Back to top",
+    "logoAlt": "Avesta Tech"
+  },
+  "microcopy": {
+    "skipLink": "Skip to content",
+    "craFootnote": "Dates and amounts: verify with counsel.",
+    "evidenceDisclaimer": "Avesta Proof produces audit-ready evidence. Certification is issued only by accredited bodies.",
+    "demoBadge": "Demo data",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyLabel": "Copy command",
+    "comingSoon": "Coming [ROADMAP_DATE]",
+    "loading": "Loading…",
+    "homeLogoAlt": "Avesta Tech home",
+    "breadcrumbHome": "Home",
+    "exampleTag": "Example",
+    "excludingVat": "excl. BTW",
+    "contactUs": "Contact us",
+    "perHour": "/ hour",
+    "perMonth": "/ month",
+    "fixed": "fixed",
+    "reportScore": "Score",
+    "reportGrade": "Grade",
+    "reportFindings": "{count} findings",
+    "faqFootnoteAria": "Footnote",
+    "tableTopic": "Topic"
+  }
+}

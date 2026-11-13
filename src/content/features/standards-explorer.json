@@ -1,0 +1,79 @@
+{
+  "standards": [
+    {
+      "key": "ISO27001",
+      "label": "ISO/IEC 27001:2022 Annex A"
+    },
+    {
+      "key": "IEC62443",
+      "label": "IEC 62443-4-1"
+    },
+    {
+      "key": "CRA",
+      "label": "EU CRA (Regulation (EU) 2024/2847)"
+    }
+  ],
+  "scanners": [
+    {
+      "key": "semgrep",
+      "label": "Semgrep"
+    },
+    {
+      "key": "bandit",
+      "label": "Bandit"
+    },
+    {
+      "key": "cppcheck",
+      "label": "cppcheck"
+    },
+    {
+      "key": "lizard",
+      "label": "Lizard"
+    },
+    {
+      "key": "trivy",
+      "label": "Trivy"
+    },
+    {
+      "key": "gitleaks",
+      "label": "Gitleaks"
+    },
+    {
+      "key": "coverage",
+      "label": "Coverage"
+    },
+    {
+      "key": "hygiene",
+      "label": "Hygiene"
+    }
+  ],
+  "labels": {
+    "tablist": "Standards",
+    "search": "Search controls",
+    "searchHint": "Search by control ID or name",
+    "type": "Evidence type",
+    "typeAll": "All",
+    "typeAutomated": "Automated",
+    "typeManual": "Manual",
+    "scanner": "Scanner",
+    "scannerAll": "All scanners",
+    "count": "Showing {shown} of {total} controls",
+    "evidenceAutomated": "Automated",
+    "evidenceManual": "Manual attestation",
+    "evidenceDerived": "Derived",
+    "checks": "What Avesta Proof checks",
+    "provide": "What you provide",
+    "provideManual": "An attestation, for example a pen-test report, with a validity period",
+    "provideAutomated": "Nothing extra: the scanners above produce the evidence.",
+    "derivedFrom": "Derived from your product information",
+    "highlight": "{scanner} supports {count} controls across three standards.",
+    "highlightTab": "{count} highlighted",
+    "clearHighlight": "Clear highlight",
+    "highlightButton": "Highlight every control {scanner} supports",
+    "empty": "No controls match these filters.",
+    "clear": "Clear filters",
+    "note": "Indicative mapping. It shows which evidence supports which control. It is not legal advice and does not replace an accredited audit.",
+    "open": "Open {id}",
+    "otherEvidence": "Also uses"
+  }
+}

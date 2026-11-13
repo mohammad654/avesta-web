@@ -1,0 +1,99 @@
+{
+  "id": "legal-terms",
+  "seo": {
+    "title": "Terms of service | Avesta Tech",
+    "description": "The terms that apply to Avesta Tech quotes, fixed-price services and Avesta Proof: scope, payment, permission to scan, confidentiality and liability.",
+    "path": "/legal/terms",
+    "breadcrumb": "Terms of service",
+    "priority": 0.2
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Terms of service",
+      "sub": "The terms that apply when you work with Avesta Tech.",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "review",
+      "paragraphs": [
+        "[LEGAL_REVIEW]"
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s1",
+      "heading": "Scope",
+      "paragraphs": [
+        "These terms apply to every quote, agreement and service from Avesta Tech, KvK [KVK_NUMBER], including Avesta Proof subscriptions and fixed-price engineering services."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s2",
+      "heading": "Quotes and fixed-price agreements",
+      "paragraphs": [
+        "Every service has a written scope, a fixed price and a delivery date, agreed in writing before we start. Work outside the agreed scope needs a new written agreement. All prices exclude 21% Dutch BTW."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s3",
+      "heading": "Payment",
+      "paragraphs": [
+        "Payment terms: [PAYMENT_TERMS]."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s4",
+      "heading": "Permission to scan",
+      "paragraphs": [
+        "We scan or test only systems and code for which you have given written permission, and only within the agreed scope. You confirm that you are entitled to give that permission."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s5",
+      "heading": "Confidentiality",
+      "paragraphs": [
+        "We keep your code, findings and business information confidential and use them only to deliver the service. Avesta Proof runs in your environment; we see results, not source, unless you choose to share it."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s6",
+      "heading": "Intellectual property",
+      "paragraphs": [
+        "Once paid, the deliverables made for you (reports, test suites, configuration and documentation) are yours to use. Avesta Proof itself, our tools and our general know-how remain ours."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s7",
+      "heading": "Audit-ready evidence, not certification",
+      "paragraphs": [
+        "Avesta provides audit-ready evidence. We do not certify products, we do not make conformity decisions and we do not give legal advice. Certification is issued only by accredited bodies; legal questions belong with your counsel."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s8",
+      "heading": "Liability",
+      "paragraphs": [
+        "Our liability is limited to [LIABILITY_CAP], except in the case of intent or gross negligence."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s9",
+      "heading": "Governing law",
+      "paragraphs": [
+        "Dutch law applies. Disputes go to the competent court in Utrecht [CONFIRM_FORUM]."
+      ]
+    }
+  ]
+}

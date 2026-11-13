@@ -1,0 +1,54 @@
+@use 'tokens' as *;
+
+.detail {
+  display: grid;
+  gap: var(--space-7);
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    align-items: start;
+  }
+}
+
+.detail__main > section + section {
+  margin-top: var(--space-7);
+}
+
+.days {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+}
+
+.days__marker {
+  font-family: var(--font-label);
+  font-weight: 500;
+  font-size: var(--fs-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-text);
+  padding-top: 0.25em;
+}
+
+.price-box {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-5));
+}
+
+.price-box__amount {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  margin: 0;
+}
+
+.price-box__related {
+  margin-top: var(--space-6);
+}

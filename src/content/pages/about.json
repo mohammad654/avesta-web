@@ -1,0 +1,82 @@
+{
+  "id": "about",
+  "seo": {
+    "title": "About Avesta Tech, Utrecht | Software quality & security",
+    "description": "Avesta Tech helps engineers prove what they already do well. Meet the company and founder Mohammad Ali Shikhi, test automation engineer in Utrecht.",
+    "path": "/about",
+    "breadcrumb": "About",
+    "priority": 0.7,
+    "schema": ["person"]
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "We help engineers prove what they already do well.",
+      "sub": "Avesta Tech is a software quality, security and test automation company in Utrecht. We were founded in 2026 on a simple idea: good engineering should be easy to prove.",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "story",
+      "heading": "Why Avesta exists.",
+      "paragraphs": [
+        "Most teams we meet do far more right than they can show. They test, they review, they patch. But when a customer or an auditor asks for proof, the evidence is scattered across tools, wikis and memories. New rules such as the EU Cyber Resilience Act make that gap expensive. Avesta closes it: we turn the work you already do into evidence that is signed, current and easy to check."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "name",
+      "heading": "Where the name comes from.",
+      "paragraphs": [
+        "[NAME_STORY]",
+        "The logo draws on the Kurdish Farenji ({lang:ku|فەرنجی}) pattern, woven layers and a gold sun."
+      ]
+    },
+    {
+      "kind": "featureGrid",
+      "id": "values",
+      "heading": "Values",
+      "columns": 2,
+      "items": [
+        { "title": "Proof over promises", "body": "If we cannot show it, we do not claim it.", "icon": "check" },
+        { "title": "Honest by default", "body": "Partial is partial. Expired is expired. We would rather lose a sale than mislead an auditor.", "icon": "shield" },
+        { "title": "Your code, your control", "body": "Local-first tools and written permission before we scan anything.", "icon": "lock" },
+        { "title": "Engineering first", "body": "We fix things. Every finding comes with the way to solve it.", "icon": "wrench" }
+      ]
+    },
+    {
+      "kind": "founder",
+      "id": "founder",
+      "heading": "Meet the founder.",
+      "name": "Mohammad Ali Shikhi",
+      "role": "Founder [CONFIRM_TITLE]",
+      "paragraphs": [
+        "Mohammad is a software and test automation engineer. Before founding Avesta Tech he worked as a consultant at Capgemini Engineering from 2023 to 2026, including client work at ASML on Python calibration software. There he built a C/C++ code-quality platform with Docker and CI/CD that cut analysis time by up to 70% on codebases of over a million lines. [CONFIRM_EMPLOYER_NAMES]",
+        "He trained as an agricultural engineer. Building control software for a hydroponics project is what turned him towards automation, and he has been testing and automating ever since: pytest, Robot Framework, Selenium, Google Test, Docker and modern CI pipelines. He is a Professional Scrum Master (PSM I) and works in Arabic, Kurdish, Dutch, English and Turkish."
+      ],
+      "quote": "I started Avesta because I kept seeing good teams that could not prove how good they were.",
+      "quoteFlag": "[CONFIRM_QUOTE]",
+      "photo": "[FOUNDER_PHOTO]",
+      "photoAlt": "Mohammad Ali Shikhi, founder of Avesta Tech",
+      "ctas": [
+        { "label": "Talk to Mohammad", "href": "/contact", "variant": "primary" },
+        { "label": "Hire him as a freelancer", "href": "/freelance", "variant": "ghost" }
+      ]
+    },
+    {
+      "kind": "facts",
+      "id": "facts",
+      "tone": "navy",
+      "heading": "Company facts",
+      "hideHeading": true,
+      "items": [
+        { "label": "Founded", "value": "October 2026" },
+        { "label": "Based in", "value": "Utrecht, the Netherlands" },
+        { "label": "KvK", "value": "[KVK_NUMBER]" },
+        { "label": "Languages", "value": "EN, NL, AR, KU, TR" }
+      ]
+    }
+  ]
+}

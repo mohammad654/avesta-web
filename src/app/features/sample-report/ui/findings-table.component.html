@@ -1,0 +1,60 @@
+@let l = copy().labels;
+<div class="table-wrap">
+  <table>
+    <caption class="visually-hidden">{{ caption() }}</caption>
+    <thead>
+      <tr>
+        <th scope="col">{{ l.colSeverity }}</th>
+        <th scope="col">{{ l.colFinding }}</th>
+        <th scope="col">{{ l.colFile }}</th>
+        <th scope="col">{{ l.colScanner }}</th>
+        <th scope="col"><span class="visually-hidden">{{ l.colDetails }}</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (f of findings(); track f.id) {
+        <tr [class.is-open]="open().has(f.id)">
+          <td><span class="sev sev--{{ f.severity.toLowerCase() }}">{{ sev(f.severity) }}</span>@if (f.kev) {{{ ' ' }}<span class="badge">{{ l.kevBadge }}</span>}</td>
+          <th scope="row" class="finding__title">{{ f.title }}</th>
+          <td class="mono">{{ f.file }}@if (f.line) {:{{ f.line }}}</td>
+          <td>{{ f.scanner }}</td>
+          <td>
+            <button type="button" class="btn btn--ghost btn--small" [attr.aria-expanded]="open().has(f.id)"
+              [attr.aria-controls]="'finding-' + f.id" [attr.aria-label]="toggleLabel(f)" (click)="toggle(f.id)">
+              <app-icon name="chevron" class="toggle-icon" />
+            </button>
+          </td>
+        </tr>
+        @if (open().has(f.id)) {
+          <tr class="detail" [id]="'finding-' + f.id">
+            <td colspan="5">
+              <dl class="detail__grid">
+                <div class="detail__wide"><dt>{{ l.description }}</dt><dd>{{ f.description }}</dd></div>
+                <div><dt>{{ l.location }}</dt><dd class="mono">{{ f.file }}@if (f.line) {:{{ f.line }}}</dd></div>
+                <div><dt>{{ l.rule }}</dt><dd class="mono">{{ f.rule_id }}</dd></div>
+                <div class="detail__wide"><dt>{{ l.controls }}</dt><dd>
+                  <ul class="plain-list chips">
+                    @for (c of f.controls; track c) {
+                      @let link = controlLink(c);
+                      <li>@if (link) {<a class="chip" routerLink="/product/standards" [queryParams]="link">{{ c }}</a>} @else {<span class="chip">{{ c }}</span>}</li>
+                    }
+                  </ul>
+                </dd></div>
+                <div class="detail__wide"><dt>{{ l.remediation }}</dt><dd>{{ f.remediation }}</dd></div>
+                @if (f.references.length) {
+                  <div class="detail__wide"><dt>{{ l.references }}</dt><dd>
+                    <ul class="plain-list">
+                      @for (ref of f.references; track ref) {
+                        <li>@if (ref.startsWith('https://')) {<a [href]="ref" rel="noopener">{{ ref }}</a>} @else {{{ ref }}}</li>
+                      }
+                    </ul>
+                  </dd></div>
+                }
+              </dl>
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

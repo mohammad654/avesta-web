@@ -1,0 +1,49 @@
+<header class="header" [class.is-solid]="solid()">
+  <div class="container header__inner">
+    <a routerLink="/" class="header__logo" [attr.aria-label]="homeLabel"><app-wordmark /></a>
+
+    <nav class="nav" [attr.aria-label]="nav.label">
+      <ul class="nav__list">
+        @for (item of nav.items; track item.href) {
+          <li class="nav__item" [class.is-open]="openDropdown() === item.href">
+            <a class="nav__link" [routerLink]="item.href" routerLinkActive="is-active"
+              [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page"
+              [appPreloadOnHover]="item.href">{{ item.label }}</a>
+            @if (item.children) {
+              <button type="button" class="nav__toggle" [attr.data-toggle]="item.href"
+                [attr.aria-expanded]="openDropdown() === item.href" [attr.aria-controls]="'sub-' + $index"
+                [attr.aria-label]="submenuLabel(item.label)" (click)="toggle(item.href)">
+                <app-icon name="chevron" />
+              </button>
+              <ul class="nav__sub" [id]="'sub-' + $index">
+                @for (child of item.children; track child.href) {
+                  <li>
+                    <a [routerLink]="child.href" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
+                      ariaCurrentWhenActive="page" [appPreloadOnHover]="child.href">{{ child.label }}</a>
+                  </li>
+                }
+              </ul>
+            }
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="header__ctas">
+      @for (cta of nav.ctas; track cta.href) {
+        <app-cta [cta]="cta" size="small" />
+      }
+    </div>
+
+    <button type="button" class="btn btn--ghost btn--small header__menu-btn" aria-controls="mobile-menu"
+      [attr.aria-expanded]="menuOpen()" (click)="menuOpen.set(true)">
+      <app-icon name="menu" />{{ nav.menu }}
+    </button>
+  </div>
+</header>
+
+@if (menuOpen()) {
+  @defer (on immediate) {
+    <app-mobile-menu [nav]="nav" (closed)="closeMenu()" />
+  }
+}

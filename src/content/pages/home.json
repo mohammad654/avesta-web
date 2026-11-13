@@ -1,0 +1,155 @@
+{
+  "id": "home",
+  "seo": {
+    "title": "Avesta Tech | Audit-ready evidence for secure software",
+    "description": "Turn code scans into signed, audit-ready evidence for ISO 27001, IEC 62443 and the EU Cyber Resilience Act. Software quality and testing from Utrecht.",
+    "path": "/",
+    "priority": 1
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "eyebrow": "Software quality · Security · CRA readiness",
+      "heading": "Proof, not promises.",
+      "sub": "Avesta Tech turns your code scans and tests into audit-ready evidence for ISO/IEC 27001, IEC 62443-4-1 and the EU Cyber Resilience Act. Signed, checkable, and with a fix for every finding.",
+      "ctas": [
+        { "label": "Run the free CRA check", "href": "/cra-readiness", "variant": "primary" },
+        { "label": "See a sample report", "href": "/product/sample-report", "variant": "ghost" }
+      ],
+      "micro": "8 questions · 3 minutes · no sign-up needed. Your code never leaves your machines.",
+      "visual": "reportCard"
+    },
+    {
+      "kind": "featureGrid",
+      "id": "problem",
+      "heading": "Regulation is here. Your scanner still only gives you a list.",
+      "columns": 3,
+      "items": [
+        {
+          "title": "The CRA is live",
+          "body": "Reporting duties under the EU Cyber Resilience Act started on 11 September 2026. The rest applies from 11 December 2027.*",
+          "icon": "clock"
+        },
+        {
+          "title": "Lists are not proof",
+          "body": "Developer scanners list bugs. They do not answer the auditor's question: \"Can you prove it?\"",
+          "icon": "list"
+        },
+        {
+          "title": "Reports go stale",
+          "body": "A consultant's answer costs a lot and is out of date a month later. Your product keeps changing.",
+          "icon": "refresh"
+        }
+      ],
+      "footnote": "* Dates and amounts: verify with counsel."
+    },
+    {
+      "kind": "featureGrid",
+      "id": "two-doors",
+      "heading": "One company. Two ways to work with us.",
+      "columns": 2,
+      "items": [
+        {
+          "eyebrow": "Avesta Proof",
+          "title": "The evidence engine for software regulation.",
+          "body": "Scan a repository, get a verdict per control in three standards, a signed report, an SBOM and a CRA technical-file draft. Every week, in your own CI.",
+          "icon": "shield",
+          "cta": { "label": "Explore Avesta Proof", "href": "/product", "variant": "primary" }
+        },
+        {
+          "eyebrow": "Engineering services",
+          "title": "Quality work, done properly and at a fixed price.",
+          "body": "Readiness scans, test automation, accessibility audits and AI assistant testing, delivered by engineers who have built software for high-tech machines.",
+          "icon": "wrench",
+          "cta": { "label": "See our services", "href": "/services", "variant": "ghost" }
+        }
+      ]
+    },
+    {
+      "kind": "steps",
+      "id": "mini-pipeline",
+      "tone": "navy",
+      "heading": "From commit to evidence in four steps.",
+      "steps": [
+        { "title": "Scan.", "body": "Eight scanners check code, dependencies, secrets, complexity, tests and repository hygiene." },
+        { "title": "Prioritise.", "body": "Findings that attackers are using right now (CISA KEV) come first, then likelihood (EPSS), then severity." },
+        { "title": "Map.", "body": "Each finding is tied to the controls it affects in ISO/IEC 27001, IEC 62443-4-1 and the CRA." },
+        { "title": "Prove.", "body": "The report is signed and linked into a tamper-evident history your auditor can check offline." }
+      ],
+      "ctas": [{ "label": "See how it works", "href": "/how-it-works", "variant": "ghost" }]
+    },
+    {
+      "kind": "featureGrid",
+      "id": "features",
+      "heading": "Everything an auditor asks for. Nothing they have to take on trust.",
+      "columns": 3,
+      "items": [
+        { "title": "Verdict per control", "body": "Pass, partial, warn or fail for every mapped control, with the exact fix per finding.", "icon": "check" },
+        { "title": "Exploit-aware priority", "body": "\"These 2 of your 140 findings are being used in attacks right now.\" Start there.", "tag": "Example", "icon": "alert" },
+        { "title": "Signed and chained", "body": "Ed25519 signatures and a hash-chained ledger. Edit an old report and the check fails.", "icon": "lock" },
+        { "title": "Evidence that expires", "body": "Pen tests, threat models and accepted risks carry an end date, so nothing quietly goes stale.", "icon": "clock" },
+        { "title": "CRA technical file", "body": "A draft structured on Annex VII, built from real scan data, plus a CycloneDX SBOM.", "icon": "file" },
+        { "title": "Trust page and badge", "body": "A one-page trust statement to answer customer security questionnaires faster.", "icon": "badge" }
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "honesty",
+      "tone": "navy",
+      "centered": true,
+      "heading": "We would rather show \"partial\" than pretend.",
+      "paragraphs": [
+        "If a scanner did not run, the controls it covers are marked partial. Never a silent pass. If a manual check has expired, it turns red. That is what makes the evidence worth something."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "standards-strip",
+      "centered": true,
+      "heading": "Three standards. One scan.",
+      "paragraphs": [
+        "ISO/IEC 27001:2022 Annex A · IEC 62443-4-1 · EU Cyber Resilience Act (Regulation (EU) 2024/2847)"
+      ],
+      "ctas": [{ "label": "Open the standards explorer", "href": "/product/standards", "variant": "ghost" }],
+      "note": "Mappings are indicative and reviewed against the current standard text. Avesta produces audit-ready evidence; certification comes from accredited bodies."
+    },
+    {
+      "kind": "list",
+      "id": "who-for",
+      "heading": "Built for teams that ship regulated software.",
+      "items": [
+        { "title": "Connected-product makers.", "body": "Industrial IoT, building automation, energy, medical devices and automotive suppliers facing the CRA and IEC 62443." },
+        { "title": "B2B software companies.", "body": "Answer enterprise ISO 27001 evidence requests without a two-week scramble." },
+        { "title": "Consultancies and audit partners.", "body": "One repeatable evidence tool for every client." }
+      ]
+    },
+    {
+      "kind": "faq",
+      "id": "faq",
+      "heading": "Frequently asked questions",
+      "faqIds": ["G1", "G2", "G3", "G4", "G5", "G6"]
+    },
+    {
+      "kind": "ctaBand",
+      "id": "cta",
+      "tone": "navy",
+      "heading": "Start with a CRA Readiness Scan.",
+      "body": "One scan, one technical-file draft, one hour with an engineer to walk you through the gaps. Fixed price, delivered in days.",
+      "ctas": [
+        { "label": "Book a readiness scan", "href": "/contact?topic=cra-scan", "variant": "primary" },
+        { "label": "Try the free checker first", "href": "/cra-readiness", "variant": "ghost" }
+      ],
+      "priceOf": "cra-readiness-scan",
+      "priceTemplate": "Price: {price} excl. BTW."
+    },
+    {
+      "kind": "closingLine",
+      "id": "closing",
+      "tone": "quiet",
+      "line": "Hi, everyone, it's time to get some fresh air!",
+      "support": "Ship it, prove it, then step outside. Your evidence keeps working while you do."
+    }
+  ]
+}

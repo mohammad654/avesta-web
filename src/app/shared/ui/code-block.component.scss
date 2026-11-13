@@ -1,0 +1,27 @@
+.code {
+  position: relative;
+  background: var(--color-navy);
+  color: var(--color-cream);
+  border: 1px solid var(--color-line-on-dark);
+  border-radius: var(--radius-md);
+}
+
+pre {
+  margin: 0;
+  padding: var(--space-8) var(--space-5) var(--space-5);
+  overflow-x: auto;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+.code__comment {
+  color: var(--color-gold);
+}
+
+.code__copy {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: var(--color-navy);
+  color: var(--color-cream);
+}

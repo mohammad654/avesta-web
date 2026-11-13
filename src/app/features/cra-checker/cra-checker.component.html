@@ -1,0 +1,47 @@
+<div class="cra">
+  <header class="cra__intro">
+    <h1 id="checker-title">{{ copy.heading }}</h1>
+    <p class="lead">{{ copy.sub }}</p>
+    <p class="micro">{{ copy.micro }}</p>
+  </header>
+
+  @switch (stage()) {
+    @case ('intro') {
+      <div class="actions">
+        <button type="button" class="btn btn--primary cra__start" (click)="start()">{{ copy.start }}</button>
+      </div>
+    }
+    @case ('questions') {
+      <div class="cra__panel">
+        <div class="cra__progress">
+          <p class="micro" id="cra-progress-label">{{ progress() }}</p>
+          <div class="bar" role="progressbar" aria-labelledby="cra-progress-label" aria-valuemin="1"
+            [attr.aria-valuemax]="questions.length" [attr.aria-valuenow]="index() + 1">
+            <span class="bar__fill" [style.transform]="'scaleX(' + progressPercent() / 100 + ')'"></span>
+          </div>
+        </div>
+        <app-cra-question [question]="question()" [selected]="selected()" [hintLabel]="copy.hintLabel" (choose)="choose($event)" />
+        <div class="actions">
+          <button type="button" class="btn btn--ghost" (click)="back()">{{ copy.back }}</button>
+          <button type="button" class="btn btn--primary" [disabled]="selected() === undefined" (click)="next()">
+            {{ isLast() ? copy.seeResult : copy.next }}
+          </button>
+        </div>
+      </div>
+    }
+    @case ('done') {
+      <div class="cra__panel">
+        @if (result(); as r) {
+          <app-cra-result [result]="r" [copy]="copy" [answers]="answerText()" (restart)="start()" />
+        } @else {
+          <h2 id="cra-exit-title" tabindex="-1">{{ copy.exit.body }}</h2>
+          <div class="actions">
+            <app-cta [cta]="copy.exit.cta" />
+            <button type="button" class="btn btn--link" (click)="start()">{{ copy.ctas.restart }}</button>
+          </div>
+          <p class="footnote">{{ copy.disclaimer }}</p>
+        }
+      </div>
+    }
+  }
+</div>

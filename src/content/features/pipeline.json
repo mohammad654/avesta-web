@@ -1,0 +1,51 @@
+{
+  "labels": {
+    "pause": "Pause",
+    "play": "Play",
+    "kev": "KEV",
+    "diagramLabel": "The eight steps from commit to evidence. Choose a step to read what happens.",
+    "step": "Step {n}"
+  },
+  "steps": [
+    {
+      "node": "Scan",
+      "title": "Scan.",
+      "body": "Scanners run inside your repository and write structured results. Nothing is uploaded."
+    },
+    {
+      "node": "Clean up",
+      "title": "Clean up.",
+      "body": "Duplicate findings are merged and each one gets a stable ID, so \"new\" and \"fixed\" mean something."
+    },
+    {
+      "node": "Enrich",
+      "title": "Enrich.",
+      "body": "Each vulnerability is checked against CISA KEV and FIRST EPSS. Exploited first."
+    },
+    {
+      "node": "Decisions",
+      "title": "Apply your decisions.",
+      "body": "Accepted risks and expired attestations are applied, visibly."
+    },
+    {
+      "node": "Map",
+      "title": "Map to controls.",
+      "body": "Findings are tagged with the ISO/IEC 27001, IEC 62443-4-1 and CRA controls they affect, and each control gets a verdict."
+    },
+    {
+      "node": "Score",
+      "title": "Score.",
+      "body": "100 minus points per severity, capped so 500 low findings cannot outweigh one critical. Grade A to F."
+    },
+    {
+      "node": "Sign & chain",
+      "title": "Sign and chain.",
+      "body": "The report is fingerprinted, signed with Ed25519, and linked to the previous scan in the ledger."
+    },
+    {
+      "node": "Publish",
+      "title": "Publish.",
+      "body": "HTML, JSON, SARIF, SBOM, trust statement, badge and CRA file. Your CI can fail the build on high-severity findings."
+    }
+  ]
+}

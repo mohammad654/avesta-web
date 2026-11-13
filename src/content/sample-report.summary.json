@@ -1,0 +1,9 @@
+{
+  "project": "Demo Controller",
+  "score": 68,
+  "grade": "C",
+  "verdict": "Gaps to close before an audit",
+  "findings": 10,
+  "started": "2026-11-13T04:31:07+00:00",
+  "fingerprint_sha256": "0e65b3f2d1d0e43cbe7a1b9b15d4066d5e9c9a9d4e3331d0f44dcdb0b38b43d5"
+}

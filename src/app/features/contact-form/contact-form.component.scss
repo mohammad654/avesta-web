@@ -1,0 +1,48 @@
+.contact {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+
+  @media (min-width: 960px) {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  }
+}
+
+.contact__form {
+  padding: var(--space-6);
+}
+
+.contact__summary {
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  border: 2px solid var(--status-fail);
+  border-radius: var(--radius-sm);
+
+  ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  a {
+    color: var(--status-fail);
+  }
+}
+
+.contact__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact__error {
+  margin-top: var(--space-4);
+}
+
+.contact__status:focus,
+.contact__summary:focus,
+.contact__error:focus {
+  outline: 2px solid var(--color-gold-ink);
+  outline-offset: 2px;
+}

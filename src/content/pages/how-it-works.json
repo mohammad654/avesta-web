@@ -1,0 +1,67 @@
+{
+  "id": "how-it-works",
+  "seo": {
+    "title": "How Avesta Proof turns scans into evidence | Avesta Tech",
+    "description": "From commit to signed evidence in eight steps: scan, enrich with CISA KEV and EPSS, map to controls, score, sign, chain and publish.",
+    "path": "/how-it-works",
+    "breadcrumb": "How it works",
+    "priority": 0.8
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "From commit to evidence, every week.",
+      "sub": "Avesta Proof runs where your code already lives. Here is what happens between \"git push\" and a report your auditor can verify.",
+      "ctas": []
+    },
+    {
+      "kind": "feature",
+      "id": "pipeline",
+      "feature": "pipeline",
+      "tone": "navy",
+      "heading": "From commit to signed evidence in eight steps."
+    },
+    {
+      "kind": "table",
+      "id": "status-legend",
+      "heading": "Control status legend",
+      "caption": "What each control status means",
+      "hideCaption": true,
+      "columns": ["Status", "Meaning"],
+      "rows": [
+        ["Pass", "Every tool that gives evidence ran and found nothing."],
+        ["Partial", "Nothing found, but some of those tools did not run."],
+        ["Warn", "Only low-severity findings."],
+        ["Fail", "A medium or worse finding, or manual evidence has expired."],
+        ["Not assessed", "No evidence yet."]
+      ]
+    },
+    {
+      "kind": "steps",
+      "id": "engagement",
+      "heading": "Working with us.",
+      "steps": [
+        { "title": "", "body": "A 20-minute call to understand your product." },
+        { "title": "", "body": "A written scope with a fixed price and a date." },
+        { "title": "", "body": "The work, with a short update at the halfway point." },
+        { "title": "", "body": "Handover and a walkthrough." },
+        { "title": "", "body": "Optional: we keep your evidence current every month." }
+      ]
+    },
+    {
+      "kind": "code",
+      "id": "ci",
+      "tone": "navy",
+      "heading": "Add it to your pipeline.",
+      "language": "yaml",
+      "snippet": "githubAction",
+      "ctas": [
+        { "label": "See a sample report", "href": "/product/sample-report", "variant": "primary" },
+        { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "ghost" },
+        { "label": "See the CRA Readiness Scan", "href": "/services/cra-readiness-scan", "variant": "link" }
+      ]
+    }
+  ]
+}

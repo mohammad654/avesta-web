@@ -1,0 +1,63 @@
+{
+  "id": "legal-disclosure",
+  "seo": {
+    "title": "Vulnerability disclosure policy | Avesta Tech",
+    "description": "How to report a security vulnerability in Avesta Proof or this website, what we promise in return, and what good-faith research must not do.",
+    "path": "/legal/disclosure",
+    "breadcrumb": "Vulnerability disclosure",
+    "priority": 0.2
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Vulnerability disclosure policy",
+      "sub": "We practise what we sell. If you find a security issue, please tell us.",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "review",
+      "paragraphs": [
+        "[LEGAL_REVIEW]"
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s1",
+      "heading": "Scope",
+      "paragraphs": [
+        "This website and Avesta Proof."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s2",
+      "heading": "How to report",
+      "paragraphs": [
+        "Email [SECURITY_EMAIL] with a description of the issue, the steps to reproduce it and the impact you expect. Our contact details are also in [/.well-known/security.txt](/.well-known/security.txt)."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s3",
+      "heading": "What we promise",
+      "paragraphs": [
+        "We acknowledge your report within [RESPONSE_DAYS] working days and keep you informed until it is fixed.",
+        "We take no legal action against good-faith research that follows this policy.",
+        "We credit researchers who want credit."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s4",
+      "heading": "What not to do",
+      "paragraphs": [
+        "Do not destroy, change or download data that is not yours.",
+        "Do not run denial-of-service tests.",
+        "Do not use social engineering, phishing or physical attacks."
+      ]
+    }
+  ]
+}

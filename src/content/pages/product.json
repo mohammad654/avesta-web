@@ -1,0 +1,117 @@
+{
+  "id": "product",
+  "seo": {
+    "title": "Avesta Proof: CRA, ISO 27001 & IEC 62443 evidence | Avesta Tech",
+    "description": "Avesta Proof maps your scan results to three standards, prioritises exploited CVEs and signs every report. Local-first. Your code never leaves you.",
+    "path": "/product",
+    "breadcrumb": "Avesta Proof",
+    "priority": 0.9,
+    "schema": ["softwareApplication"]
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "eyebrow": "Avesta Proof",
+      "heading": "Turn code scans into audit evidence.",
+      "sub": "Avesta Proof scans a repository, maps what it finds to ISO/IEC 27001, IEC 62443-4-1 and the EU Cyber Resilience Act, and produces a signed, tamper-evident report with a fix for every finding. Your code never leaves your machine.",
+      "ctas": [
+        { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "primary" },
+        { "label": "Open the sample report", "href": "/product/sample-report", "variant": "ghost" }
+      ]
+    },
+    {
+      "kind": "comparison",
+      "id": "comparison",
+      "heading": "What a typical scanner gives you, and what Avesta Proof gives you.",
+      "caption": "A typical scanner compared with Avesta Proof",
+      "columns": ["Typical scanner", "Avesta Proof"],
+      "rows": [
+        { "label": "Output", "a": "A list of findings", "b": "Findings and a per-control verdict for three standards" },
+        { "label": "Priority", "a": "Severity only", "b": "Actively exploited first (CISA KEV), then likelihood (EPSS), then severity" },
+        { "label": "Trust", "a": "A PDF anyone could edit", "b": "Ed25519-signed report and hash-chained scan history, verifiable offline" },
+        { "label": "Manual evidence", "a": "Out of scope", "b": "Attestations such as pen tests and threat models that expire" },
+        { "label": "Exceptions", "a": "Hidden suppressions", "b": "Accepted risks with reason, approver and expiry, shown in the report" },
+        { "label": "CRA", "a": "A blog post", "b": "Technical-file draft (Annex VII), SBOM, key-date clock, support-period check" },
+        { "label": "Sales", "a": "n/a", "b": "One-page trust statement and badge for customers" },
+        { "label": "Honesty", "a": "Green when a tool is missing", "b": "A skipped tool makes its controls partial, never a silent pass" }
+      ]
+    },
+    {
+      "kind": "featureRows",
+      "id": "features",
+      "rows": [
+        { "heading": "A weekly verdict per standard.", "body": "Pass, partial, warn, fail or not-assessed for every mapped control. Each finding names the file, the line and the fix. Run it on every pull request and on a weekly schedule, because new CVEs appear even when your code does not change.", "icon": "check" },
+        { "heading": "Know what attackers are using today.", "body": "Avesta Proof checks every dependency vulnerability against the CISA Known Exploited Vulnerabilities catalogue and the FIRST EPSS score. You see the handful that matter now, not a wall of red.", "icon": "alert" },
+        { "heading": "Evidence an auditor can verify without trusting you.", "body": "Every report has a SHA-256 fingerprint and an Ed25519 signature. Each scan links to the previous one in a ledger. Delete or edit an old scan and the chain breaks. Your auditor checks it with one command, offline.", "icon": "lock" },
+        { "heading": "Manual evidence that keeps itself honest.", "body": "Record your pen test, threat model or design review as an attestation with a validity period. When it expires, the control turns red. Accepted risks need a reason, an approver and an end date, and they come back when that date passes.", "icon": "clock" },
+        { "heading": "Your CRA technical file, drafted from real data.", "body": "Avesta Proof drafts the technical documentation structured on Annex VII of the Regulation, generates a CycloneDX 1.5 SBOM, counts down to the key CRA dates and checks your declared support period. Your team completes and reviews the draft; we never pretend a draft is the finished file.", "icon": "file" },
+        { "heading": "Answer security questionnaires in minutes.", "body": "Share a one-page trust statement and a badge with customers. It shows your current verdict and links to evidence you choose to publish.", "icon": "badge" },
+        { "heading": "Local-first by design.", "body": "The scan runs in your CI or on an air-gapped machine. Source code stays with you. Only signed results move.", "icon": "server" }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "what-runs",
+      "heading": "What runs",
+      "caption": "Scanners Avesta Proof runs and what each one finds",
+      "hideCaption": true,
+      "columns": ["Scanner", "Finds"],
+      "rows": [
+        ["Semgrep", "Code vulnerabilities in many languages, with bundled offline rules"],
+        ["Bandit", "Python security issues"],
+        ["cppcheck", "C and C++ memory and logic errors"],
+        ["Lizard", "Complexity, function length, parameter count"],
+        ["Trivy", "Dependency CVEs, container and infrastructure misconfiguration"],
+        ["Gitleaks", "Hard-coded secrets"],
+        ["Coverage", "Test presence and coverage"],
+        ["Hygiene", "SECURITY.md, SBOM, CI, lock files, dependency updates, licence, CODEOWNERS, .env files"]
+      ],
+      "note": "A scanner that does not apply (for example, no C files) is marked not-applicable and does not count against you."
+    },
+    {
+      "kind": "richText",
+      "id": "outputs",
+      "tone": "navy",
+      "heading": "Seven outputs from one run.",
+      "paragraphs": [
+        "HTML report · signed JSON · SARIF for GitHub and GitLab code scanning · CycloneDX SBOM · trust statement · badge · CRA technical-file draft. PDF on request."
+      ]
+    },
+    {
+      "kind": "feature",
+      "id": "standards-explorer",
+      "feature": "standards",
+      "heading": "Explore the controls we map."
+    },
+    {
+      "kind": "disclosure",
+      "id": "limits",
+      "heading": "What Avesta Proof does not do.",
+      "items": [
+        "Control mappings are indicative. A compliance expert should review them against the current standard text.",
+        "Automated tools miss design flaws and business-logic bugs. Pair them with threat modelling and pen tests; our services can help.",
+        "SBOM support today: Python, npm and Cargo lock files. Maven, Gradle, Go, yarn, pnpm and NuGet are on the roadmap.",
+        "There is no hosted dashboard yet. The signed JSON and the ledger are your data."
+      ]
+    },
+    {
+      "kind": "faq",
+      "id": "faq",
+      "heading": "Frequently asked questions",
+      "faqIds": ["G2", "G3", "G7", "G8"]
+    },
+    {
+      "kind": "ctaBand",
+      "id": "cta",
+      "tone": "navy",
+      "heading": "See it on your own code.",
+      "body": "Book a 30-minute demo, or start with a fixed-price CRA Readiness Scan.",
+      "ctas": [
+        { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "primary" },
+        { "label": "CRA Readiness Scan", "href": "/services/cra-readiness-scan", "variant": "ghost" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+@let l = copy().labels;
+@let f = filters();
+<fieldset class="filters">
+  <legend class="visually-hidden">{{ l.filtersLegend }}</legend>
+  <div class="filters__row" role="group" aria-labelledby="sev-label">
+    <span id="sev-label" class="filters__label">{{ l.severity }}</span>
+    <div class="filters__chips">
+      @for (s of severities; track s.key) {
+        <button type="button" class="chip" [attr.aria-pressed]="f.severities.includes(s.key)" (click)="toggleSeverity(s.key)">
+          @if (f.severities.includes(s.key)) {<app-icon class="chip__check" name="check" />}
+          {{ l[s.label] }} ({{ counts()[s.key] }})
+        </button>
+      }
+    </div>
+  </div>
+  <div class="filters__grid">
+    <div class="field">
+      <label for="rf-std">{{ l.standard }}</label>
+      <select id="rf-std" class="input" (change)="setStandard($event)">
+        <option value="all" [selected]="f.standard === 'all'">{{ l.standardAll }}</option>
+        @for (s of copy().standards; track s.key) {
+          <option [value]="s.key" [selected]="f.standard === s.key">{{ s.label }}</option>
+        }
+      </select>
+    </div>
+    <div class="field">
+      <label for="rf-scanner">{{ l.scanner }}</label>
+      <select id="rf-scanner" class="input" (change)="patch({ scanner: value($event) || null })">
+        <option value="" [selected]="f.scanner === null">{{ l.scannerAll }}</option>
+        @for (s of scanners(); track s) {
+          <option [value]="s" [selected]="f.scanner === s">{{ s }}</option>
+        }
+      </select>
+    </div>
+    <div class="field">
+      <label for="rf-cat">{{ l.category }}</label>
+      <select id="rf-cat" class="input" (change)="patch({ category: value($event) || null })">
+        <option value="" [selected]="f.category === null">{{ l.categoryAll }}</option>
+        @for (c of categories(); track c) {
+          <option [value]="c" [selected]="f.category === c">{{ c }}</option>
+        }
+      </select>
+    </div>
+    <div class="field">
+      <label for="rf-q">{{ l.search }}</label>
+      <input id="rf-q" class="input" type="search" autocomplete="off" [value]="f.query" [attr.placeholder]="l.searchHint"
+        (input)="patch({ query: value($event) })" />
+    </div>
+    <div class="field">
+      <label for="rf-sort">{{ l.sort }}</label>
+      <select id="rf-sort" class="input" (change)="setSort($event)">
+        <option value="priority" [selected]="sort() === 'priority'">{{ l.sortPriority }}</option>
+        <option value="severity" [selected]="sort() === 'severity'">{{ l.sortSeverity }}</option>
+        <option value="file" [selected]="sort() === 'file'">{{ l.sortFile }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="filters__toggles">
+    <label class="checkbox"><input type="checkbox" [checked]="f.kevOnly" (change)="patch({ kevOnly: checked($event) })" /><span>{{ l.kev }}</span></label>
+    <label class="checkbox" [class.is-disabled]="!hasBaseline()">
+      <input type="checkbox" [checked]="f.newOnly" [disabled]="!hasBaseline()" [attr.aria-describedby]="hasBaseline() ? null : 'rf-new-hint'"
+        (change)="patch({ newOnly: checked($event) })" />
+      <span>{{ l.isNew }}</span>
+      @if (!hasBaseline()) {<span id="rf-new-hint" class="micro" role="tooltip">({{ l.needsBaseline }})</span>}
+    </label>
+  </div>
+</fieldset>

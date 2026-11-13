@@ -1,0 +1,75 @@
+{
+  "id": "freelance",
+  "seo": {
+    "title": "Freelance test automation & Python engineer | Avesta Tech",
+    "description": "Hire an experienced test automation and Python engineer in the Netherlands: pytest, Robot Framework, Selenium, CI/CD. On site or remote.",
+    "path": "/freelance",
+    "breadcrumb": "Freelance engineering",
+    "parent": { "name": "About", "path": "/about" },
+    "priority": 0.7,
+    "schema": ["person"]
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "An experienced test automation engineer, when you need one.",
+      "sub": "Hire Avesta Tech's founder for test automation and Python engineering, for a sprint or for months. On site in the Netherlands or remote.",
+      "ctas": [
+        { "label": "Check availability", "href": "/contact?topic=freelance", "variant": "primary" },
+        { "label": "Download CV", "href": "[CV_PDF]", "variant": "ghost" }
+      ],
+      "meta": "Available from [AVAILABLE_FROM] · [DAYS_PER_WEEK] days a week · Rate [HOURLY_RATE] excl. BTW · CV: [CV_PDF]"
+    },
+    {
+      "kind": "featureGrid",
+      "id": "what-i-do",
+      "heading": "What I do",
+      "columns": 3,
+      "items": [
+        { "title": "Test automation", "body": "pytest, Robot Framework, Selenium, Playwright [CONFIRM_PLAYWRIGHT], JUnit, Google Test, Postman. From zero to a suite your team trusts.", "icon": "check" },
+        { "title": "Python engineering", "body": "Tooling, data handling and test benches for high-tech and hardware-adjacent software.", "icon": "code" },
+        { "title": "CI/CD and quality", "body": "Docker, Jenkins, GitHub Actions and GitLab CI pipelines with quality gates that catch problems early.", "icon": "branch" }
+      ]
+    },
+    {
+      "kind": "list",
+      "id": "experience",
+      "heading": "Experience.",
+      "items": [
+        { "title": "Capgemini Engineering, consultant, 2023 to 2026:", "body": "client work at ASML on Python calibration software; built a C/C++ code-quality platform (Docker, CI/CD). [CONFIRM_EMPLOYER_NAMES]" },
+        { "title": "Avesta Tech, founder,", "body": "October 2026 to present." }
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "how-i-work",
+      "heading": "How I work.",
+      "paragraphs": [
+        "Clear deliverables, agreed up front. Short written updates. I bring my own equipment and tools, and I work with more than one client, as an independent business should. Model agreement (modelovereenkomst) available on request [CONFIRM_MODEL_AGREEMENT]."
+      ]
+    },
+    {
+      "kind": "facts",
+      "id": "credentials",
+      "tone": "navy",
+      "heading": "Credentials",
+      "items": [
+        { "label": "Certificate", "value": "PSM I" },
+        { "label": "Languages", "value": "Arabic, Kurdish, Dutch, English, Turkish" },
+        { "label": "ISTQB Foundation", "value": "[ISTQB_STATUS]", "requires": "ISTQB_STATUS" }
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "cta",
+      "centered": true,
+      "paragraphs": [],
+      "ctas": [
+        { "label": "Check availability", "href": "/contact?topic=freelance", "variant": "primary" },
+        { "label": "See our services", "href": "/services", "variant": "link" }
+      ]
+    }
+  ]
+}

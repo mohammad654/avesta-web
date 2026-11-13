@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "id": "G1",
+      "question": "What does Avesta Tech do?",
+      "answer": "We help software and connected-product makers prove their code is secure and tested. Our product, Avesta Proof, turns scans into signed, audit-ready evidence for ISO/IEC 27001, IEC 62443-4-1 and the EU Cyber Resilience Act. We also deliver fixed-price quality, test automation and accessibility services."
+    },
+    {
+      "id": "G2",
+      "question": "Does Avesta Proof replace an audit or a certification?",
+      "answer": "No tool can do that, and we will not pretend otherwise. Avesta Proof produces audit-ready evidence: a verdict per control, signed reports and a technical-file draft. Certification and conformity decisions come from accredited bodies and your own assessment."
+    },
+    {
+      "id": "G3",
+      "question": "Does my source code leave my company?",
+      "answer": "No. Avesta Proof runs in your CI or on your own machine, including air-gapped machines. Only the signed results move, and only if you send them."
+    },
+    {
+      "id": "G4",
+      "question": "Which languages and stacks do you support?",
+      "answer": "Semgrep covers many languages. Python gets extra checks from Bandit, C and C++ from cppcheck. Dependency scanning works through Trivy. SBOMs are generated from Python, npm and Cargo lock files today, with Maven, Gradle, Go, yarn, pnpm and NuGet on the roadmap."
+    },
+    {
+      "id": "G5",
+      "question": "How is this different from Snyk or SonarQube?",
+      "answer": "Those tools are good at listing issues for developers. Avesta Proof answers a different question: \"Can we prove it to an auditor?\" It maps findings to controls in three standards, signs the result, tracks expiring manual evidence and drafts the CRA technical file."
+    },
+    {
+      "id": "G6",
+      "question": "Who is behind Avesta Tech?",
+      "answer": "Avesta Tech was founded in Utrecht in 2026 by Mohammad Ali Shikhi, a software and test automation engineer with high-tech industry experience. You work directly with engineers, not account managers."
+    },
+    {
+      "id": "G7",
+      "question": "How can my auditor check a report?",
+      "answer": "With one command and our public key: `avesta-proof verify report.json --pubkey avesta-proof.pub`. It checks the fingerprint and the Ed25519 signature offline. `verify-ledger` checks that no earlier scan was removed or changed."
+    },
+    {
+      "id": "G8",
+      "question": "What happens when a tool is not installed?",
+      "answer": "The controls that tool supports are marked partial, never pass. A scanner that does not apply, such as cppcheck on a Python-only project, is marked not-applicable and does not count against you."
+    },
+    {
+      "id": "P1",
+      "question": "Why do you charge per product and not per developer?",
+      "answer": "Regulation applies to products. Charging per product keeps your price tied to what you need to prove, so growing your team does not raise your bill."
+    },
+    {
+      "id": "P2",
+      "question": "Is there a free option?",
+      "answer": "Yes. The Community edition gives developers the command-line tool and local reports. The CRA readiness checker on this site is free too."
+    },
+    {
+      "id": "P3",
+      "question": "Are prices including BTW?",
+      "answer": "No. All prices exclude 21% Dutch BTW. For business clients outside the Netherlands, VAT is handled according to EU rules; your invoice will show it clearly."
+    },
+    {
+      "id": "P4",
+      "question": "Can I start with a service and move to a subscription later?",
+      "answer": "Yes, and most teams do. A CRA Readiness Scan gives you a first signed report and a plan. If you want the evidence kept current every week, a Team plan picks up from there."
+    },
+    {
+      "id": "P5",
+      "question": "Can I cancel?",
+      "answer": "Monthly plans can be cancelled with [NOTICE_PERIOD] notice. Your reports and ledger stay yours; they are files you own."
+    },
+    {
+      "id": "C1",
+      "question": "When does the Cyber Resilience Act apply?",
+      "answer": "The Regulation entered into force on 10 December 2024. Reporting duties for actively exploited vulnerabilities have applied since 11 September 2026. Most other obligations apply from 11 December 2027.*",
+      "footnote": "* Dates and amounts: verify with counsel."
+    },
+    {
+      "id": "C2",
+      "question": "What are the penalties?",
+      "answer": "For the main obligations, fines can reach EUR 15 million or 2.5% of worldwide annual turnover.* Your counsel can tell you how this applies to you.",
+      "footnote": "* Dates and amounts: verify with counsel."
+    },
+    {
+      "id": "C3",
+      "question": "Does the CRA apply to my product?",
+      "answer": "It covers most products with digital elements sold in the EU, with some sector exceptions. The checker gives a first indication; confirm with counsel."
+    },
+    {
+      "id": "C4",
+      "question": "What is a technical file?",
+      "answer": "The technical documentation a manufacturer keeps to show how the product meets the essential requirements (Annex VII of the Regulation). Avesta Proof drafts it from real scan data; your team completes and reviews it."
+    }
+  ]
+}

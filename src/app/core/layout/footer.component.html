@@ -1,0 +1,58 @@
+<footer class="footer on-dark">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span role="img" [attr.aria-label]="footer.logoAlt"><app-wordmark [size]="48" /></span>
+        <p>{{ footer.brandLine }}</p>
+        <div class="actions">
+          @for (cta of footer.ctas; track cta.href) {
+            <app-cta [cta]="cta" />
+          }
+        </div>
+      </div>
+      @for (column of footer.columns; track column.heading) {
+        <nav class="footer__col" [attr.aria-label]="column.heading">
+          <h2 class="eyebrow">{{ column.heading }}</h2>
+          <ul class="plain-list">
+            @for (link of column.links; track link.href) {
+              <li><a [routerLink]="link.href">{{ link.label }}</a></li>
+            }
+          </ul>
+        </nav>
+      }
+    </div>
+
+    <p class="footer__disclaimer">{{ footer.disclaimer }}</p>
+
+    <div class="footer__bottom">
+      <p><app-text [text]="footer.bottom" /></p>
+      <ul class="plain-list footer__inline">
+        @for (link of footer.legal; track link.href) {
+          <li><a [routerLink]="link.href">{{ link.label }}</a></li>
+        }
+        @for (link of footer.social; track link.label) {
+          @let h = href(link.href);
+          <li>
+            @if (h.kind === 'external') {
+              <a [href]="h.href" rel="me noopener">{{ link.label }}</a>
+            } @else {
+              {{ link.label }} <app-ph [token]="link.href" />
+            }
+          </li>
+        }
+      </ul>
+      <ul class="plain-list footer__inline" [attr.aria-label]="footer.languageLabel">
+        @for (lang of footer.languages; track lang.label) {
+          <li>
+            @if (lang.active) {
+              <span aria-current="true" class="footer__lang">{{ lang.label }}</span>
+            } @else {
+              <span class="footer__lang footer__lang--off" aria-disabled="true">{{ lang.label }}</span>
+            }
+          </li>
+        }
+        <li><a [routerLink]="[]" fragment="top">{{ footer.backToTop }}</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

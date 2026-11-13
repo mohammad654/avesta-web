@@ -1,0 +1,19 @@
+{
+  "id": "cra-readiness",
+  "seo": {
+    "title": "Free CRA readiness check (8 questions) | Avesta Tech",
+    "description": "How ready is your product for the EU Cyber Resilience Act? Answer eight questions and get an honest readiness picture with next steps.",
+    "path": "/cra-readiness",
+    "breadcrumb": "CRA readiness checker",
+    "priority": 0.9
+  },
+  "sections": [
+    { "kind": "feature", "id": "checker", "feature": "craChecker", "tone": "navy" },
+    {
+      "kind": "faq",
+      "id": "faq",
+      "heading": "Frequently asked questions",
+      "faqIds": ["C1", "C2", "C3", "C4"]
+    }
+  ]
+}

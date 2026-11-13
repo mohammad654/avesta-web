@@ -1,0 +1,390 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "avesta-proof",
+          "version": "0.5.0",
+          "rules": [
+            {
+              "id": "bandit/B602",
+              "shortDescription": {
+                "text": "subprocess call with shell=True identified, security issue."
+              },
+              "help": {
+                "text": "Pass the command as a list of arguments and drop shell=True. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html"
+              },
+              "properties": {
+                "tags": [
+                  "code-vulnerability",
+                  "ISO27001:A.8.28",
+                  "ISO27001:A.8.8",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "IEC62443:SVV-3",
+                  "CRA:I.2(a)",
+                  "NIS2:Art.21(2)(e)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B324",
+              "shortDescription": {
+                "text": "Use of weak MD5 hash for security. Consider usedforsecurity=False"
+              },
+              "help": {
+                "text": "Replace MD5/SHA-1 with SHA-256 (hashlib.sha256) or a password KDF. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html"
+              },
+              "properties": {
+                "tags": [
+                  "crypto",
+                  "ISO27001:A.8.24",
+                  "ISO27001:A.8.28",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "CRA:I.2(e)",
+                  "NIS2:Art.21(2)(h)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B301",
+              "shortDescription": {
+                "text": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue."
+              },
+              "help": {
+                "text": "Do not unpickle untrusted data; use JSON or a schema-validated format. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle"
+              },
+              "properties": {
+                "tags": [
+                  "code-vulnerability",
+                  "ISO27001:A.8.28",
+                  "ISO27001:A.8.8",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "IEC62443:SVV-3",
+                  "CRA:I.2(a)",
+                  "NIS2:Art.21(2)(e)"
+                ]
+              }
+            },
+            {
+              "id": "coverage/no-coverage-report",
+              "shortDescription": {
+                "text": "Tests exist but coverage is not measured"
+              },
+              "help": {
+                "text": "Produce a coverage report in CI, or run avesta-proof with --run-tests."
+              },
+              "properties": {
+                "tags": [
+                  "testing",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SVV-1",
+                  "CRA:II.3",
+                  "NIS2:Art.21(2)(f)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B403",
+              "shortDescription": {
+                "text": "Consider possible security implications associated with pickle module."
+              },
+              "help": {
+                "text": "Replace the flagged call with its safe alternative. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle"
+              },
+              "properties": {
+                "tags": [
+                  "code-vulnerability",
+                  "ISO27001:A.8.28",
+                  "ISO27001:A.8.8",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "IEC62443:SVV-3",
+                  "CRA:I.2(a)",
+                  "NIS2:Art.21(2)(e)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B105",
+              "shortDescription": {
+                "text": "Possible hardcoded password: 'demo-controller-token-123456'"
+              },
+              "help": {
+                "text": "Move the hard-coded password to a secret manager or environment variable. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html"
+              },
+              "properties": {
+                "tags": [
+                  "code-vulnerability",
+                  "ISO27001:A.8.28",
+                  "ISO27001:A.8.8",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "IEC62443:SVV-3",
+                  "CRA:I.2(a)",
+                  "NIS2:Art.21(2)(e)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B404",
+              "shortDescription": {
+                "text": "Consider possible security implications associated with the subprocess module."
+              },
+              "help": {
+                "text": "Only a review item: make sure subprocess is never called with untrusted input. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess"
+              },
+              "properties": {
+                "tags": [
+                  "code-vulnerability",
+                  "ISO27001:A.8.28",
+                  "ISO27001:A.8.8",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "IEC62443:SVV-3",
+                  "CRA:I.2(a)",
+                  "NIS2:Art.21(2)(e)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B311",
+              "shortDescription": {
+                "text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes."
+              },
+              "help": {
+                "text": "Use the secrets module for tokens, keys and anything security-related. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random"
+              },
+              "properties": {
+                "tags": [
+                  "crypto",
+                  "ISO27001:A.8.24",
+                  "ISO27001:A.8.28",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "CRA:I.2(e)",
+                  "NIS2:Art.21(2)(h)"
+                ]
+              }
+            },
+            {
+              "id": "bandit/B110",
+              "shortDescription": {
+                "text": "Try, Except, Pass detected."
+              },
+              "help": {
+                "text": "Handle or log the exception instead of silently passing. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html"
+              },
+              "properties": {
+                "tags": [
+                  "code-vulnerability",
+                  "ISO27001:A.8.28",
+                  "ISO27001:A.8.8",
+                  "ISO27001:A.8.29",
+                  "IEC62443:SI-1",
+                  "IEC62443:SI-2",
+                  "IEC62443:SVV-3",
+                  "CRA:I.2(a)",
+                  "NIS2:Art.21(2)(e)"
+                ]
+              }
+            },
+            {
+              "id": "hygiene/sbom",
+              "shortDescription": {
+                "text": "SBOM exists only as a generated file, not published with the repository"
+              },
+              "help": {
+                "text": "Avesta Proof generated sbom.cdx.json (2 components). Commit or attach it to every release (CRA Annex I Part II(1))."
+              },
+              "properties": {
+                "tags": [
+                  "process",
+                  "CRA:II.1",
+                  "IEC62443:SM-9"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "bandit/B602",
+          "level": "error",
+          "message": {
+            "text": "subprocess call with shell=True identified, security issue.. Fix: Pass the command as a list of arguments and drop shell=True. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b602_subprocess_popen_with_shell_equals_true.html"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/control.py"
+                },
+                "region": {
+                  "startLine": 26
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "bandit/B324",
+          "level": "error",
+          "message": {
+            "text": "Use of weak MD5 hash for security. Consider usedforsecurity=False. Fix: Replace MD5/SHA-1 with SHA-256 (hashlib.sha256) or a password KDF. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/control.py"
+                },
+                "region": {
+                  "startLine": 30
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "bandit/B301",
+          "level": "warning",
+          "message": {
+            "text": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.. Fix: Do not unpickle untrusted data; use JSON or a schema-validated format. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/config.py"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "coverage/no-coverage-report",
+          "level": "warning",
+          "message": {
+            "text": "Tests exist but coverage is not measured. Fix: Produce a coverage report in CI, or run avesta-proof with --run-tests."
+          }
+        },
+        {
+          "ruleId": "bandit/B403",
+          "level": "note",
+          "message": {
+            "text": "Consider possible security implications associated with pickle module.. Fix: Replace the flagged call with its safe alternative. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/config.py"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "bandit/B105",
+          "level": "note",
+          "message": {
+            "text": "Possible hardcoded password: 'demo-controller-token-123456'. Fix: Move the hard-coded password to a secret manager or environment variable. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/config.py"
+                },
+                "region": {
+                  "startLine": 4
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "bandit/B404",
+          "level": "note",
+          "message": {
+            "text": "Consider possible security implications associated with the subprocess module.. Fix: Only a review item: make sure subprocess is never called with untrusted input. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/control.py"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "bandit/B311",
+          "level": "note",
+          "message": {
+            "text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.. Fix: Use the secrets module for tokens, keys and anything security-related. Details: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/control.py"
+                },
+                "region": {
+                  "startLine": 39
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "bandit/B110",
+          "level": "note",
+          "message": {
+            "text": "Try, Except, Pass detected.. Fix: Handle or log the exception instead of silently passing. Details: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo_controller/control.py"
+                },
+                "region": {
+                  "startLine": 45
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "hygiene/sbom",
+          "level": "note",
+          "message": {
+            "text": "SBOM exists only as a generated file, not published with the repository. Fix: Avesta Proof generated sbom.cdx.json (2 components). Commit or attach it to every release (CRA Annex I Part II(1))."
+          }
+        }
+      ]
+    }
+  ]
+}

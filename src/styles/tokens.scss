@@ -1,0 +1,84 @@
+// Design tokens (brief 9.1–9.4). Every colour pair used on the site is listed in /dev/tokens
+// with its calculated contrast ratio.
+
+// Breakpoints (Sass, for media queries)
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 960px;
+$bp-xl: 1200px;
+
+:root {
+  // Colour
+  --color-navy: #0e1a33;
+  --color-navy-2: #1b2d57;
+  --color-gold: #c9a461;
+  --color-gold-hover: #b8924f;
+  --color-gold-ink: #a8843f;
+  --color-gold-text: #8a6a2e;
+  --color-cream: #faf7f0;
+  --color-gold-soft: #f1e6cc;
+  --color-line: #e4dcc8;
+  --color-muted: #4f5a70;
+  --color-muted-on-dark: #a9b1c4;
+  --color-white: #ffffff;
+  --color-line-on-dark: rgb(250 247 240 / 16%);
+
+  // Status (report UI): always paired with a text label or icon
+  --status-pass: #2e6b4a;
+  --status-warn: #9a5b12;
+  --status-fail: #b3261e;
+  --status-partial: #1b2d57;
+  --status-not-assessed: #4f5a70;
+
+  // Type
+  --font-display: 'Cinzel', 'Cinzel Fallback', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', 'Plex Fallback', Arial, sans-serif;
+  --font-label: 'Space Grotesk', 'IBM Plex Sans', 'Plex Fallback', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  // Fluid sizes: mobile value at 480px → desktop value at 1200px
+  --fs-h1: clamp(2.25rem, 1.583rem + 2.222vw, 3.5rem); // 36 → 56
+  --fs-h2: clamp(1.75rem, 1.483rem + 0.889vw, 2.25rem); // 28 → 36
+  --fs-h3: clamp(1.25rem, 1.183rem + 0.222vw, 1.375rem); // 20 → 22
+  --fs-h4: clamp(1.0625rem, 1.029rem + 0.111vw, 1.125rem); // 17 → 18
+  --fs-body: clamp(1.0625rem, 1.029rem + 0.111vw, 1.125rem); // 17 → 18
+  --fs-small: 0.9375rem;
+  --fs-label: clamp(0.75rem, 0.717rem + 0.111vw, 0.8125rem); // 12 → 13
+  --fs-code: clamp(0.875rem, 0.842rem + 0.111vw, 0.9375rem); // 14 → 15
+  --fs-closing: clamp(1.375rem, 1.175rem + 0.667vw, 1.75rem); // 22 → 28
+
+  // Spacing scale
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --section-pad: var(--space-8);
+
+  // Layout
+  --container: 1200px;
+  --gutter: 16px;
+  --header-height: 64px;
+
+  // Shape
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  // Motion
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration: 150ms;
+
+  @media (min-width: $bp-sm) {
+    --gutter: 24px;
+  }
+
+  @media (min-width: $bp-lg) {
+    --section-pad: var(--space-9);
+  }
+}

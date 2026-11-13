@@ -1,0 +1,51 @@
+{
+  "id": "legal-cookies",
+  "seo": {
+    "title": "Cookie policy | Avesta Tech",
+    "description": "This website sets no tracking cookies by default. Read which storage we use, why no cookie banner is shown, and what changes if that ever changes.",
+    "path": "/legal/cookies",
+    "breadcrumb": "Cookie policy",
+    "priority": 0.2
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Cookie policy",
+      "sub": "This website sets no tracking cookies.",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "review",
+      "paragraphs": [
+        "[LEGAL_REVIEW]"
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s1",
+      "heading": "What we use",
+      "paragraphs": [
+        "By default this site sets no tracking cookies and no advertising cookies. Settings you choose, such as monthly or yearly prices, are kept in the page address, not in a cookie. Your CRA readiness checker answers stay in your browser."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s2",
+      "heading": "Analytics",
+      "paragraphs": [
+        "Analytics tool, if any: [ANALYTICS_TOOL]. If we use privacy-friendly analytics, it works without cookies and without personal profiles, so no cookie banner is needed."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s3",
+      "heading": "If this changes",
+      "paragraphs": [
+        "If we ever add a non-essential cookie, we will first ask for your consent with a banner that has equally visible \"Accept\" and \"Reject\" buttons, and update this page."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sample-report",
+  "seo": {
+    "title": "Sample security evidence report | Avesta Proof",
+    "description": "Explore a real Avesta Proof report on a demo project: findings, control verdicts, SBOM and a signature you can verify yourself. Filter by standard.",
+    "path": "/product/sample-report",
+    "breadcrumb": "Sample report",
+    "parent": { "name": "Avesta Proof", "path": "/product" },
+    "priority": 0.8,
+    "ogImageAlt": "Avesta Proof report summary showing score 68, grade C, and 10 findings on a demo project"
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "A real report, on a demo project.",
+      "sub": "This is Avesta Proof's output for \"Demo Controller\", a small test project we built to show the format. Filter the findings, open a control, check the signature.",
+      "ctas": []
+    },
+    { "kind": "feature", "id": "report", "feature": "sampleReport" },
+    {
+      "kind": "richText",
+      "id": "next",
+      "centered": true,
+      "paragraphs": [],
+      "ctas": [{ "label": "Get a report on your own code", "href": "/services/cra-readiness-scan", "variant": "primary" }]
+    }
+  ]
+}

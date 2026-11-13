@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="generator" content="Avesta Proof">
+<title>Security trust statement · Demo Controller</title>
+<style>
+:root{--navy:#0E1A33;--gold:#C9A461;--cream:#FAF7F0;--ink:#141A2B;--muted:#5B6175;
+--line:#E3E5EC;--panel:#F6F7FA;--surface:#FFFFFF;--radius:12px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+-webkit-font-smoothing:antialiased}
+.app{display:grid;grid-template-columns:238px minmax(0,1fr);gap:0;max-width:1320px;margin:0 auto}
+.app.solo{grid-template-columns:minmax(0,1fr);max-width:1000px}
+main{background:var(--surface);min-width:0;box-shadow:0 0 0 1px var(--line)}
+.inner{padding:34px 40px}
+a{color:#1a4f8a}
+
+/* ---------- navigation ---------- */
+.nav{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:26px 18px;
+background:var(--navy);color:#fff}
+.nav .mark{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.nav .mark b{font-size:15px;letter-spacing:.02em}
+.nav .sub{color:var(--gold);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+margin-bottom:20px}
+.nav .scorebox{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+border-radius:10px;padding:12px 14px;margin-bottom:18px}
+.nav .scorebox .n{font-size:30px;font-weight:800;line-height:1}
+.nav .scorebox .g{float:right;font-size:13px;font-weight:800;color:var(--navy);
+background:var(--gold);border-radius:6px;padding:3px 9px}
+.nav .scorebox .c{color:#c9cde0;font-size:11.5px;margin-top:4px}
+.nav ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.nav li{counter-increment:s}
+.nav a{display:block;color:#c9cde0;text-decoration:none;font-size:13px;padding:6px 10px;
+border-radius:7px;border-left:2px solid transparent}
+.nav a::before{content:counter(s) ". ";color:#79819e}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav a.on{background:rgba(201,164,97,.16);color:#fff;border-left-color:var(--gold)}
+.nav .foot{margin-top:22px;font-size:11px;color:#79819e;line-height:1.5}
+
+/* ---------- cover ---------- */
+.cover{background:linear-gradient(135deg,var(--navy) 0%,#1b2c52 100%);color:#fff;
+padding:40px 40px 34px}
+.cover .eyebrow{letter-spacing:.2em;font-size:11px;color:var(--gold);text-transform:uppercase}
+.cover h1{font-size:33px;margin:10px 0 6px;line-height:1.15;font-weight:700}
+.cover .claim{font-size:15px;color:#d7dbe8;max-width:62ch}
+.cover .facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;font-size:12.5px;
+color:#aeb6cd}
+.cover .facts b{color:#fff;font-weight:600}
+.cover .verdictline{margin-top:22px;display:inline-flex;align-items:center;gap:10px;
+background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:99px;
+padding:8px 16px;font-size:13.5px}
+
+/* ---------- typography ---------- */
+h2{font-size:21px;margin:0 0 4px;font-weight:700;letter-spacing:-.01em}
+h3{font-size:15.5px;margin:22px 0 8px;font-weight:650}
+h4{font-size:13.5px;margin:16px 0 6px;color:var(--muted);text-transform:uppercase;
+letter-spacing:.07em}
+section{padding:30px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.sec-head .num{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.1em}
+.lead{color:var(--muted);max-width:76ch;margin:0 0 14px}
+.muted{color:var(--muted)}.small{font-size:12.5px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;
+background:var(--panel);padding:1px 5px;border-radius:4px;word-break:break-word}
+
+/* ---------- blocks ---------- */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:18px}
+.panel.tint{background:var(--panel)}
+.panel h4{margin-top:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.kpi .v{font-size:25px;font-weight:750;line-height:1.15;letter-spacing:-.01em}
+.kpi .v.sm{font-size:16px;font-weight:700}
+.kpi .l{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+margin-top:3px}
+.kpi .n{font-size:11.5px;color:var(--muted);margin-top:4px}
+.kpi.accent{border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold)}
+.hero{display:grid;grid-template-columns:minmax(170px,210px) minmax(0,1fr);gap:24px;
+align-items:center}
+.chart{display:block;max-width:100%;height:auto;margin:0 auto}
+.chart-empty{color:var(--muted);font-size:12.5px;font-style:italic;margin:6px 0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:12px;
+color:var(--muted)}
+.legend .lg{display:inline-flex;align-items:center;gap:6px}
+.legend .lg i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.legend .lg-note{font-style:italic}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:13px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--panel);font-weight:650;font-size:11.5px;text-transform:uppercase;
+letter-spacing:.05em;color:var(--muted);position:sticky;top:0;z-index:1}
+tbody tr:hover{background:#fcfcfe}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+
+/* ---------- pills, cards ---------- */
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:10.5px;font-weight:700;
+color:#fff;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.pill.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.pill.kev{background:#6B0F1A}.pill.new{background:#5B3FD1}.pill.fixed{background:#1F8A4C}
+.pill.ok{background:#1F8A4C}.pill.error{background:#C0392B}.pill.skipped{background:#9AA1B1}
+.pill.not-applicable{background:#9AA1B1}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.card{border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:10px;
+padding:14px 16px;margin:10px 0;break-inside:avoid;background:var(--surface)}
+.card .t{font-weight:650;font-size:14.5px}
+.card .meta{color:var(--muted);font-size:12px;margin-top:4px}
+.card .why{margin-top:8px;font-size:13px}
+.fix{background:#FBF7EE;border:1px solid #EFE3CA;border-radius:8px;padding:9px 12px;
+margin-top:10px;font-size:13px}
+.fix b{color:#8A6A22}
+.rank{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
+border-radius:6px;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;
+margin-right:8px}
+.callout{border:1px solid var(--line);border-left:4px solid var(--gold);background:var(--panel);
+border-radius:10px;padding:14px 16px;margin:14px 0}
+.callout b{color:var(--navy)}
+.filter{margin:10px 0;display:none}
+.filter.live{display:flex;gap:10px;align-items:center}
+.filter input{flex:1;max-width:360px;padding:7px 11px;border:1px solid var(--line);
+border-radius:8px;font:inherit;font-size:13px}
+.sig{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+font-size:13px}
+.sig code{background:#fff}
+footer{border-top:1px solid var(--line);margin-top:10px;padding:22px 40px 34px;
+color:var(--muted);font-size:12px}
+footer b{color:var(--ink)}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+ .app{grid-template-columns:1fr}
+ .nav{position:static;height:auto;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+ .nav ol{display:flex;flex-wrap:wrap;gap:4px}
+ .nav .scorebox,.nav .foot{display:none}
+ .inner,.cover,footer{padding-left:20px;padding-right:20px}
+ .hero{grid-template-columns:1fr}
+}
+
+/* ---------- print / PDF ---------- */
+@media print{
+ body{background:#fff}
+ .app{display:block;max-width:none}
+ .nav,.filter{display:none}
+ main{box-shadow:none}
+ .inner{padding:0 10mm}
+ .cover{padding:12mm 10mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .pill,.kpi,.card,.callout,.fix,.panel,svg{-webkit-print-color-adjust:exact;
+ print-color-adjust:exact}
+ section{break-inside:auto;page-break-inside:auto;border-top:1px solid #ddd}
+ h2,h3{break-after:avoid}
+ table{font-size:10.5pt}
+ tr,.card,.kpi{break-inside:avoid}
+ th{position:static}
+ a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#666}
+}
+@page{size:A4;margin:14mm 0}
+.pill.CRITICAL{background:#8C1D2F}.card.CRITICAL{border-left-color:#8C1D2F}.dot.CRITICAL{background:#8C1D2F}.pill.HIGH{background:#C0392B}.card.HIGH{border-left-color:#C0392B}.dot.HIGH{background:#C0392B}.pill.MEDIUM{background:#D4880F}.card.MEDIUM{border-left-color:#D4880F}.dot.MEDIUM{background:#D4880F}.pill.LOW{background:#2F7DBD}.card.LOW{border-left-color:#2F7DBD}.dot.LOW{background:#2F7DBD}.pill.INFO{background:#8A91A1}.card.INFO{border-left-color:#8A91A1}.dot.INFO{background:#8A91A1}.pill.pass{background:#1F8A4C}.dot.pass{background:#1F8A4C}.pill.partial{background:#5B7AA8}.dot.partial{background:#5B7AA8}.pill.warn{background:#D4880F}.dot.warn{background:#D4880F}.pill.fail{background:#C0392B}.dot.fail{background:#C0392B}.pill.not-assessed{background:#9AA1B1}.dot.not-assessed{background:#9AA1B1}</style></head>
+<body><div class="app solo"><main><header class="cover">
+ <div class="eyebrow">Avesta Tech · Security trust statement</div>
+ <h1>Demo Controller </h1>
+ <p class="claim">An independent, automated check of the security, testing and quality
+ practice behind this product. Published by <b>Avesta Tech</b> for customers, partners and
+ procurement teams.</p>
+ <div class="facts"><span>Checked <b>2026-11-13</b></span><span>Standards
+ <b>ISO/IEC 27001 · IEC 62443-4-1 · EU CRA</b></span><span>Components in SBOM
+ <b>2</b></span></div>
+</header>
+<div class="inner">
+<section id="posture"><div class="sec-head"><span class="num">01</span>
+<h2>Security posture</h2></div>
+<div class="hero"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="100%" style="max-width:180px" preserveAspectRatio="xMidYMid meet" class="chart" role="img"><title>Score: 68 out of 100</title><path d="M 30.6 149.4 A 84 84 0 1 1 149.4 149.4 L 136.67 136.67 A 66 66 0 1 0 43.33 136.67 Z" fill="#E3E5EC"/><path d="M 30.6 149.4 A 84 84 0 1 1 153.01 34.45 L 139.51 46.35 A 66 66 0 1 0 43.33 136.67 Z" fill="#D4880F"/><text x="90" y="96" font-size="46.8" fill="#D4880F" text-anchor="middle" font-weight="700">68</text><text x="90" y="120" font-size="15.3" fill="#5B6175" text-anchor="middle" font-weight="400">Score</text><text x="90" y="176" font-size="13.5" fill="#5B6175" text-anchor="middle" font-weight="400">Grade C</text></svg></div><div>
+ <p style="font-size:17px;font-weight:600;margin:0 0 6px">Gaps to close before an audit</p>
+ <div class="kpis"><div class="kpi"><div class="v">11%</div><div class="l">Controls passing</div></div><div class="kpi"><div class="v">2</div><div class="l">Critical + high open</div></div><div class="kpi"><div class="v">0</div><div class="l">Known exploited</div></div><div class="kpi"><div class="v">4</div><div class="l">Checks completed</div><div class="n">of 8</div></div></div></div></div>
+<div class="grid g2" style="margin-top:18px">
+ <div class="panel"><h4>Severity mix of open findings</h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170" width="100%" style="max-width:170px" preserveAspectRatio="xMidYMid meet" class="chart" role="img"><title>Distribution: High 2, Medium 2, Low 6</title><path d="M 85 2 A 83 83 0 0 1 163.94 59.35 L 133.94 69.1 A 51.46 51.46 0 0 0 85 33.54 Z" fill="#C0392B" stroke="#FFFFFF" stroke-width="1"><title>High: 2 (20%)</title></path><path d="M 163.94 59.35 A 83 83 0 0 1 133.79 152.15 L 115.25 126.63 A 51.46 51.46 0 0 0 133.94 69.1 Z" fill="#D4880F" stroke="#FFFFFF" stroke-width="1"><title>Medium: 2 (20%)</title></path><path d="M 133.79 152.15 A 83 83 0 1 1 85 2 L 85 33.54 A 51.46 51.46 0 1 0 115.25 126.63 Z" fill="#2F7DBD" stroke="#FFFFFF" stroke-width="1"><title>Low: 6 (60%)</title></path><text x="85" y="87" font-size="35.7" fill="#141A2B" text-anchor="middle" font-weight="700">10</text><text x="85" y="107.1" font-size="12.75" fill="#5B6175" text-anchor="middle" font-weight="400">open findings</text></svg><div class="legend"><span class="lg"><i style="background:#C0392B"></i>High</span><span class="lg"><i style="background:#D4880F"></i>Medium</span><span class="lg"><i style="background:#2F7DBD"></i>Low</span></div></div>
+ <div class="panel"><h4>Readiness against standards</h4><div class="scroll"><table><thead><tr><th>Framework</th><th>Pass</th><th>Control status</th></tr></thead><tbody><tr><td><b>ISO/IEC 27001:2022 Annex A</b></td><td class='num'>8%</td><td style='min-width:220px'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 18" width="100%" style="max-width:280px" preserveAspectRatio="xMidYMid meet" class="chart" role="img"><title>pass 1, partial 3, fail 4, not assessed 4</title><rect x="0" y="0" width="23.33" height="18" fill="#1F8A4C" rx="0"><title>pass: 1 (8%)</title></rect><text x="11.67" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text><rect x="23.33" y="0" width="70" height="18" fill="#5B7AA8" rx="0"><title>partial: 3 (25%)</title></rect><text x="58.33" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">3</text><rect x="93.33" y="0" width="93.33" height="18" fill="#C0392B" rx="0"><title>fail: 4 (33%)</title></rect><text x="140" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">4</text><rect x="186.67" y="0" width="93.33" height="18" fill="#9AA1B1" rx="0"><title>not assessed: 4 (33%)</title></rect><text x="233.33" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">4</text></svg></td></tr><tr><td><b>IEC 62443-4-1 Secure product development lifecycle</b></td><td class='num'>9%</td><td style='min-width:220px'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 18" width="100%" style="max-width:280px" preserveAspectRatio="xMidYMid meet" class="chart" role="img"><title>pass 1, partial 1, warn 1, fail 4, not assessed 4</title><rect x="0" y="0" width="25.45" height="18" fill="#1F8A4C" rx="0"><title>pass: 1 (9%)</title></rect><text x="12.73" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text><rect x="25.45" y="0" width="25.45" height="18" fill="#5B7AA8" rx="0"><title>partial: 1 (9%)</title></rect><text x="38.18" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text><rect x="50.91" y="0" width="25.45" height="18" fill="#D4880F" rx="0"><title>warn: 1 (9%)</title></rect><text x="63.64" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text><rect x="76.36" y="0" width="101.82" height="18" fill="#C0392B" rx="0"><title>fail: 4 (36%)</title></rect><text x="127.27" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">4</text><rect x="178.18" y="0" width="101.82" height="18" fill="#9AA1B1" rx="0"><title>not assessed: 4 (36%)</title></rect><text x="229.09" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">4</text></svg></td></tr><tr><td><b>EU Cyber Resilience Act (Regulation (EU) 2024/2847)</b></td><td class='num'>13%</td><td style='min-width:220px'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 18" width="100%" style="max-width:280px" preserveAspectRatio="xMidYMid meet" class="chart" role="img"><title>pass 2, partial 1, warn 1, fail 3, not assessed 8</title><rect x="0" y="0" width="37.33" height="18" fill="#1F8A4C" rx="0"><title>pass: 2 (13%)</title></rect><text x="18.67" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">2</text><rect x="37.33" y="0" width="18.67" height="18" fill="#5B7AA8" rx="0"><title>partial: 1 (7%)</title></rect><rect x="56" y="0" width="18.67" height="18" fill="#D4880F" rx="0"><title>warn: 1 (7%)</title></rect><rect x="74.67" y="0" width="56" height="18" fill="#C0392B" rx="0"><title>fail: 3 (20%)</title></rect><text x="102.67" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">3</text><rect x="130.67" y="0" width="149.33" height="18" fill="#9AA1B1" rx="0"><title>not assessed: 8 (53%)</title></rect><text x="205.33" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">8</text></svg></td></tr><tr><td><b>NIS2 and the Dutch Cybersecurity Act (supplier view)</b></td><td class='num'>17%</td><td style='min-width:220px'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 18" width="100%" style="max-width:280px" preserveAspectRatio="xMidYMid meet" class="chart" role="img"><title>pass 1, partial 1, fail 3, not assessed 1</title><rect x="0" y="0" width="46.67" height="18" fill="#1F8A4C" rx="0"><title>pass: 1 (17%)</title></rect><text x="23.33" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text><rect x="46.67" y="0" width="46.67" height="18" fill="#5B7AA8" rx="0"><title>partial: 1 (17%)</title></rect><text x="70" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text><rect x="93.33" y="0" width="140" height="18" fill="#C0392B" rx="0"><title>fail: 3 (50%)</title></rect><text x="163.33" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">3</text><rect x="233.33" y="0" width="46.67" height="18" fill="#9AA1B1" rx="0"><title>not assessed: 1 (17%)</title></rect><text x="256.67" y="12.96" font-size="11.5" fill="#FFFFFF" text-anchor="middle" font-weight="700">1</text></svg></td></tr></tbody></table></div></div>
+</div></section>
+<section id="checks"><div class="sec-head"><span class="num">02</span>
+<h2>What was checked</h2></div>
+<p class="lead">Each check below ran against the product source on the manufacturer's own
+machine. Detailed findings are available to customers under NDA; they are deliberately not
+reproduced here.</p><div class="scroll"><table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td>semgrep</td><td><span class="pill error">error</span></td></tr><tr><td>bandit</td><td><span class="pill pass">completed</span></td></tr><tr><td>cppcheck</td><td><span class="pill skipped">skipped</span></td></tr><tr><td>lizard</td><td><span class="pill pass">completed</span></td></tr><tr><td>trivy</td><td><span class="pill skipped">skipped</span></td></tr><tr><td>gitleaks</td><td><span class="pill skipped">skipped</span></td></tr><tr><td>coverage</td><td><span class="pill pass">completed</span></td></tr><tr><td>hygiene</td><td><span class="pill pass">completed</span></td></tr></tbody></table></div>
+<p class="small">Security contact: <b>not published</b>. Security updates are provided until
+<b>not declared</b>.</p></section>
+<section id="integrity"><div class="sec-head"><span class="num">03</span>
+<h2>How to check this statement</h2></div>
+<div class="sig">Signed evidence, key <code>3e21fe9e126cd751</code>. Fingerprint <code>0e65b3f2d1d0e43cbe7a1b9b15d4066d…</code>. Ask the manufacturer for the signed
+<code>report.json</code> and verify it offline with the Avesta Proof command line tool; the signature
+covers every number on this page.</div></section>
+</div><footer>
+<b>How to check this report.</b> Re-run <code>avesta-proof scan</code> on commit
+<code>802d2bcf5dd3</code> to reproduce it, <code>avesta-proof verify report.json</code> to confirm it
+was not altered, and <code>avesta-proof verify-ledger</code> to confirm the scan history is
+intact. The code never left the machine that produced this file.<br>
+This document is automated evidence, not a certification. © Avesta Tech · Avesta Proof 0.5.0
+</footer></main></div></body></html>

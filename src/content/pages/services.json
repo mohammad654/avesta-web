@@ -1,0 +1,33 @@
+{
+  "id": "services",
+  "seo": {
+    "title": "Software testing & quality services | Avesta Tech",
+    "description": "Fixed-price CRA readiness scans, code quality audits, test automation, accessibility audits and AI chatbot testing. Clear scope, clear price, fast delivery.",
+    "path": "/services",
+    "breadcrumb": "Services",
+    "priority": 0.9
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Engineering services with a fixed scope and a fixed price.",
+      "sub": "Every service ends in something you can use: a report, a test suite, a fix list, a working pipeline. You know the price and the delivery date before we start.",
+      "ctas": [{ "label": "Book a 20-minute call", "href": "/contact?topic=call", "variant": "primary" }]
+    },
+    { "kind": "services", "id": "services", "heading": "Services", "layout": "cards" },
+    {
+      "kind": "ctaBand",
+      "id": "cta",
+      "tone": "navy",
+      "heading": "Start with a CRA Readiness Scan.",
+      "body": "One scan, one technical-file draft, one hour with an engineer to walk you through the gaps. Fixed price, delivered in days.",
+      "ctas": [
+        { "label": "Book a readiness scan", "href": "/contact?topic=cra-scan", "variant": "primary" },
+        { "label": "Try the free checker first", "href": "/cra-readiness", "variant": "ghost" },
+        { "label": "Explore Avesta Proof", "href": "/product", "variant": "link" }
+      ]
+    }
+  ]
+}

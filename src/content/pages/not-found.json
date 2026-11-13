@@ -1,0 +1,22 @@
+{
+  "id": "not-found",
+  "seo": {
+    "title": "Page not found | Avesta Tech",
+    "description": "The link may be old or mistyped. Let's get you back on track.",
+    "path": "/404",
+    "noindex": true
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "This page took a fresh-air break.",
+      "sub": "The link may be old or mistyped. Let's get you back on track.",
+      "ctas": [
+        { "label": "Go to the home page", "href": "/", "variant": "primary" },
+        { "label": "Contact us", "href": "/contact", "variant": "ghost" }
+      ]
+    }
+  ]
+}

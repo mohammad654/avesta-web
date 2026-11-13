@@ -1,0 +1,35 @@
+{
+  "id": "pricing",
+  "seo": {
+    "title": "Pricing per product, not per developer | Avesta Tech",
+    "description": "Avesta Proof plans from free Community to Enterprise, priced per product. Fixed prices for readiness scans, audits and test automation.",
+    "path": "/pricing",
+    "breadcrumb": "Pricing",
+    "priority": 0.8
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Priced per product, not per developer.",
+      "sub": "Your price follows the thing that is regulated: the product. Add developers without adding cost.",
+      "ctas": []
+    },
+    { "kind": "feature", "id": "pricing", "feature": "pricing" },
+    {
+      "kind": "faq",
+      "id": "faq",
+      "heading": "Frequently asked questions",
+      "faqIds": ["P1", "P2", "P3", "P4", "P5"]
+    },
+    {
+      "kind": "ctaBand",
+      "id": "cta",
+      "tone": "navy",
+      "heading": "Not sure which plan fits?",
+      "body": "Tell us about your product in a 20-minute call. We will tell you honestly if Community is enough.",
+      "ctas": [{ "label": "Book a call", "href": "/contact?topic=call", "variant": "primary" }]
+    }
+  ]
+}

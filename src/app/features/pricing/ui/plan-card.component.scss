@@ -1,0 +1,52 @@
+.plan {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.plan--highlight {
+  border: 2px solid var(--color-gold-ink);
+}
+
+.plan__flag {
+  position: absolute;
+  top: calc(-1 * var(--space-3));
+  left: var(--space-5);
+  margin: 0;
+  background: var(--color-gold);
+}
+
+.plan__price {
+  min-height: 5.5rem;
+  margin: var(--space-4) 0;
+  animation: price-fade 150ms var(--ease);
+}
+
+@keyframes price-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.plan__amount {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.plan__unit {
+  font-size: var(--fs-small);
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.plan__includes-label {
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.plan__cta {
+  margin-top: auto;
+  padding-top: var(--space-5);
+}

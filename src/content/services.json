@@ -1,0 +1,230 @@
+{
+  "labels": {
+    "whoFor": "Who it is for",
+    "deliverables": "What you get",
+    "deliverablesMonthly": "What you get each month",
+    "steps": "How it runs",
+    "needs": "What we need from you",
+    "price": "Price",
+    "delivery": "Delivery",
+    "faq": "Frequently asked questions",
+    "book": "Book a call",
+    "details": "Read more about {name}",
+    "related": "Related",
+    "relatedProduct": "Explore Avesta Proof",
+    "relatedChecker": "Try the free CRA readiness checker",
+    "tableCaption": "Services and prices",
+    "colService": "Service",
+    "colDescription": "What you get",
+    "colPrice": "Price",
+    "colAction": "Book",
+    "pricingNote": "All prices exclude 21% BTW. Fixed scope and price agreed in writing before we start."
+  },
+  "needs": ["Access", "A contact person", "Written permission to scan"],
+  "services": [
+    {
+      "slug": "cra-readiness-scan",
+      "name": "CRA Readiness Scan",
+      "card": "One Avesta Proof run on your product, a CRA technical-file draft, an SBOM, and a one-hour review with an engineer. You leave knowing your gaps and the order to close them.",
+      "promise": "One Avesta Proof run on your product, a CRA technical-file draft, an SBOM, and a one-hour review with an engineer.",
+      "whoFor": [
+        "Makers of software or connected hardware sold in the EU",
+        "Teams with no compliance specialist",
+        "Companies whose customers have started asking about the CRA"
+      ],
+      "deliverables": [
+        "A signed Avesta Proof report with verdicts for CRA, ISO/IEC 27001 and IEC 62443-4-1 controls",
+        "A CRA technical-file draft structured on Annex VII",
+        "A CycloneDX SBOM",
+        "A 90-day fix plan in priority order",
+        "A one-hour walkthrough with an engineer"
+      ],
+      "steps": [
+        { "day": "Day 1", "text": "Kick-off call and scope." },
+        { "day": "Days 2 to 3", "text": "Scan in your environment (we guide your team, or run it on a machine you provide)." },
+        { "day": "Day 4", "text": "We review findings and draft the plan." },
+        { "day": "Day 5", "text": "Walkthrough and handover." }
+      ],
+      "needs": [],
+      "microcopy": "Your code stays in your environment. We see results, not source, unless you choose to share it.",
+      "delivery": "5 working days",
+      "price": { "amount": null, "unit": "fixed", "placeholder": "[PRICE_CRA_SCAN]" },
+      "faqIds": ["C1", "C3", "C4", "G3", "P4"],
+      "seo": {
+        "title": "CRA Readiness Scan for software makers | Avesta Tech",
+        "description": "One scan, a CRA technical-file draft, an SBOM and a one-hour review. Know your Cyber Resilience Act gaps and the order to close them. Fixed price.",
+        "path": "/services/cra-readiness-scan",
+        "breadcrumb": "CRA Readiness Scan",
+        "parent": { "name": "Services", "path": "/services" },
+        "priority": 0.8,
+        "schema": ["service"]
+      }
+    },
+    {
+      "slug": "quality-scan",
+      "name": "Quality Scan",
+      "card": "A fixed-price audit of your code and tests: static checks, coverage, flaky tests, security issues and CI setup. A branded report and a prioritised fix list in 5 working days.",
+      "promise": "A fixed-price audit of your code and tests: static checks, coverage, flaky tests, security issues and CI setup.",
+      "whoFor": [
+        "Scale-ups with 5 to 50 developers and no QA team",
+        "Teams whose releases feel risky",
+        "CTOs preparing for due diligence"
+      ],
+      "deliverables": [
+        "A branded PDF and HTML report",
+        "Complexity, duplication and coverage overview",
+        "Flaky-test and CI review",
+        "Security findings with fixes",
+        "A prioritised fix list",
+        "A 45-minute debrief"
+      ],
+      "steps": [],
+      "needs": [],
+      "delivery": "5 working days",
+      "price": { "amount": null, "unit": "fixed", "placeholder": "[PRICE_QUALITY_SCAN]" },
+      "faqIds": ["G6", "P3", "P4"],
+      "seo": {
+        "title": "Code quality & test audit, fixed price | Avesta Tech",
+        "description": "A five-day audit of your code, tests and CI: security issues, flaky tests, coverage and complexity, with a prioritised fix list and debrief.",
+        "path": "/services/quality-scan",
+        "breadcrumb": "Quality Scan",
+        "parent": { "name": "Services", "path": "/services" },
+        "priority": 0.8,
+        "schema": ["service"]
+      }
+    },
+    {
+      "slug": "test-suite-in-a-week",
+      "name": "Test suite in a week",
+      "card": "A working Playwright or pytest suite for your web app or API, running in your GitHub Actions or GitLab pipeline, with a handover session for your team.",
+      "promise": "A working Playwright or pytest suite for your web app or API, running in your GitHub Actions or GitLab pipeline, with a handover session for your team.",
+      "whoFor": [
+        "Start-ups that just raised and have no tests",
+        "Teams moving from manual testing",
+        "Teams migrating to Playwright"
+      ],
+      "deliverables": [
+        "Tests for your key user flows",
+        "Page objects and test data",
+        "CI configuration that runs on every pull request",
+        "A README your team can follow",
+        "A handover session"
+      ],
+      "steps": [],
+      "needs": [],
+      "price": { "amount": null, "unit": "fixed", "placeholder": "[PRICE_TEST_SUITE]" },
+      "faqIds": ["G6", "P3", "P4"],
+      "seo": {
+        "title": "Playwright & pytest test suite in a week | Avesta Tech",
+        "description": "Get a working Playwright or pytest test suite for your app or API, running in your CI pipeline, with a handover for your team. Fixed price.",
+        "path": "/services/test-suite-in-a-week",
+        "breadcrumb": "Test suite in a week",
+        "parent": { "name": "Services", "path": "/services" },
+        "priority": 0.8,
+        "schema": ["service"]
+      }
+    },
+    {
+      "slug": "keep-it-green",
+      "name": "Keep-it-green",
+      "card": "Monthly care for your test suite: we fix flaky tests, update tests when the app changes, and send a short quality report every month.",
+      "promise": "Monthly care for your test suite: we fix flaky tests, update tests when the app changes, and send a short quality report every month.",
+      "whoFor": [],
+      "deliverables": [
+        "Flaky tests fixed",
+        "Tests updated when your app changes",
+        "Pull requests you approve",
+        "One short call",
+        "A monthly quality report"
+      ],
+      "deliverablesNote": "Cancel with one month's notice [CONFIRM_NOTICE_PERIOD].",
+      "steps": [],
+      "needs": [],
+      "price": { "amount": null, "unit": "month", "placeholder": "[PRICE_RETAINER]" },
+      "faqIds": ["G6", "P3", "P4"],
+      "seo": {
+        "title": "Test suite maintenance retainer | Avesta Tech",
+        "description": "We keep your test suite green every month: flaky tests fixed, tests updated as your app changes, and a monthly quality report.",
+        "path": "/services/keep-it-green",
+        "breadcrumb": "Keep-it-green",
+        "parent": { "name": "Services", "path": "/services" },
+        "priority": 0.8,
+        "schema": ["service"]
+      }
+    },
+    {
+      "slug": "accessibility-audit",
+      "name": "Accessibility audit",
+      "card": "An automated WCAG 2.1 AA scan with Playwright and axe-core, a manual keyboard and screen-reader check of your key flows, and a plain-language fix list. The European Accessibility Act has applied since 28 June 2025.",
+      "promise": "An automated WCAG 2.1 AA scan with Playwright and axe-core, a manual keyboard and screen-reader check of your key flows, and a plain-language fix list.",
+      "whoFor": [],
+      "deliverables": [
+        "An automated scan of every page",
+        "A manual check of key flows with keyboard and screen reader",
+        "Issues grouped by impact",
+        "Code-level fixes",
+        "A plain-language summary for management"
+      ],
+      "deliverablesNote": "We report technical findings against WCAG 2.1 AA. We do not give legal advice.",
+      "steps": [],
+      "needs": [],
+      "price": { "amount": null, "unit": "fixed", "placeholder": "[PRICE_A11Y]" },
+      "faqIds": ["G6", "P3", "P4"],
+      "seo": {
+        "title": "WCAG 2.1 AA accessibility audit (EAA) | Avesta Tech",
+        "description": "Automated and manual accessibility testing against WCAG 2.1 AA for the European Accessibility Act, with a plain-language fix list.",
+        "path": "/services/accessibility-audit",
+        "breadcrumb": "Accessibility audit",
+        "parent": { "name": "Services", "path": "/services" },
+        "priority": 0.8,
+        "schema": ["service"]
+      }
+    },
+    {
+      "slug": "ai-assistant-testing",
+      "name": "AI assistant testing",
+      "card": "We test your chatbot for wrong answers, unsafe replies and data leaks, in Dutch, English, Arabic and Turkish, and hand over a repeatable test set you can run on every release.",
+      "promise": "We test your chatbot for wrong answers, unsafe replies and data leaks, in Dutch, English, Arabic and Turkish, and hand over a repeatable test set you can run on every release.",
+      "whoFor": [],
+      "deliverables": [
+        "A test set of realistic questions in your customers' languages",
+        "Scored answers for accuracy, safety and data leakage",
+        "Native-speaker review of Dutch, Arabic and Turkish cases [CONFIRM_LANGUAGE_REVIEWERS]",
+        "A report on risks",
+        "A test set you can re-run on every release"
+      ],
+      "steps": [],
+      "needs": [],
+      "price": { "amount": null, "unit": "fixed", "placeholder": "[PRICE_AI_TESTING]" },
+      "faqIds": ["G6", "P3", "P4"],
+      "seo": {
+        "title": "AI chatbot testing in Dutch, English & Arabic | Avesta Tech",
+        "description": "Test your AI assistant for wrong answers, unsafe replies and data leaks in Dutch, English, Arabic and Turkish. Get a reusable test set.",
+        "path": "/services/ai-assistant-testing",
+        "breadcrumb": "AI assistant testing",
+        "parent": { "name": "Services", "path": "/services" },
+        "priority": 0.8,
+        "schema": ["service"]
+      }
+    },
+    {
+      "slug": "freelance-engineering",
+      "name": "Freelance engineering",
+      "href": "/freelance",
+      "card": "Need an extra engineer? Hire our founder for test automation and Python work, on site in the Netherlands or remote.",
+      "promise": "Need an extra engineer? Hire our founder for test automation and Python work, on site in the Netherlands or remote.",
+      "whoFor": [],
+      "deliverables": [],
+      "steps": [],
+      "needs": [],
+      "price": { "amount": null, "unit": "hour", "placeholder": "[HOURLY_RATE]" },
+      "faqIds": [],
+      "seo": {
+        "title": "Freelance test automation & Python engineer | Avesta Tech",
+        "description": "Hire an experienced test automation and Python engineer in the Netherlands: pytest, Robot Framework, Selenium, CI/CD. On site or remote.",
+        "path": "/freelance",
+        "noindex": false
+      }
+    }
+  ]
+}

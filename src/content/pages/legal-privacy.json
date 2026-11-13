@@ -1,0 +1,104 @@
+{
+  "id": "legal-privacy",
+  "seo": {
+    "title": "Privacy policy | Avesta Tech",
+    "description": "How Avesta Tech collects, uses and protects personal data under the GDPR (AVG): what we collect, why, how long we keep it, and your rights.",
+    "path": "/legal/privacy",
+    "breadcrumb": "Privacy policy",
+    "priority": 0.2
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Privacy policy",
+      "sub": "How we handle personal data under the General Data Protection Regulation (GDPR, in Dutch: AVG).",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "review",
+      "paragraphs": [
+        "[LEGAL_REVIEW]"
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s1",
+      "heading": "Who is responsible",
+      "paragraphs": [
+        "The controller is Avesta Tech, KvK [KVK_NUMBER], [BUSINESS_ADDRESS], Utrecht, the Netherlands. Email: [EMAIL]."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s2",
+      "heading": "What we collect",
+      "paragraphs": [
+        "Contact form: your name, work email, company (optional), the service you are interested in and your message.",
+        "CRA readiness checker: your answers stay in your browser. We receive them only if you choose \"Email me this result\"; then we receive your email address and your answers.",
+        "Booking a call: the details you enter in our booking tool ([BOOKING_URL]).",
+        "Analytics: by default this website uses no analytics and sets no tracking cookies. Analytics tool, if any: [ANALYTICS_TOOL]."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s3",
+      "heading": "Why we use it and our legal basis",
+      "paragraphs": [
+        "To answer your question and prepare a quote: steps at your request before a contract, and our legitimate interest in replying to business enquiries (Article 6(1)(b) and (f) GDPR).",
+        "To deliver a service you ordered: performance of a contract (Article 6(1)(b) GDPR).",
+        "To keep our administration: legal obligation (Article 6(1)(c) GDPR)."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s4",
+      "heading": "How long we keep it",
+      "paragraphs": [
+        "Enquiries that do not lead to work, and client data and findings: [RETENTION_PERIOD], unless you ask us to delete them earlier. Invoices and administration: as long as Dutch tax law requires."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s5",
+      "heading": "Processors",
+      "paragraphs": [
+        "We use these processors, each under a data processing agreement: [PROCESSORS_LIST]."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s6",
+      "heading": "International transfers",
+      "paragraphs": [
+        "We prefer processors in the European Economic Area. If data is transferred outside it, we rely on an adequacy decision or standard contractual clauses, and we list it under Processors."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s7",
+      "heading": "Your rights",
+      "paragraphs": [
+        "You can ask for access to, correction of, deletion of, or a copy of your personal data (portability), and you can object to processing. Email [EMAIL]. We answer within one month."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s8",
+      "heading": "Complaints",
+      "paragraphs": [
+        "If you are not satisfied with how we handle your data, you can complain to the Dutch Data Protection Authority, the Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl)."
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s9",
+      "heading": "Contact",
+      "paragraphs": [
+        "Questions about this policy: [EMAIL]. Security issues: [SECURITY_EMAIL]."
+      ]
+    }
+  ]
+}

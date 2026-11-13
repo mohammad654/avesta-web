@@ -1,0 +1,80 @@
+{
+  "annualDiscount": "[ANNUAL_DISCOUNT]",
+  "businessThreshold": 3,
+  "thresholdFlag": "[CONFIRM_THRESHOLD]",
+  "plans": [
+    {
+      "id": "community",
+      "name": "Community",
+      "for": "Developers",
+      "includes": [{ "text": "Command-line tool" }, { "text": "Local reports" }],
+      "monthly": null,
+      "yearly": null,
+      "placeholder": "[PRICE_COMMUNITY]",
+      "cta": { "label": "Get started", "href": "/contact?topic=demo", "variant": "ghost" }
+    },
+    {
+      "id": "team",
+      "name": "Team",
+      "for": "One product",
+      "includes": [
+        { "text": "Signed evidence" },
+        { "text": "CRA technical-file draft" },
+        { "text": "Trust page" },
+        { "text": "History vault", "comingSoon": true },
+        { "text": "Email alerts for newly exploited CVEs", "comingSoon": true }
+      ],
+      "monthly": null,
+      "yearly": null,
+      "placeholder": "[PRICE_TEAM]",
+      "unitLabel": "per product / month",
+      "highlighted": true,
+      "highlightLabel": "Most teams start here",
+      "cta": { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "primary" }
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "for": "Up to 10 products",
+      "includes": [
+        { "text": "Everything in Team" },
+        { "text": "Portfolio dashboard", "comingSoon": true },
+        { "text": "Auditor portal", "comingSoon": true },
+        { "text": "Plug-ins" },
+        { "text": "SSO", "comingSoon": true }
+      ],
+      "monthly": null,
+      "yearly": null,
+      "placeholder": "[PRICE_BUSINESS]",
+      "cta": { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "ghost" }
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "for": "Many products",
+      "includes": [{ "text": "Air-gapped bundle" }, { "text": "Custom controls" }, { "text": "Support SLA" }],
+      "monthly": null,
+      "yearly": null,
+      "cta": { "label": "Talk to us", "href": "/contact", "variant": "ghost" }
+    }
+  ],
+  "labels": {
+    "billingLegend": "Billing",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save {discount}",
+    "viewLabel": "Price list",
+    "plansTab": "Avesta Proof plans",
+    "servicesTab": "Services",
+    "for": "For",
+    "includes": "Includes",
+    "billedYearly": "billed yearly, EUR {amount}",
+    "perMonthShort": "/ month",
+    "calculatorHeading": "Per product",
+    "calculatorLabel": "Number of products",
+    "calculatorTotal": "Team plan × {count}: {total} / month",
+    "calculatorContact": "Team plan × {count}: Contact us",
+    "calculatorSuggest": "Above {threshold} products, the Business plan is usually the better fit.",
+    "announce": "Showing {billing} prices"
+  }
+}

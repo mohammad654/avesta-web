@@ -1,0 +1,40 @@
+<div class="pipeline" [class.is-started]="started()" [class.is-kev]="active() >= 2" [class.is-split]="active() >= 4"
+  [class.is-signed]="active() >= 6" [class.is-published]="active() === last" [style.--progress]="progress()">
+  <p class="visually-hidden">{{ copy.labels.diagramLabel }}</p>
+  <div class="pipeline__track" aria-hidden="true">
+    <span class="pipeline__line"></span>
+    <span class="pipeline__carrier">
+      <span class="pipeline__dot">
+        <span class="dot dot--main"></span>
+        <span class="dot dot--a"></span>
+        <span class="dot dot--b"></span>
+        <span class="pipeline__kev">{{ copy.labels.kev }}</span>
+        <app-icon class="pipeline__lock" name="lock" />
+        @for (o of outputs; track o) {
+          <span class="pipeline__out" [style.--i]="o"><app-icon name="file" /></span>
+        }
+      </span>
+    </span>
+  </div>
+  <ol class="pipeline__steps">
+    @for (step of copy.steps; track step.node; let i = $index) {
+      <li class="pipeline__step" [class.is-active]="active() === i" [class.is-past]="active() > i">
+        <button type="button" class="pipeline__node" [attr.aria-pressed]="active() === i"
+          [attr.aria-controls]="'pipeline-body-' + i" (click)="select(i)">
+          <span class="pipeline__num" aria-hidden="true">{{ i + 1 }}</span>
+          <span class="pipeline__label"><span class="visually-hidden">{{ stepLabel(i) }}: </span>{{ step.node }}</span>
+        </button>
+        <div class="pipeline__body" [id]="'pipeline-body-' + i">
+          <p><strong>{{ step.title }}</strong> {{ step.body }}</p>
+        </div>
+      </li>
+    }
+  </ol>
+  <div class="pipeline__controls">
+    @if (started() && !done()) {
+      <button type="button" class="btn btn--ghost btn--small" (click)="togglePlay()">
+        <app-icon [name]="playing() ? 'pause' : 'play'" />{{ playing() ? copy.labels.pause : copy.labels.play }}
+      </button>
+    }
+  </div>
+</div>

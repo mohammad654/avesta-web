@@ -1,0 +1,40 @@
+{
+  "id": "legal-imprint",
+  "seo": {
+    "title": "Imprint and company details | Avesta Tech",
+    "description": "Company details for Avesta Tech, Utrecht: legal form, Chamber of Commerce (KvK) number, VAT (BTW) number, address and contact information.",
+    "path": "/legal/imprint",
+    "breadcrumb": "Imprint",
+    "priority": 0.2
+  },
+  "sections": [
+    {
+      "kind": "hero",
+      "id": "hero",
+      "tone": "navy",
+      "heading": "Imprint and company details",
+      "sub": "Who we are, officially.",
+      "ctas": []
+    },
+    {
+      "kind": "richText",
+      "id": "review",
+      "paragraphs": [
+        "[LEGAL_REVIEW]"
+      ]
+    },
+    {
+      "kind": "richText",
+      "id": "s1",
+      "heading": "Company details",
+      "paragraphs": [
+        "Avesta Tech, eenmanszaak [CONFIRM_LEGAL_FORM]",
+        "KvK: [KVK_NUMBER]",
+        "BTW: [BTW_NUMBER]",
+        "Address: [BUSINESS_ADDRESS], Utrecht, the Netherlands",
+        "Email: [EMAIL]",
+        "Phone: [PHONE]"
+      ]
+    }
+  ]
+}
