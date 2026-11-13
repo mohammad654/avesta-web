@@ -12,7 +12,9 @@ import { InlineTextComponent } from '../ui/inline-text.component';
       @if (eyebrow()) {
         <p class="eyebrow">{{ eyebrow() }}</p>
       }
-      <h2 [id]="sectionId() + '-title'" [class.visually-hidden]="hidden()"><app-text [text]="heading()" /></h2>
+      <h2 [id]="sectionId() + '-title'" [class.visually-hidden]="hidden()">
+        <app-text [text]="heading()" />
+      </h2>
       @if (intro()) {
         <p class="lead"><app-text [text]="intro()!" /></p>
       }

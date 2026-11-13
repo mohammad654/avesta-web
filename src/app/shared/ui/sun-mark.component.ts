@@ -9,7 +9,11 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     <svg viewBox="542 200 116 116" [attr.width]="size()" [attr.height]="size()" focusable="false">
       <circle cx="600" cy="258" r="52" fill="none" [attr.stroke]="color()" stroke-width="3" />
       <path d="M600 214q0 44 44 44-44 0-44 44 0-44-44-44 44 0 44-44Z" [attr.fill]="color()" />
-      <g [attr.fill]="color()"><circle cx="637" cy="221" r="6" /><circle cx="563" cy="295" r="6" /><circle cx="551" cy="240" r="4" /></g>
+      <g [attr.fill]="color()">
+        <circle cx="637" cy="221" r="6" />
+        <circle cx="563" cy="295" r="6" />
+        <circle cx="551" cy="240" r="4" />
+      </g>
     </svg>
   `,
 })

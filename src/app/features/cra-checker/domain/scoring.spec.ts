@@ -17,7 +17,16 @@ function answers(q1: number, rest: Record<number, number>): CraAnswers {
 describe('CRA scoring (brief 4.1)', () => {
   it('scores 21/21 as 100% and "strong"', () => {
     const r = scoreCra(questions, answers(0, {}));
-    expect(r).toEqual(expect.objectContaining({ kind: 'result', score: 21, max: 21, percent: 100, band: 'strong', critical: false }));
+    expect(r).toEqual(
+      expect.objectContaining({
+        kind: 'result',
+        score: 21,
+        max: 21,
+        percent: 100,
+        band: 'strong',
+        critical: false,
+      }),
+    );
   });
 
   it('uses the band thresholds 80 and 50', () => {
@@ -68,7 +77,10 @@ describe('CRA scoring (brief 4.1)', () => {
   });
 
   it('raises the critical flag when Q3 or Q5 scores 0, whatever the band', () => {
-    expect(scoreCra(questions, answers(0, { 3: LOW }))).toMatchObject({ critical: true, band: 'strong' });
+    expect(scoreCra(questions, answers(0, { 3: LOW }))).toMatchObject({
+      critical: true,
+      band: 'strong',
+    });
     expect(scoreCra(questions, answers(0, { 5: LOW }))).toMatchObject({ critical: true });
     expect(scoreCra(questions, answers(0, { 3: MID, 5: MID }))).toMatchObject({ critical: false });
   });

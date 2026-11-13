@@ -19,7 +19,9 @@ export const routes: Routes = [
   {
     path: 'services/:slug',
     loadComponent: () =>
-      import('./pages/service-detail/service-detail.component').then((m) => m.ServiceDetailComponent),
+      import('./pages/service-detail/service-detail.component').then(
+        (m) => m.ServiceDetailComponent,
+      ),
     resolve: { service: serviceResolver },
   },
   page('pricing', 'pricing'),

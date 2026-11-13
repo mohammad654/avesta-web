@@ -19,9 +19,7 @@
     {
       "kind": "richText",
       "id": "review",
-      "paragraphs": [
-        "[LEGAL_REVIEW]"
-      ]
+      "paragraphs": ["[LEGAL_REVIEW]"]
     },
     {
       "kind": "richText",
@@ -43,9 +41,7 @@
       "kind": "richText",
       "id": "s3",
       "heading": "Payment",
-      "paragraphs": [
-        "Payment terms: [PAYMENT_TERMS]."
-      ]
+      "paragraphs": ["Payment terms: [PAYMENT_TERMS]."]
     },
     {
       "kind": "richText",

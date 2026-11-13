@@ -24,7 +24,11 @@ export function bySeverity(a: ReportFinding, b: ReportFinding): number {
 }
 
 export function byFile(a: ReportFinding, b: ReportFinding): number {
-  return (a.file ?? '').localeCompare(b.file ?? '') || (a.line ?? 0) - (b.line ?? 0) || a.id.localeCompare(b.id);
+  return (
+    (a.file ?? '').localeCompare(b.file ?? '') ||
+    (a.line ?? 0) - (b.line ?? 0) ||
+    a.id.localeCompare(b.id)
+  );
 }
 
 const COMPARATORS: Record<SortKey, (a: ReportFinding, b: ReportFinding) => number> = {

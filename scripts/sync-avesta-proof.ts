@@ -39,7 +39,10 @@ function writeSummary(): void {
     started: report.started,
     fingerprint_sha256: report.fingerprint_sha256,
   };
-  writeFileSync(join(root, 'src/content/sample-report.summary.json'), JSON.stringify(summary, null, 2) + '\n');
+  writeFileSync(
+    join(root, 'src/content/sample-report.summary.json'),
+    JSON.stringify(summary, null, 2) + '\n',
+  );
   console.log('wrote src/content/sample-report.summary.json');
 }
 

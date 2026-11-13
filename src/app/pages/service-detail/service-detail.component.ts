@@ -11,7 +11,13 @@ import { PriceTagComponent } from '../../shared/ui/price-tag.component';
 @Component({
   selector: 'app-service-detail',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SectionComponent, FaqSectionComponent, CtaComponent, InlineTextComponent, PriceTagComponent],
+  imports: [
+    SectionComponent,
+    FaqSectionComponent,
+    CtaComponent,
+    InlineTextComponent,
+    PriceTagComponent,
+  ],
   templateUrl: './service-detail.component.html',
   styleUrl: './service-detail.component.scss',
 })
@@ -34,12 +40,19 @@ export class ServiceDetailComponent {
 
   protected readonly faq = computed(() =>
     this.service().faqIds.length
-      ? { kind: 'faq' as const, id: 'faq', heading: this.labels().faq, faqIds: this.service().faqIds }
+      ? {
+          kind: 'faq' as const,
+          id: 'faq',
+          heading: this.labels().faq,
+          faqIds: this.service().faqIds,
+        }
       : null,
   );
 
   protected readonly deliverablesHeading = computed(() =>
-    this.service().price.unit === 'month' ? this.labels().deliverablesMonthly : this.labels().deliverables,
+    this.service().price.unit === 'month'
+      ? this.labels().deliverablesMonthly
+      : this.labels().deliverables,
   );
 
   private readonly topic = computed(() => {

@@ -15,6 +15,8 @@ describe('format (brief 1.6)', () => {
   });
 
   it('fills {tokens} and leaves unknown ones', () => {
-    expect(fill('Showing {shown} of {total} {x}', { shown: 4, total: 10 })).toBe('Showing 4 of 10 {x}');
+    expect(fill('Showing {shown} of {total} {x}', { shown: 4, total: 10 })).toBe(
+      'Showing 4 of 10 {x}',
+    );
   });
 });

@@ -27,7 +27,14 @@ export interface SiteContent {
   settings: SiteSettings;
   /** Fill values here; "" means still open. Keys match the [KEY] tokens in all content. */
   placeholders: Record<string, string>;
-  nav: { items: NavItem[]; ctas: Cta[]; menu: string; close: string; label: string; submenu: string };
+  nav: {
+    items: NavItem[];
+    ctas: Cta[];
+    menu: string;
+    close: string;
+    label: string;
+    submenu: string;
+  };
   footer: {
     brandLine: string;
     ctas: Cta[];

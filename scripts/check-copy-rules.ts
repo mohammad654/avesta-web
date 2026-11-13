@@ -35,7 +35,9 @@ for (const file of htmlFiles()) {
 }
 
 if (closingPages.length !== 1 || closingPages[0] !== '/ (1x)') {
-  failures.push(`closing line must appear once, on Home only; found on: ${closingPages.join(', ') || 'no page'}`);
+  failures.push(
+    `closing line must appear once, on Home only; found on: ${closingPages.join(', ') || 'no page'}`,
+  );
 }
 
 if (failures.length) {

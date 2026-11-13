@@ -34,27 +34,55 @@ import { SectionComponent } from './section.component';
       }
       @switch (s.feature) {
         @case ('craChecker') {
-          @defer (on viewport; prefetch on idle; hydrate on viewport) { <app-cra-checker /> } @placeholder { <div class="feature-placeholder"></div> }
+          @defer (on viewport; hydrate on viewport) {
+            <app-cra-checker />
+          } @placeholder {
+            <div class="feature-placeholder"></div>
+          }
         }
         @case ('standards') {
-          @defer (on viewport; prefetch on idle; hydrate on viewport) { <app-standards-explorer /> } @placeholder { <div class="feature-placeholder"></div> }
+          @defer (on viewport; hydrate on viewport) {
+            <app-standards-explorer />
+          } @placeholder {
+            <div class="feature-placeholder"></div>
+          }
         }
         @case ('pipeline') {
-          @defer (on viewport; prefetch on idle; hydrate on viewport) { <app-pipeline /> } @placeholder { <div class="feature-placeholder"></div> }
+          @defer (on viewport; hydrate on viewport) {
+            <app-pipeline />
+          } @placeholder {
+            <div class="feature-placeholder"></div>
+          }
         }
         @case ('sampleReport') {
-          @defer (on viewport; prefetch on idle; hydrate on viewport) { <app-sample-report /> } @placeholder { <div class="feature-placeholder"></div> }
+          @defer (on viewport; hydrate on viewport) {
+            <app-sample-report />
+          } @placeholder {
+            <div class="feature-placeholder"></div>
+          }
         }
         @case ('pricing') {
-          @defer (on viewport; prefetch on idle; hydrate on viewport) { <app-pricing /> } @placeholder { <div class="feature-placeholder"></div> }
+          @defer (on viewport; hydrate on viewport) {
+            <app-pricing />
+          } @placeholder {
+            <div class="feature-placeholder"></div>
+          }
         }
         @case ('contactForm') {
-          @defer (on viewport; prefetch on idle; hydrate on viewport) { <app-contact-form /> } @placeholder { <div class="feature-placeholder"></div> }
+          @defer (on viewport; hydrate on viewport) {
+            <app-contact-form />
+          } @placeholder {
+            <div class="feature-placeholder"></div>
+          }
         }
       }
     </app-section>
   `,
-  styles: `.feature-placeholder { min-height: 480px; }`,
+  styles: `
+    .feature-placeholder {
+      min-height: 480px;
+    }
+  `,
 })
 export class FeatureHostComponent {
   readonly section = input.required<FeatureSection>();

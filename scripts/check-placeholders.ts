@@ -33,7 +33,9 @@ if (process.argv.includes('--content')) {
   const open = Object.entries(readJson<SiteJson>(join(CONTENT, 'site.json')).placeholders)
     .filter(([, v]) => !v.trim())
     .map(([k]) => k);
-  console.log(`Open placeholders in src/content/site.json (${open.length}):\n  ${open.join('\n  ')}\n`);
+  console.log(
+    `Open placeholders in src/content/site.json (${open.length}):\n  ${open.join('\n  ')}\n`,
+  );
 }
 
 const tokens = [...found.keys()].sort();

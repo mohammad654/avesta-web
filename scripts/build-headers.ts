@@ -15,7 +15,11 @@ for (const file of htmlFiles()) {
   for (const m of html.matchAll(/<script(?![^>]*\bsrc=)([^>]*)>([\s\S]*?)<\/script>/g)) {
     const attrs = m[1] ?? '';
     if (/type="application\/(ld\+)?json"/.test(attrs)) continue;
-    hashes.add(`'sha256-${createHash('sha256').update(m[2] ?? '').digest('base64')}'`);
+    hashes.add(
+      `'sha256-${createHash('sha256')
+        .update(m[2] ?? '')
+        .digest('base64')}'`,
+    );
   }
 }
 
@@ -65,4 +69,6 @@ writeFileSync(join(DIST, '_headers'), headers);
 const host = domain();
 const redirects = host.includes('[') ? '' : `https://www.${host}/* https://${host}/:splat 301!\n`;
 writeFileSync(join(DIST, '_redirects'), redirects);
-console.log(`_headers written (${hashes.size} inline script hash(es)); _redirects ${redirects ? 'written' : 'empty until [DOMAIN] is set'}`);
+console.log(
+  `_headers written (${hashes.size} inline script hash(es)); _redirects ${redirects ? 'written' : 'empty until [DOMAIN] is set'}`,
+);

@@ -254,6 +254,7 @@
 
   .is-published .pipeline__out {
     opacity: 1;
-    transform: rotate(calc(-90deg + var(--i) * 30deg)) translateX(46px) rotate(calc(90deg - var(--i) * 30deg));
+    transform: rotate(calc(-90deg + var(--i) * 30deg)) translateX(46px)
+      rotate(calc(90deg - var(--i) * 30deg));
   }
 }

@@ -6,7 +6,12 @@ describe('FaqSectionComponent (brief 4.6)', () => {
   async function render(faqIds: string[]) {
     TestBed.configureTestingModule({ providers: testProviders() });
     const fixture = TestBed.createComponent(FaqSectionComponent);
-    fixture.componentRef.setInput('section', { kind: 'faq', id: 'faq', heading: 'Frequently asked questions', faqIds });
+    fixture.componentRef.setInput('section', {
+      kind: 'faq',
+      id: 'faq',
+      heading: 'Frequently asked questions',
+      faqIds,
+    });
     await fixture.whenStable();
     return fixture.nativeElement as HTMLElement;
   }
@@ -22,13 +27,17 @@ describe('FaqSectionComponent (brief 4.6)', () => {
   });
 
   it('shows the CRA footnote only under blocks containing C1 or C2', async () => {
-    expect(text((await render(['C1', 'C3'])).querySelector('.footnote'))).toBe('* Dates and amounts: verify with counsel.');
+    expect(text((await render(['C1', 'C3'])).querySelector('.footnote'))).toBe(
+      '* Dates and amounts: verify with counsel.',
+    );
     TestBed.resetTestingModule();
     expect((await render(['C3', 'C4'])).querySelector('.footnote')).toBeNull();
   });
 
   it('renders inline code in answers', async () => {
     const el = await render(['G7']);
-    expect(text(el.querySelector('code'))).toBe('avesta-proof verify report.json --pubkey avesta-proof.pub');
+    expect(text(el.querySelector('code'))).toBe(
+      'avesta-proof verify report.json --pubkey avesta-proof.pub',
+    );
   });
 });

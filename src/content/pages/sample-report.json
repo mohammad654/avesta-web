@@ -24,7 +24,13 @@
       "id": "next",
       "centered": true,
       "paragraphs": [],
-      "ctas": [{ "label": "Get a report on your own code", "href": "/services/cra-readiness-scan", "variant": "primary" }]
+      "ctas": [
+        {
+          "label": "Get a report on your own code",
+          "href": "/services/cra-readiness-scan",
+          "variant": "primary"
+        }
+      ]
     }
   ]
 }

@@ -11,25 +11,53 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
   selector: 'app-cra-email-form',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ReactiveFormsModule, InlineTextComponent],
-  styles: `form { margin-top: var(--space-5); padding: var(--space-5); border: 1px solid var(--color-line-on-dark); border-radius: var(--radius-md); }
-    fieldset { border: 0; padding: 0; margin: 0; } legend { font-weight: 600; margin-bottom: var(--space-4); }
-    .input { background: var(--color-cream); }`,
+  styles: `
+    form {
+      margin-top: var(--space-5);
+      padding: var(--space-5);
+      border: 1px solid var(--color-line-on-dark);
+      border-radius: var(--radius-md);
+    }
+    fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+    legend {
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+    }
+    .input {
+      background: var(--color-cream);
+    }
+  `,
   template: `
     <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
       <fieldset>
         <legend>{{ copy().legend }}</legend>
         <div class="field">
           <label for="cra-email-input">{{ copy().emailLabel }}</label>
-          <input id="cra-email-input" class="input" type="email" autocomplete="email" formControlName="email"
-            [attr.aria-invalid]="showError('email')" [attr.aria-describedby]="showError('email') ? 'cra-email-error' : null" />
+          <input
+            id="cra-email-input"
+            class="input"
+            type="email"
+            autocomplete="email"
+            formControlName="email"
+            [attr.aria-invalid]="showError('email')"
+            [attr.aria-describedby]="showError('email') ? 'cra-email-error' : null"
+          />
           @if (showError('email')) {
             <p class="field-error" id="cra-email-error">{{ copy().emailError }}</p>
           }
         </div>
         <div class="field">
           <label class="checkbox">
-            <input type="checkbox" formControlName="consent" [attr.aria-invalid]="showError('consent')"
-              [attr.aria-describedby]="showError('consent') ? 'cra-consent-error' : null" />
+            <input
+              type="checkbox"
+              formControlName="consent"
+              [attr.aria-invalid]="showError('consent')"
+              [attr.aria-describedby]="showError('consent') ? 'cra-consent-error' : null"
+            />
             <span><app-text [text]="copy().consent" /></span>
           </label>
           @if (showError('consent')) {
@@ -40,7 +68,11 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
           {{ status() === 'sending' ? copy().sending : copy().submit }}
         </button>
         <p role="status" class="micro">
-          @if (status() === 'success') { {{ copy().success }} } @else if (status() === 'error') { <app-text [text]="copy().error" /> }
+          @if (status() === 'success') {
+            {{ copy().success }}
+          } @else if (status() === 'error') {
+            <app-text [text]="copy().error" />
+          }
         </p>
       </fieldset>
     </form>
@@ -54,7 +86,10 @@ export class CraEmailFormComponent {
   private readonly submitted = signal(false);
 
   protected readonly form = new FormGroup({
-    email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+    email: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.email],
+    }),
     consent: new FormControl(false, { nonNullable: true, validators: [Validators.requiredTrue] }),
   });
 

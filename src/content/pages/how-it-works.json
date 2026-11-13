@@ -60,7 +60,11 @@
       "ctas": [
         { "label": "See a sample report", "href": "/product/sample-report", "variant": "primary" },
         { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "ghost" },
-        { "label": "See the CRA Readiness Scan", "href": "/services/cra-readiness-scan", "variant": "link" }
+        {
+          "label": "See the CRA Readiness Scan",
+          "href": "/services/cra-readiness-scan",
+          "variant": "link"
+        }
       ]
     }
   ]

@@ -15,8 +15,14 @@ import { SunMarkComponent } from '../ui/sun-mark.component';
       <div class="card visual__card">
         <span class="badge">{{ demo }}</span>
         <p class="visual__score">
-          <span><span class="visual__label">{{ micro.reportScore }}</span> <span class="display">{{ report().score }}</span></span>
-          <span><span class="visual__label">{{ micro.reportGrade }}</span> <span class="visual__grade">{{ report().grade }}</span></span>
+          <span
+            ><span class="visual__label">{{ micro.reportScore }}</span>
+            <span class="display">{{ report().score }}</span></span
+          >
+          <span
+            ><span class="visual__label">{{ micro.reportGrade }}</span>
+            <span class="visual__grade">{{ report().grade }}</span></span
+          >
         </p>
         <p class="visual__verdict">{{ report().verdict }}</p>
         <p class="visual__meta">{{ report().project }} · {{ findings() }}</p>

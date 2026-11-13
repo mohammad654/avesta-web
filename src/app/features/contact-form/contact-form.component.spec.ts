@@ -9,9 +9,13 @@ describe('ContactFormComponent (brief 3.9)', () => {
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     const set = (id: string, value: string) => {
-      const input = el.querySelector<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(`#${id}`)!;
+      const input = el.querySelector<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+        `#${id}`,
+      )!;
       input.value = value;
-      input.dispatchEvent(new Event(input.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true }));
+      input.dispatchEvent(
+        new Event(input.tagName === 'SELECT' ? 'change' : 'input', { bubbles: true }),
+      );
     };
     const fillValid = async () => {
       set('contact-name', 'Ada');
@@ -44,9 +48,13 @@ describe('ContactFormComponent (brief 3.9)', () => {
     await submit();
     expect(el.querySelectorAll('#contact-errors li')).toHaveLength(5);
     expect(text(el.querySelector('#contact-name-error'))).toBe('Please enter your name.');
-    expect(el.querySelector('#contact-name')!.getAttribute('aria-describedby')).toBe('contact-name-error');
+    expect(el.querySelector('#contact-name')!.getAttribute('aria-describedby')).toBe(
+      'contact-name-error',
+    );
     expect(el.querySelector('#contact-name')!.getAttribute('aria-invalid')).toBe('true');
-    expect(text(el.querySelector('#contact-consent-error'))).toBe('Please accept the privacy note so we can reply.');
+    expect(text(el.querySelector('#contact-consent-error'))).toBe(
+      'Please accept the privacy note so we can reply.',
+    );
     expect(send).not.toHaveBeenCalled();
   });
 
@@ -56,8 +64,18 @@ describe('ContactFormComponent (brief 3.9)', () => {
     vi.setSystemTime(Date.now() + 5000);
     await fillValid();
     await submit();
-    expect(send).toHaveBeenCalledWith('contact', expect.objectContaining({ name: 'Ada', email: 'ada@example.com', need: 'demo', consent: true }));
-    expect(text(el.querySelector('#contact-status'))).toBe('Thank you. Your message is with us and we will reply within one working day.');
+    expect(send).toHaveBeenCalledWith(
+      'contact',
+      expect.objectContaining({
+        name: 'Ada',
+        email: 'ada@example.com',
+        need: 'demo',
+        consent: true,
+      }),
+    );
+    expect(text(el.querySelector('#contact-status'))).toBe(
+      'Thank you. Your message is with us and we will reply within one working day.',
+    );
     vi.useRealTimers();
   });
 
@@ -79,7 +97,9 @@ describe('ContactFormComponent (brief 3.9)', () => {
     vi.setSystemTime(Date.now() + 5000);
     await fillValid();
     await submit();
-    expect(text(el.querySelector('#contact-status'))).toContain('That did not go through. Please try again');
+    expect(text(el.querySelector('#contact-status'))).toContain(
+      'That did not go through. Please try again',
+    );
     vi.useRealTimers();
   });
 });

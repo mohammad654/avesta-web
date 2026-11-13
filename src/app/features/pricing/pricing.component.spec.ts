@@ -7,7 +7,9 @@ import { PricingComponent } from './pricing.component';
 
 describe('PricingComponent (brief 4.5)', () => {
   async function setup(pricing?: PricingData) {
-    TestBed.configureTestingModule({ providers: testProviders({ content: new FakeContentProvider({ pricing }) }) });
+    TestBed.configureTestingModule({
+      providers: testProviders({ content: new FakeContentProvider({ pricing }) }),
+    });
     const fixture = TestBed.createComponent(PricingComponent);
     await fixture.whenStable();
     return { fixture, el: fixture.nativeElement as HTMLElement };
@@ -38,7 +40,9 @@ describe('PricingComponent (brief 4.5)', () => {
       plans: base.plans.map((p) => (p.id === 'team' ? { ...p, monthly: 750, yearly: 7650 } : p)),
     };
     const { fixture, el } = await setup(priced);
-    expect(text(el.querySelector('#plan-team')!.closest('article')!.querySelector('.plan__amount'))).toContain('€750');
+    expect(
+      text(el.querySelector('#plan-team')!.closest('article')!.querySelector('.plan__amount')),
+    ).toContain('€750');
     const yearly = el.querySelector<HTMLButtonElement>('[data-billing="yearly"]')!;
     expect(text(yearly)).toContain('Save 15%');
     yearly.click();
@@ -51,14 +55,19 @@ describe('PricingComponent (brief 4.5)', () => {
 
   it('moves between Monthly and Yearly with the arrow keys', async () => {
     const { fixture, el } = await setup();
-    el.querySelector('[role=radiogroup]')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+    el.querySelector('[role=radiogroup]')!.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }),
+    );
     await fixture.whenStable();
     expect(el.querySelector('[data-billing="yearly"]')!.getAttribute('aria-checked')).toBe('true');
   });
 
   it('multiplies the Team price and suggests Business above the threshold', async () => {
     const base = pricingJson as unknown as PricingData;
-    const priced = { ...base, plans: base.plans.map((p) => (p.id === 'team' ? { ...p, monthly: 750 } : p)) };
+    const priced = {
+      ...base,
+      plans: base.plans.map((p) => (p.id === 'team' ? { ...p, monthly: 750 } : p)),
+    };
     const { fixture, el } = await setup(priced);
     const input = el.querySelector<HTMLInputElement>('#calc-products')!;
     input.value = '4';

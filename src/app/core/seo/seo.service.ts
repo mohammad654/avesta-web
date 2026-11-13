@@ -68,7 +68,10 @@ export class SeoService {
 
     this.title.setTitle(seo.title);
     this.setName('description', description);
-    this.setName('robots', seo.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large');
+    this.setName(
+      'robots',
+      seo.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large',
+    );
     this.setProperty('og:title', ogTitle(seo));
     this.setProperty('og:description', description);
     this.setProperty('og:url', url);

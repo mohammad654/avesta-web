@@ -20,7 +20,10 @@ export class ReportFiltersComponent {
   readonly categories = input.required<readonly string[]>();
   readonly hasBaseline = input.required<boolean>();
   readonly clear = output<void>();
-  protected readonly severities: { key: Severity; label: 'sevCritical' | 'sevHigh' | 'sevMedium' | 'sevLow' }[] = [
+  protected readonly severities: {
+    key: Severity;
+    label: 'sevCritical' | 'sevHigh' | 'sevMedium' | 'sevLow';
+  }[] = [
     { key: 'CRITICAL', label: 'sevCritical' },
     { key: 'HIGH', label: 'sevHigh' },
     { key: 'MEDIUM', label: 'sevMedium' },
@@ -33,7 +36,9 @@ export class ReportFiltersComponent {
 
   protected toggleSeverity(s: Severity): void {
     const current = this.filters().severities;
-    this.patch({ severities: current.includes(s) ? current.filter((x) => x !== s) : [...current, s] });
+    this.patch({
+      severities: current.includes(s) ? current.filter((x) => x !== s) : [...current, s],
+    });
   }
 
   protected value(event: Event): string {

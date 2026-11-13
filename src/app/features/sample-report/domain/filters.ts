@@ -33,11 +33,16 @@ export function matchesStandard(finding: ReportFinding, standard: StandardFilter
 export function matchesSearch(finding: ReportFinding, query: string): boolean {
   const q = query.trim().toLowerCase();
   if (!q) return true;
-  return [finding.title, finding.file ?? '', finding.rule_id].some((v) => v.toLowerCase().includes(q));
+  return [finding.title, finding.file ?? '', finding.rule_id].some((v) =>
+    v.toLowerCase().includes(q),
+  );
 }
 
 /** Brief 4.4 filters, all combined with AND. Pure. */
-export function filterFindings(findings: readonly ReportFinding[], f: ReportFilters): ReportFinding[] {
+export function filterFindings(
+  findings: readonly ReportFinding[],
+  f: ReportFilters,
+): ReportFinding[] {
   return findings.filter(
     (x) =>
       (f.severities.length === 0 || f.severities.includes(x.severity)) &&
@@ -56,7 +61,10 @@ export function severityCounts(findings: readonly ReportFinding[]): Record<Sever
   return counts;
 }
 
-export function distinct(findings: readonly ReportFinding[], key: 'scanner' | 'category'): string[] {
+export function distinct(
+  findings: readonly ReportFinding[],
+  key: 'scanner' | 'category',
+): string[] {
   return [...new Set(findings.map((f) => f[key]))].sort();
 }
 

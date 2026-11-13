@@ -19,17 +19,13 @@
     {
       "kind": "richText",
       "id": "review",
-      "paragraphs": [
-        "[LEGAL_REVIEW]"
-      ]
+      "paragraphs": ["[LEGAL_REVIEW]"]
     },
     {
       "kind": "richText",
       "id": "s1",
       "heading": "Scope",
-      "paragraphs": [
-        "This website and Avesta Proof."
-      ]
+      "paragraphs": ["This website and Avesta Proof."]
     },
     {
       "kind": "richText",

@@ -18,7 +18,11 @@
       "sub": "See which automated scans and manual attestations support each control in ISO/IEC 27001, IEC 62443-4-1 and the EU Cyber Resilience Act.",
       "ctas": [
         { "label": "Book a demo", "href": "/contact?topic=demo", "variant": "primary" },
-        { "label": "See the CRA Readiness Scan", "href": "/services/cra-readiness-scan", "variant": "ghost" }
+        {
+          "label": "See the CRA Readiness Scan",
+          "href": "/services/cra-readiness-scan",
+          "variant": "ghost"
+        }
       ]
     },
     { "kind": "feature", "id": "explorer", "feature": "standards" }

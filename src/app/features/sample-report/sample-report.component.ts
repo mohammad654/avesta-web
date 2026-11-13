@@ -1,10 +1,26 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { AnnouncerService } from '../../core/a11y/announcer.service';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { fill } from '../../core/content/format';
 import { injectQueryState } from '../../core/routing/query-state';
 import { TabsComponent } from '../../shared/ui/tabs.component';
-import { EMPTY_FILTERS, ReportFilters, ReportTab, distinct, filterFindings, parseReportParams, severityCounts, toReportParams } from './domain/filters';
+import {
+  EMPTY_FILTERS,
+  ReportFilters,
+  ReportTab,
+  distinct,
+  filterFindings,
+  parseReportParams,
+  severityCounts,
+  toReportParams,
+} from './domain/filters';
 import { SortKey, sortFindings } from './domain/sort';
 import { ControlsGridComponent } from './ui/controls-grid.component';
 import { FindingsTableComponent } from './ui/findings-table.component';
@@ -15,14 +31,38 @@ import { ReportSummaryComponent } from './ui/report-summary.component';
 @Component({
   selector: 'app-sample-report',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TabsComponent, ReportSummaryComponent, ReportFiltersComponent, FindingsTableComponent, ControlsGridComponent],
+  imports: [
+    TabsComponent,
+    ReportSummaryComponent,
+    ReportFiltersComponent,
+    FindingsTableComponent,
+    ControlsGridComponent,
+  ],
   templateUrl: './sample-report.component.html',
   styles: `
-    .banner { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4);
-      margin-bottom: var(--space-6); border-radius: var(--radius-md); background: var(--color-gold-soft); font-weight: 500; }
-    .report { margin-top: var(--space-8); }
-    .count { font-size: var(--fs-small); color: var(--color-muted); }
-    .empty { padding: var(--space-6); text-align: center; border: 1px dashed var(--color-line); border-radius: var(--radius-md); }
+    .banner {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+      padding: var(--space-3) var(--space-4);
+      margin-bottom: var(--space-6);
+      border-radius: var(--radius-md);
+      background: var(--color-gold-soft);
+      font-weight: 500;
+    }
+    .report {
+      margin-top: var(--space-8);
+    }
+    .count {
+      font-size: var(--fs-small);
+      color: var(--color-muted);
+    }
+    .empty {
+      padding: var(--space-6);
+      text-align: center;
+      border: 1px dashed var(--color-line);
+      border-radius: var(--radius-md);
+    }
   `,
 })
 export class SampleReportComponent {
@@ -34,7 +74,8 @@ export class SampleReportComponent {
   protected readonly demoBadge = this.content.chrome().microcopy.demoBadge;
   protected readonly scanners = distinct(this.report.findings, 'scanner');
   protected readonly categories = distinct(this.report.findings, 'category');
-  protected readonly hasBaseline = this.report.baseline !== null && this.report.baseline !== undefined;
+  protected readonly hasBaseline =
+    this.report.baseline !== null && this.report.baseline !== undefined;
   protected readonly counts = severityCounts(this.report.findings);
 
   protected readonly filters = signal<ReportFilters>(EMPTY_FILTERS);
@@ -53,12 +94,21 @@ export class SampleReportComponent {
   );
   protected readonly sortLabel = computed(() => {
     const s = this.sort();
-    return s === 'priority' ? this.labels.sortPriority : s === 'severity' ? this.labels.sortSeverity : this.labels.sortFile;
+    return s === 'priority'
+      ? this.labels.sortPriority
+      : s === 'severity'
+        ? this.labels.sortSeverity
+        : this.labels.sortFile;
   });
 
   constructor() {
     const ready = injectQueryState(
-      () => toReportParams({ filters: this.filters(), sort: this.sort(), tab: this.tab() as ReportTab }),
+      () =>
+        toReportParams({
+          filters: this.filters(),
+          sort: this.sort(),
+          tab: this.tab() as ReportTab,
+        }),
       (params) => {
         const state = parseReportParams(params, {
           scanners: this.scanners,

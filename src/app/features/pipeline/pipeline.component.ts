@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, afterNextRender, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  ElementRef,
+  afterNextRender,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import { injectReducedMotion } from '../../core/a11y/reduced-motion';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { fill } from '../../core/content/format';

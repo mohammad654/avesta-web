@@ -6,10 +6,7 @@
       "controls": {
         "A.5.17": {
           "name": "Authentication information",
-          "evidence": [
-            "gitleaks",
-            "hygiene"
-          ]
+          "evidence": ["gitleaks", "hygiene"]
         },
         "A.5.24": {
           "name": "Incident management planning and preparation",
@@ -17,33 +14,19 @@
         },
         "A.8.8": {
           "name": "Management of technical vulnerabilities",
-          "evidence": [
-            "trivy",
-            "semgrep",
-            "bandit",
-            "cppcheck",
-            "osv"
-          ]
+          "evidence": ["trivy", "semgrep", "bandit", "cppcheck", "osv"]
         },
         "A.8.9": {
           "name": "Configuration management",
-          "evidence": [
-            "trivy",
-            "hygiene"
-          ]
+          "evidence": ["trivy", "hygiene"]
         },
         "A.8.24": {
           "name": "Use of cryptography",
-          "evidence": [
-            "semgrep",
-            "bandit"
-          ]
+          "evidence": ["semgrep", "bandit"]
         },
         "A.8.25": {
           "name": "Secure development life cycle",
-          "evidence": [
-            "hygiene"
-          ]
+          "evidence": ["hygiene"]
         },
         "A.8.26": {
           "name": "Application security requirements",
@@ -70,26 +53,15 @@
         },
         "A.8.29": {
           "name": "Security testing in development and acceptance",
-          "evidence": [
-            "coverage",
-            "semgrep",
-            "bandit",
-            "cppcheck",
-            "mutation"
-          ]
+          "evidence": ["coverage", "semgrep", "bandit", "cppcheck", "mutation"]
         },
         "A.8.32": {
           "name": "Change management",
-          "evidence": [
-            "hygiene",
-            "churn"
-          ]
+          "evidence": ["hygiene", "churn"]
         },
         "A.5.32": {
           "name": "Intellectual property rights",
-          "evidence": [
-            "licenses"
-          ],
+          "evidence": ["licenses"],
           "note": "Licences of the product and of every third-party component it ships."
         }
       }
@@ -99,12 +71,7 @@
       "controls": {
         "SM-9": {
           "name": "Security requirements for externally provided components",
-          "evidence": [
-            "trivy",
-            "hygiene",
-            "osv",
-            "licenses"
-          ]
+          "evidence": ["trivy", "hygiene", "osv", "licenses"]
         },
         "SR-2": {
           "name": "Threat model",
@@ -116,12 +83,7 @@
         },
         "SI-1": {
           "name": "Security implementation review",
-          "evidence": [
-            "semgrep",
-            "bandit",
-            "gitleaks",
-            "cppcheck"
-          ]
+          "evidence": ["semgrep", "bandit", "gitleaks", "cppcheck"]
         },
         "SI-2": {
           "name": "Secure coding standards",
@@ -139,20 +101,11 @@
         },
         "SVV-1": {
           "name": "Security requirements testing",
-          "evidence": [
-            "coverage",
-            "mutation"
-          ]
+          "evidence": ["coverage", "mutation"]
         },
         "SVV-3": {
           "name": "Vulnerability testing",
-          "evidence": [
-            "trivy",
-            "semgrep",
-            "bandit",
-            "cppcheck",
-            "osv"
-          ]
+          "evidence": ["trivy", "semgrep", "bandit", "cppcheck", "osv"]
         },
         "SVV-4": {
           "name": "Penetration testing",
@@ -160,24 +113,15 @@
         },
         "DM-1": {
           "name": "Receiving notifications of security-related issues",
-          "evidence": [
-            "hygiene"
-          ]
+          "evidence": ["hygiene"]
         },
         "SUM-1": {
           "name": "Security update qualification",
-          "evidence": [
-            "hygiene",
-            "trivy"
-          ]
+          "evidence": ["hygiene", "trivy"]
         },
         "SD-4": {
           "name": "Secure design best practices",
-          "evidence": [
-            "design",
-            "solid",
-            "cleancode"
-          ],
+          "evidence": ["design", "solid", "cleancode"],
           "note": "Structure that can be reviewed: no dependency cycles between packages, bounded coupling, declared architecture rules enforced on every scan."
         }
       }
@@ -191,57 +135,31 @@
         },
         "I.2(a)": {
           "name": "No known exploitable vulnerabilities at release",
-          "evidence": [
-            "trivy",
-            "semgrep",
-            "bandit",
-            "cppcheck",
-            "osv"
-          ]
+          "evidence": ["trivy", "semgrep", "bandit", "cppcheck", "osv"]
         },
         "I.2(b)": {
           "name": "Secure by default configuration",
-          "evidence": [
-            "trivy"
-          ]
+          "evidence": ["trivy"]
         },
         "I.2(d)": {
           "name": "Protection from unauthorised access",
-          "evidence": [
-            "gitleaks",
-            "semgrep"
-          ]
+          "evidence": ["gitleaks", "semgrep"]
         },
         "I.2(e)": {
           "name": "Confidentiality of data through encryption",
-          "evidence": [
-            "semgrep",
-            "bandit"
-          ]
+          "evidence": ["semgrep", "bandit"]
         },
         "II.1": {
           "name": "Identify and document components, including an SBOM",
-          "evidence": [
-            "hygiene",
-            "trivy",
-            "licenses"
-          ]
+          "evidence": ["hygiene", "trivy", "licenses"]
         },
         "II.2": {
           "name": "Address and remediate vulnerabilities without delay",
-          "evidence": [
-            "trivy",
-            "hygiene",
-            "osv"
-          ]
+          "evidence": ["trivy", "hygiene", "osv"]
         },
         "II.3": {
           "name": "Regular tests and reviews of security",
-          "evidence": [
-            "coverage",
-            "hygiene",
-            "mutation"
-          ]
+          "evidence": ["coverage", "hygiene", "mutation"]
         },
         "II.4": {
           "name": "Publicly disclose fixed vulnerabilities after an update",
@@ -249,15 +167,11 @@
         },
         "II.5": {
           "name": "Coordinated vulnerability disclosure policy",
-          "evidence": [
-            "hygiene"
-          ]
+          "evidence": ["hygiene"]
         },
         "II.6": {
           "name": "Contact address for reporting vulnerabilities",
-          "evidence": [
-            "hygiene"
-          ]
+          "evidence": ["hygiene"]
         },
         "II.7": {
           "name": "Mechanisms to distribute security updates securely",
@@ -273,10 +187,7 @@
         },
         "I.2(h)": {
           "name": "Availability of essential functions, including resilience against denial-of-service",
-          "evidence": [
-            "perf",
-            "semgrep"
-          ],
+          "evidence": ["perf", "semgrep"],
           "note": "Static performance-risk signals only. Indicative: confirm with load and resilience testing."
         }
       }
@@ -292,47 +203,26 @@
         },
         "Art.21(2)(b)": {
           "name": "Incident handling",
-          "evidence": [
-            "hygiene"
-          ],
+          "evidence": ["hygiene"],
           "note": "A published way to report, and a route for the report to reach someone."
         },
         "Art.21(2)(d)": {
           "name": "Supply chain security, including the security of suppliers",
-          "evidence": [
-            "trivy",
-            "osv",
-            "licenses",
-            "hygiene"
-          ],
+          "evidence": ["trivy", "osv", "licenses", "hygiene"],
           "note": "Component inventory, known-vulnerability checks and licence position for everything shipped."
         },
         "Art.21(2)(e)": {
           "name": "Security in acquisition, development and maintenance, including vulnerability handling and disclosure",
-          "evidence": [
-            "semgrep",
-            "bandit",
-            "cppcheck",
-            "cleancode",
-            "design",
-            "hygiene"
-          ]
+          "evidence": ["semgrep", "bandit", "cppcheck", "cleancode", "design", "hygiene"]
         },
         "Art.21(2)(f)": {
           "name": "Policies to assess the effectiveness of risk-management measures",
-          "evidence": [
-            "coverage",
-            "mutation"
-          ],
+          "evidence": ["coverage", "mutation"],
           "note": "Measuring whether the tests actually catch anything is the effectiveness check for secure development."
         },
         "Art.21(2)(h)": {
           "name": "Policies on the use of cryptography and encryption",
-          "evidence": [
-            "semgrep",
-            "bandit",
-            "gitleaks"
-          ]
+          "evidence": ["semgrep", "bandit", "gitleaks"]
         }
       }
     }
@@ -364,227 +254,69 @@
       "CRA:II.2",
       "NIS2:Art.21(2)(d)"
     ],
-    "secret": [
-      "ISO27001:A.5.17",
-      "IEC62443:SI-1",
-      "CRA:I.2(d)",
-      "NIS2:Art.21(2)(h)"
-    ],
-    "misconfiguration": [
-      "ISO27001:A.8.9",
-      "CRA:I.2(b)"
-    ],
-    "testing": [
-      "ISO27001:A.8.29",
-      "IEC62443:SVV-1",
-      "CRA:II.3",
-      "NIS2:Art.21(2)(f)"
-    ],
-    "quality": [
-      "ISO27001:A.8.28",
-      "IEC62443:SI-2",
-      "IEC62443:SD-4",
-      "NIS2:Art.21(2)(e)"
-    ],
-    "design": [
-      "ISO27001:A.8.28",
-      "IEC62443:SD-4",
-      "IEC62443:SI-2",
-      "NIS2:Art.21(2)(e)"
-    ],
-    "performance": [
-      "CRA:I.2(h)"
-    ],
-    "change-risk": [
-      "ISO27001:A.8.32"
-    ],
-    "process": [
-      "ISO27001:A.8.25",
-      "CRA:II.5",
-      "NIS2:Art.21(2)(b)"
-    ]
+    "secret": ["ISO27001:A.5.17", "IEC62443:SI-1", "CRA:I.2(d)", "NIS2:Art.21(2)(h)"],
+    "misconfiguration": ["ISO27001:A.8.9", "CRA:I.2(b)"],
+    "testing": ["ISO27001:A.8.29", "IEC62443:SVV-1", "CRA:II.3", "NIS2:Art.21(2)(f)"],
+    "quality": ["ISO27001:A.8.28", "IEC62443:SI-2", "IEC62443:SD-4", "NIS2:Art.21(2)(e)"],
+    "design": ["ISO27001:A.8.28", "IEC62443:SD-4", "IEC62443:SI-2", "NIS2:Art.21(2)(e)"],
+    "performance": ["CRA:I.2(h)"],
+    "change-risk": ["ISO27001:A.8.32"],
+    "process": ["ISO27001:A.8.25", "CRA:II.5", "NIS2:Art.21(2)(b)"]
   },
   "by_rule": {
-    "hygiene:security-policy": [
-      "IEC62443:DM-1",
-      "CRA:II.5",
-      "CRA:II.6"
-    ],
-    "hygiene:sbom": [
-      "CRA:II.1",
-      "IEC62443:SM-9"
-    ],
-    "hygiene:ci": [
-      "ISO27001:A.8.25",
-      "ISO27001:A.8.32",
-      "CRA:II.3"
-    ],
-    "hygiene:lockfile": [
-      "ISO27001:A.8.9",
-      "CRA:II.1"
-    ],
-    "hygiene:dependency-updates": [
-      "IEC62443:SUM-1",
-      "CRA:II.2"
-    ],
-    "hygiene:codeowners": [
-      "ISO27001:A.8.32"
-    ],
+    "hygiene:security-policy": ["IEC62443:DM-1", "CRA:II.5", "CRA:II.6"],
+    "hygiene:sbom": ["CRA:II.1", "IEC62443:SM-9"],
+    "hygiene:ci": ["ISO27001:A.8.25", "ISO27001:A.8.32", "CRA:II.3"],
+    "hygiene:lockfile": ["ISO27001:A.8.9", "CRA:II.1"],
+    "hygiene:dependency-updates": ["IEC62443:SUM-1", "CRA:II.2"],
+    "hygiene:codeowners": ["ISO27001:A.8.32"],
     "hygiene:license": [],
-    "hygiene:readme": [
-      "ISO27001:A.8.25"
-    ],
-    "licenses:no-license-file": [
-      "ISO27001:A.5.32"
-    ],
-    "licenses:unrecognised-license": [
-      "ISO27001:A.5.32"
-    ],
-    "licenses:license-mismatch": [
-      "ISO27001:A.5.32"
-    ],
-    "licenses:copyleft-dependency": [
-      "ISO27001:A.5.32",
-      "IEC62443:SM-9"
-    ],
-    "licenses:unknown-component-licenses": [
-      "ISO27001:A.5.32",
-      "CRA:II.1",
-      "NIS2:Art.21(2)(d)"
-    ],
-    "design:package-cycle": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "design:class-design": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "design:layer-violation": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28",
-      "NIS2:Art.21(2)(e)"
-    ],
-    "design:zone-of-pain": [
-      "IEC62443:SD-4"
-    ],
-    "clones:clone-family": [
-      "ISO27001:A.8.28",
-      "IEC62443:SI-2",
-      "CRA:II.2"
-    ],
-    "clones:duplication-level": [
-      "ISO27001:A.8.28",
-      "IEC62443:SI-2"
-    ],
+    "hygiene:readme": ["ISO27001:A.8.25"],
+    "licenses:no-license-file": ["ISO27001:A.5.32"],
+    "licenses:unrecognised-license": ["ISO27001:A.5.32"],
+    "licenses:license-mismatch": ["ISO27001:A.5.32"],
+    "licenses:copyleft-dependency": ["ISO27001:A.5.32", "IEC62443:SM-9"],
+    "licenses:unknown-component-licenses": ["ISO27001:A.5.32", "CRA:II.1", "NIS2:Art.21(2)(d)"],
+    "design:package-cycle": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "design:class-design": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "design:layer-violation": ["IEC62443:SD-4", "ISO27001:A.8.28", "NIS2:Art.21(2)(e)"],
+    "design:zone-of-pain": ["IEC62443:SD-4"],
+    "clones:clone-family": ["ISO27001:A.8.28", "IEC62443:SI-2", "CRA:II.2"],
+    "clones:duplication-level": ["ISO27001:A.8.28", "IEC62443:SI-2"],
     "mutation:low-mutation-score": [
       "ISO27001:A.8.29",
       "IEC62443:SVV-1",
       "CRA:II.3",
       "NIS2:Art.21(2)(f)"
     ],
-    "mutation:surviving-mutant": [
-      "ISO27001:A.8.29",
-      "IEC62443:SVV-1"
-    ],
-    "cleancode:assert-in-production": [
-      "ISO27001:A.8.28",
-      "IEC62443:SI-2",
-      "CRA:I.2(a)"
-    ],
-    "cleancode:swallowed-exception": [
-      "ISO27001:A.8.28",
-      "IEC62443:SI-2",
-      "NIS2:Art.21(2)(e)"
-    ],
-    "cleancode:mutable-default": [
-      "ISO27001:A.8.28",
-      "IEC62443:SI-2"
-    ],
-    "cleancode:hardcoded-path": [
-      "ISO27001:A.8.9"
-    ],
-    "cleancode:empty-test": [
-      "ISO27001:A.8.29",
-      "IEC62443:SVV-1"
-    ],
-    "cleancode:skipped-test": [
-      "ISO27001:A.8.29",
-      "IEC62443:SVV-1"
-    ],
-    "churn:hotspot": [
-      "ISO27001:A.8.32"
-    ],
-    "churn:change-coupling": [
-      "ISO27001:A.8.32",
-      "IEC62443:SD-4"
-    ],
-    "churn:knowledge-risk": [
-      "ISO27001:A.8.32"
-    ],
-    "perf:query-in-loop": [
-      "CRA:I.2(h)"
-    ],
-    "perf:http-in-loop": [
-      "CRA:I.2(h)"
-    ],
-    "perf:io-in-loop": [
-      "CRA:I.2(h)"
-    ],
-    "perf:blocking-call-in-async": [
-      "CRA:I.2(h)"
-    ],
-    "perf:nested-loop-scan": [
-      "CRA:I.2(h)"
-    ],
-    "perf:unbounded-query": [
-      "CRA:I.2(h)"
-    ],
-    "perf:allocation-in-loop": [
-      "CRA:I.2(h)"
-    ],
-    "perf:string-concat-in-loop": [
-      "CRA:I.2(h)"
-    ],
-    "perf:regex-compiled-in-loop": [
-      "CRA:I.2(h)"
-    ],
-    "perf:select-star": [
-      "CRA:I.2(h)"
-    ],
-    "perf:large-copy-cpp": [
-      "CRA:I.2(h)"
-    ],
-    "perf:sync-sleep-retry": [
-      "CRA:I.2(h)"
-    ],
-    "solid:god-class": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "solid:type-switch": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "solid:refused-bequest": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "solid:narrowed-signature": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "solid:fat-interface": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "solid:empty-implementations": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ],
-    "solid:concrete-dependency": [
-      "IEC62443:SD-4",
-      "ISO27001:A.8.28"
-    ]
+    "mutation:surviving-mutant": ["ISO27001:A.8.29", "IEC62443:SVV-1"],
+    "cleancode:assert-in-production": ["ISO27001:A.8.28", "IEC62443:SI-2", "CRA:I.2(a)"],
+    "cleancode:swallowed-exception": ["ISO27001:A.8.28", "IEC62443:SI-2", "NIS2:Art.21(2)(e)"],
+    "cleancode:mutable-default": ["ISO27001:A.8.28", "IEC62443:SI-2"],
+    "cleancode:hardcoded-path": ["ISO27001:A.8.9"],
+    "cleancode:empty-test": ["ISO27001:A.8.29", "IEC62443:SVV-1"],
+    "cleancode:skipped-test": ["ISO27001:A.8.29", "IEC62443:SVV-1"],
+    "churn:hotspot": ["ISO27001:A.8.32"],
+    "churn:change-coupling": ["ISO27001:A.8.32", "IEC62443:SD-4"],
+    "churn:knowledge-risk": ["ISO27001:A.8.32"],
+    "perf:query-in-loop": ["CRA:I.2(h)"],
+    "perf:http-in-loop": ["CRA:I.2(h)"],
+    "perf:io-in-loop": ["CRA:I.2(h)"],
+    "perf:blocking-call-in-async": ["CRA:I.2(h)"],
+    "perf:nested-loop-scan": ["CRA:I.2(h)"],
+    "perf:unbounded-query": ["CRA:I.2(h)"],
+    "perf:allocation-in-loop": ["CRA:I.2(h)"],
+    "perf:string-concat-in-loop": ["CRA:I.2(h)"],
+    "perf:regex-compiled-in-loop": ["CRA:I.2(h)"],
+    "perf:select-star": ["CRA:I.2(h)"],
+    "perf:large-copy-cpp": ["CRA:I.2(h)"],
+    "perf:sync-sleep-retry": ["CRA:I.2(h)"],
+    "solid:god-class": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "solid:type-switch": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "solid:refused-bequest": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "solid:narrowed-signature": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "solid:fat-interface": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "solid:empty-implementations": ["IEC62443:SD-4", "ISO27001:A.8.28"],
+    "solid:concrete-dependency": ["IEC62443:SD-4", "ISO27001:A.8.28"]
   }
 }

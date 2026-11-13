@@ -7,7 +7,9 @@ import { ChangeDetectionStrategy, Component, input, isDevMode } from '@angular/c
 @Component({
   selector: 'app-ph',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<span class="ph" [class.ph--dev]="dev" [attr.title]="dev ? hint : null">{{ token() }}</span>`,
+  template: `<span class="ph" [class.ph--dev]="dev" [attr.title]="dev ? hint : null">{{
+    token()
+  }}</span>`,
 })
 export class PhTagComponent {
   readonly token = input.required<string>();

@@ -10,7 +10,13 @@ for (const path of [...publishedRoutes(), '/404']) {
     await page.mouse.wheel(0, 20000); // hydrate deferred features
     await page.waitForTimeout(400);
     const results = await new AxeBuilder({ page }).withTags(TAGS).analyze();
-    const summary = results.violations.map((v) => `${v.id} (${v.impact}): ${v.nodes.map((n) => n.target.join(' ')).slice(0, 3).join(', ')}`);
+    const summary = results.violations.map(
+      (v) =>
+        `${v.id} (${v.impact}): ${v.nodes
+          .map((n) => n.target.join(' '))
+          .slice(0, 3)
+          .join(', ')}`,
+    );
     expect(summary).toEqual([]);
   });
 }

@@ -8,8 +8,13 @@ describe('FooterComponent (brief 2.3)', () => {
     const fixture = TestBed.createComponent(FooterComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
-    expect([...el.querySelectorAll('.footer__col h2')].map(text)).toEqual(['Product & services', 'Company']);
-    expect(text(el)).toContain('Avesta Proof produces audit-ready evidence. Certification is issued only by accredited bodies.');
+    expect([...el.querySelectorAll('.footer__col h2')].map(text)).toEqual([
+      'Product & services',
+      'Company',
+    ]);
+    expect(text(el)).toContain(
+      'Avesta Proof produces audit-ready evidence. Certification is issued only by accredited bodies.',
+    );
     expect(text(el)).toContain('© 2026 Avesta Tech · KvK [KVK_NUMBER]');
     expect(el.querySelector('a[href="[LINKEDIN_URL]"]')).toBeNull();
     expect(text(el.querySelector('.footer__lang--off'))).toBe('Nederlands (coming soon)');

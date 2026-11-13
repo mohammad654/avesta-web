@@ -23,7 +23,16 @@ import { ControlRow } from '../domain/standards-filter';
           @if (known().length) {
             <ul class="plain-list control__scanners">
               @for (key of known(); track key) {
-                <li><button type="button" class="chip" (click)="highlightScanner.emit(key)" [attr.aria-label]="highlightLabel(key)">{{ label(key) }}</button></li>
+                <li>
+                  <button
+                    type="button"
+                    class="chip"
+                    (click)="highlightScanner.emit(key)"
+                    [attr.aria-label]="highlightLabel(key)"
+                  >
+                    {{ label(key) }}
+                  </button>
+                </li>
               }
             </ul>
           } @else if (r.type === 'derived') {
@@ -62,7 +71,11 @@ export class ControlRowComponent {
   protected readonly typeLabel = computed(() => {
     const l = this.labels();
     const t = this.row().type;
-    return t === 'manual' ? l.evidenceManual : t === 'derived' ? l.evidenceDerived : l.evidenceAutomated;
+    return t === 'manual'
+      ? l.evidenceManual
+      : t === 'derived'
+        ? l.evidenceDerived
+        : l.evidenceAutomated;
   });
 
   protected label(key: string): string {

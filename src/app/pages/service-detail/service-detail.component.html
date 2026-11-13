@@ -5,73 +5,82 @@
   <div class="actions"><app-cta [cta]="book()" /></div>
 </app-section>
 
-<app-section sectionId="details">
-  <div class="detail">
-    <div class="detail__main">
-      @if (s.whoFor.length) {
-        <section aria-labelledby="who-title">
-          <h2 id="who-title">{{ labels().whoFor }}</h2>
+@defer (on idle; hydrate on viewport) {
+  <app-section sectionId="details">
+    <div class="detail">
+      <div class="detail__main">
+        @if (s.whoFor.length) {
+          <section aria-labelledby="who-title">
+            <h2 id="who-title">{{ labels().whoFor }}</h2>
+            <ul class="check-list">
+              @for (item of s.whoFor; track item) {
+                <li><app-text [text]="item" /></li>
+              }
+            </ul>
+          </section>
+        }
+        @if (s.deliverables.length) {
+          <section aria-labelledby="get-title">
+            <h2 id="get-title">{{ deliverablesHeading() }}</h2>
+            <ul class="check-list">
+              @for (item of s.deliverables; track item) {
+                <li><app-text [text]="item" /></li>
+              }
+            </ul>
+            @if (s.deliverablesNote) {
+              <p class="micro"><app-text [text]="s.deliverablesNote" /></p>
+            }
+          </section>
+        }
+        @if (s.steps.length) {
+          <section aria-labelledby="steps-title">
+            <h2 id="steps-title">{{ labels().steps }}</h2>
+            <ol class="days">
+              @for (step of s.steps; track step.day) {
+                <li>
+                  <span class="days__marker">{{ step.day }}</span
+                  ><span><app-text [text]="step.text" /></span>
+                </li>
+              }
+            </ol>
+            @if (s.microcopy) {
+              <p class="micro"><app-text [text]="s.microcopy" /></p>
+            }
+          </section>
+        }
+        <section aria-labelledby="needs-title">
+          <h2 id="needs-title">{{ labels().needs }}</h2>
           <ul class="check-list">
-            @for (item of s.whoFor; track item) {
-              <li><app-text [text]="item" /></li>
+            @for (item of s.needs; track item) {
+              <li>{{ item }}</li>
             }
           </ul>
         </section>
-      }
-      @if (s.deliverables.length) {
-        <section aria-labelledby="get-title">
-          <h2 id="get-title">{{ deliverablesHeading() }}</h2>
-          <ul class="check-list">
-            @for (item of s.deliverables; track item) {
-              <li><app-text [text]="item" /></li>
-            }
-          </ul>
-          @if (s.deliverablesNote) {
-            <p class="micro"><app-text [text]="s.deliverablesNote" /></p>
-          }
-        </section>
-      }
-      @if (s.steps.length) {
-        <section aria-labelledby="steps-title">
-          <h2 id="steps-title">{{ labels().steps }}</h2>
-          <ol class="days">
-            @for (step of s.steps; track step.day) {
-              <li><span class="days__marker">{{ step.day }}</span><span><app-text [text]="step.text" /></span></li>
-            }
-          </ol>
-          @if (s.microcopy) {
-            <p class="micro"><app-text [text]="s.microcopy" /></p>
-          }
-        </section>
-      }
-      <section aria-labelledby="needs-title">
-        <h2 id="needs-title">{{ labels().needs }}</h2>
-        <ul class="check-list">
-          @for (item of s.needs; track item) {
-            <li>{{ item }}</li>
+      </div>
+
+      <aside class="card price-box" aria-labelledby="price-title">
+        <h2 id="price-title" class="eyebrow">{{ labels().price }}</h2>
+        <p class="price-box__amount"><app-price-tag [price]="s.price" /></p>
+        <p class="micro">{{ excl }}</p>
+        @if (s.delivery) {
+          <p>
+            <strong>{{ labels().delivery }}:</strong> {{ s.delivery }}
+          </p>
+        }
+        <app-cta [cta]="book()" />
+        <h2 class="eyebrow price-box__related">{{ labels().related }}</h2>
+        <ul class="plain-list">
+          @for (link of related(); track link.href) {
+            <li><app-cta [cta]="link" /></li>
           }
         </ul>
-      </section>
+      </aside>
     </div>
+  </app-section>
 
-    <aside class="card price-box" aria-labelledby="price-title">
-      <h2 id="price-title" class="eyebrow">{{ labels().price }}</h2>
-      <p class="price-box__amount"><app-price-tag [price]="s.price" /></p>
-      <p class="micro">{{ excl }}</p>
-      @if (s.delivery) {
-        <p><strong>{{ labels().delivery }}:</strong> {{ s.delivery }}</p>
-      }
-      <app-cta [cta]="book()" />
-      <h2 class="eyebrow price-box__related">{{ labels().related }}</h2>
-      <ul class="plain-list">
-        @for (link of related(); track link.href) {
-          <li><app-cta [cta]="link" /></li>
-        }
-      </ul>
-    </aside>
-  </div>
-</app-section>
-
-@if (faq(); as faqSection) {
-  <app-faq-section [section]="faqSection" />
+  @if (faq(); as faqSection) {
+    <app-faq-section [section]="faqSection" />
+  }
+} @placeholder {
+  <div class="details-placeholder"></div>
 }

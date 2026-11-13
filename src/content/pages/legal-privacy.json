@@ -19,9 +19,7 @@
     {
       "kind": "richText",
       "id": "review",
-      "paragraphs": [
-        "[LEGAL_REVIEW]"
-      ]
+      "paragraphs": ["[LEGAL_REVIEW]"]
     },
     {
       "kind": "richText",
@@ -96,9 +94,7 @@
       "kind": "richText",
       "id": "s9",
       "heading": "Contact",
-      "paragraphs": [
-        "Questions about this policy: [EMAIL]. Security issues: [SECURITY_EMAIL]."
-      ]
+      "paragraphs": ["Questions about this policy: [EMAIL]. Security issues: [SECURITY_EMAIL]."]
     }
   ]
 }

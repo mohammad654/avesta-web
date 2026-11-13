@@ -15,7 +15,9 @@ const ICONS: Record<ControlStatus, string> = {
   selector: 'app-status-badge',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [IconComponent],
-  template: `<span class="status status--{{ status() }}"><app-icon [name]="icon()" />{{ label() }}</span>`,
+  template: `<span class="status status--{{ status() }}"
+    ><app-icon [name]="icon()" />{{ label() }}</span
+  >`,
 })
 export class StatusBadgeComponent {
   readonly status = input.required<ControlStatus>();

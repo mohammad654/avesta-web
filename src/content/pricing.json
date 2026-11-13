@@ -52,7 +52,11 @@
       "id": "enterprise",
       "name": "Enterprise",
       "for": "Many products",
-      "includes": [{ "text": "Air-gapped bundle" }, { "text": "Custom controls" }, { "text": "Support SLA" }],
+      "includes": [
+        { "text": "Air-gapped bundle" },
+        { "text": "Custom controls" },
+        { "text": "Support SLA" }
+      ],
       "monthly": null,
       "yearly": null,
       "cta": { "label": "Talk to us", "href": "/contact", "variant": "ghost" }

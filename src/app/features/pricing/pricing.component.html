@@ -1,11 +1,23 @@
 <h2 class="visually-hidden">{{ labels.viewLabel }}</h2>
 <app-tabs [tabs]="tabs" [label]="labels.viewLabel" prefix="pricing" [(selected)]="view">
   @if (view() === 'plans') {
-    <div class="toggle" role="radiogroup" [attr.aria-label]="labels.billingLegend" tabindex="-1" (keydown)="onKey($event)">
+    <div
+      class="toggle"
+      role="radiogroup"
+      [attr.aria-label]="labels.billingLegend"
+      tabindex="-1"
+      (keydown)="onKey($event)"
+    >
       @for (option of options(); track option.id) {
-        <button type="button" role="radio" class="toggle__option" [attr.data-billing]="option.id"
-          [attr.aria-checked]="billing() === option.id" [tabIndex]="billing() === option.id ? 0 : -1"
-          (click)="billing.set(option.id)">
+        <button
+          type="button"
+          role="radio"
+          class="toggle__option"
+          [attr.data-billing]="option.id"
+          [attr.aria-checked]="billing() === option.id"
+          [tabIndex]="billing() === option.id ? 0 : -1"
+          (click)="billing.set(option.id)"
+        >
           {{ option.label }}
           @if (option.id === 'yearly') {
             <span class="badge"><app-text [text]="save" /></span>
@@ -18,8 +30,13 @@
         <li><app-plan-card [plan]="plan" [billing]="billing()" [labels]="labels" /></li>
       }
     </ul>
-    <app-product-calculator [team]="team" [billing]="billing()" [labels]="labels"
-      [threshold]="pricing.businessThreshold" [flag]="pricing.thresholdFlag" />
+    <app-product-calculator
+      [team]="team"
+      [billing]="billing()"
+      [labels]="labels"
+      [threshold]="pricing.businessThreshold"
+      [flag]="pricing.thresholdFlag"
+    />
   } @else {
     <app-services-table />
   }

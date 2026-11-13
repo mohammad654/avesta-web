@@ -10,11 +10,28 @@ import { SectionComponent } from './section.component';
 @Component({
   selector: 'app-feature-grid-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [SectionComponent, SectionHeadingComponent, CtaComponent, IconComponent, InlineTextComponent],
+  imports: [
+    SectionComponent,
+    SectionHeadingComponent,
+    CtaComponent,
+    IconComponent,
+    InlineTextComponent,
+  ],
   styles: `
-    .card { display: flex; flex-direction: column; }
-    .card h3 { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
-    .card__cta { margin-top: auto; padding-top: var(--space-4); }
+    .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .card h3 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+    }
+    .card__cta {
+      margin-top: auto;
+      padding-top: var(--space-4);
+    }
   `,
   template: `
     @let s = section();

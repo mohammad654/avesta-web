@@ -16,7 +16,11 @@ import { SectionComponent } from './section.component';
       }
       <div class="table-wrap">
         <table>
-          <caption [class.visually-hidden]="s.hideCaption">{{ s.caption }}</caption>
+          <caption [class.visually-hidden]="s.hideCaption">
+            {{
+              s.caption
+            }}
+          </caption>
           <thead>
             <tr>
               @for (column of s.columns; track column) {

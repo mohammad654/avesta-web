@@ -20,17 +20,53 @@
       "kind": "featureRows",
       "id": "sections",
       "rows": [
-        { "heading": "Your code stays with you.", "body": "Avesta Proof runs in your CI or on your own machine, including air-gapped machines. We do not need a copy of your source code. Only signed results leave your environment, and only if you send them.", "icon": "server" },
-        { "heading": "Evidence anyone can check.", "body": "Every report has a SHA-256 fingerprint and an Ed25519 signature. Scans are linked in a hash chain. Verification works offline with the public key, so your auditor does not have to trust us.", "icon": "check" },
-        { "heading": "Keys.", "body": "Private signing keys are written with owner-only file permissions (0600). For production, we recommend keeping them in a KMS or HSM; built-in support for that is on our roadmap.", "icon": "key" },
-        { "heading": "We scan ourselves.", "body": "Avesta Proof runs on its own code in CI. We publish our own SBOM and a SECURITY.md. Our own trust statement: [LINK_OWN_TRUST_STATEMENT].", "icon": "refresh" },
-        { "heading": "Our roadmap to stronger proof.", "body": "Signed releases · an independent pen test of Avesta Proof · KMS/HSM key support. Status of each: [TRUST_ROADMAP_STATUS]. We list these as plans until they are done.", "icon": "flag" },
-        { "heading": "Your data.", "body": "We process only what we need to deliver the service. Client data and findings are kept for [RETENTION_PERIOD] and deleted on request. We sign a data processing agreement on request. Full details in the [Privacy policy](/legal/privacy).", "icon": "file" },
-        { "heading": "Report a vulnerability.", "body": "Found a security issue in Avesta Proof or this website? Email [SECURITY_EMAIL]. We reply within [RESPONSE_DAYS] working days and credit researchers who want credit. See our [disclosure policy](/legal/disclosure) and [/.well-known/security.txt](/.well-known/security.txt).", "icon": "alert" },
-        { "heading": "What we will not claim.", "body": "Avesta produces audit-ready evidence. We do not certify products, and we do not give legal advice. Certification is issued by accredited bodies; legal questions belong with your counsel.", "icon": "shield" }
+        {
+          "heading": "Your code stays with you.",
+          "body": "Avesta Proof runs in your CI or on your own machine, including air-gapped machines. We do not need a copy of your source code. Only signed results leave your environment, and only if you send them.",
+          "icon": "server"
+        },
+        {
+          "heading": "Evidence anyone can check.",
+          "body": "Every report has a SHA-256 fingerprint and an Ed25519 signature. Scans are linked in a hash chain. Verification works offline with the public key, so your auditor does not have to trust us.",
+          "icon": "check"
+        },
+        {
+          "heading": "Keys.",
+          "body": "Private signing keys are written with owner-only file permissions (0600). For production, we recommend keeping them in a KMS or HSM; built-in support for that is on our roadmap.",
+          "icon": "key"
+        },
+        {
+          "heading": "We scan ourselves.",
+          "body": "Avesta Proof runs on its own code in CI. We publish our own SBOM and a SECURITY.md. Our own trust statement: [LINK_OWN_TRUST_STATEMENT].",
+          "icon": "refresh"
+        },
+        {
+          "heading": "Our roadmap to stronger proof.",
+          "body": "Signed releases · an independent pen test of Avesta Proof · KMS/HSM key support. Status of each: [TRUST_ROADMAP_STATUS]. We list these as plans until they are done.",
+          "icon": "flag"
+        },
+        {
+          "heading": "Your data.",
+          "body": "We process only what we need to deliver the service. Client data and findings are kept for [RETENTION_PERIOD] and deleted on request. We sign a data processing agreement on request. Full details in the [Privacy policy](/legal/privacy).",
+          "icon": "file"
+        },
+        {
+          "heading": "Report a vulnerability.",
+          "body": "Found a security issue in Avesta Proof or this website? Email [SECURITY_EMAIL]. We reply within [RESPONSE_DAYS] working days and credit researchers who want credit. See our [disclosure policy](/legal/disclosure) and [/.well-known/security.txt](/.well-known/security.txt).",
+          "icon": "alert"
+        },
+        {
+          "heading": "What we will not claim.",
+          "body": "Avesta produces audit-ready evidence. We do not certify products, and we do not give legal advice. Certification is issued by accredited bodies; legal questions belong with your counsel.",
+          "icon": "shield"
+        }
       ],
       "ctas": [
-        { "label": "Download our trust statement", "href": "[LINK_OWN_TRUST_STATEMENT]", "variant": "primary" },
+        {
+          "label": "Download our trust statement",
+          "href": "[LINK_OWN_TRUST_STATEMENT]",
+          "variant": "primary"
+        },
         { "label": "Read the disclosure policy", "href": "/legal/disclosure", "variant": "ghost" }
       ]
     }

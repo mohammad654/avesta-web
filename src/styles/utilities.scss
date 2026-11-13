@@ -174,7 +174,17 @@
   }
 }
 
-// Two light sections in a row share one gap instead of two (hosts are siblings in the renderer).
-app-section-renderer > :has(> app-section > .section--light) + :has(> app-section > .section--light) > app-section > .section--light {
+// Two light sections in a row share one gap instead of two (switch hosts are siblings).
+app-section-switch:has(> * > app-section > .section--light)
+  + app-section-switch:has(> * > app-section > .section--light)
+  .section--light {
   padding-top: 0;
+}
+
+// Sections below the hero skip layout and paint until they approach the viewport (cuts the
+// first layout task on mobile). `auto` remembers each section's real size after first render.
+app-section-switch .section,
+app-service-detail app-section + app-section .section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
 }

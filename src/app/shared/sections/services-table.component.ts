@@ -10,17 +10,28 @@ import { PriceTagComponent } from '../ui/price-tag.component';
   selector: 'app-services-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CtaComponent, InlineTextComponent, PriceTagComponent],
-  styles: `td:nth-child(3) { white-space: nowrap; font-weight: 600; }`,
+  styles: `
+    td:nth-child(3) {
+      white-space: nowrap;
+      font-weight: 600;
+    }
+  `,
   template: `
     <div class="table-wrap">
       <table>
-        <caption class="visually-hidden">{{ labels().tableCaption }}</caption>
+        <caption class="visually-hidden">
+          {{
+            labels().tableCaption
+          }}
+        </caption>
         <thead>
           <tr>
             <th scope="col">{{ labels().colService }}</th>
             <th scope="col">{{ labels().colDescription }}</th>
             <th scope="col">{{ labels().colPrice }}</th>
-            <th scope="col"><span class="visually-hidden">{{ labels().colAction }}</span></th>
+            <th scope="col">
+              <span class="visually-hidden">{{ labels().colAction }}</span>
+            </th>
           </tr>
         </thead>
         <tbody>

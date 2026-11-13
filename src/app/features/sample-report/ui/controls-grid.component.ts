@@ -1,9 +1,16 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { ControlStatus, SampleReport, SampleReportCopy } from '../../../core/content/content.models';
+import {
+  ControlStatus,
+  SampleReport,
+  SampleReportCopy,
+} from '../../../core/content/content.models';
 import { fill } from '../../../core/content/format';
 import { StatusBadgeComponent } from '../../../shared/ui/status-badge.component';
 
-const STATUS_LABEL: Record<ControlStatus, 'statusPass' | 'statusPartial' | 'statusWarn' | 'statusFail' | 'statusNotAssessed'> = {
+const STATUS_LABEL: Record<
+  ControlStatus,
+  'statusPass' | 'statusPartial' | 'statusWarn' | 'statusFail' | 'statusNotAssessed'
+> = {
   pass: 'statusPass',
   partial: 'statusPartial',
   warn: 'statusWarn',
@@ -17,12 +24,29 @@ const STATUS_LABEL: Record<ControlStatus, 'statusPass' | 'statusPartial' | 'stat
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [StatusBadgeComponent],
   styles: `
-    section + section { margin-top: var(--space-6); }
-    h3 { font-size: var(--fs-h4); }
-    ul { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
-    li { display: grid; gap: var(--space-2); align-content: start; }
-    .id { font-weight: 600; }
-    p { margin: 0; font-size: var(--fs-small); }
+    section + section {
+      margin-top: var(--space-6);
+    }
+    h3 {
+      font-size: var(--fs-h4);
+    }
+    ul {
+      display: grid;
+      gap: var(--space-3);
+      grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    }
+    li {
+      display: grid;
+      gap: var(--space-2);
+      align-content: start;
+    }
+    .id {
+      font-weight: 600;
+    }
+    p {
+      margin: 0;
+      font-size: var(--fs-small);
+    }
   `,
   template: `
     @for (group of groups(); track group.key) {

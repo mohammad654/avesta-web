@@ -1,10 +1,26 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, computed, effect, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { AnnouncerService } from '../../core/a11y/announcer.service';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { fill } from '../../core/content/format';
 import { injectQueryState } from '../../core/routing/query-state';
 import { TabItem, TabsComponent } from '../../shared/ui/tabs.component';
-import { ExplorerState, TypeFilter, filterRows, parseExplorerParams, supportedBy, toExplorerParams, toRows } from './domain/standards-filter';
+import {
+  ExplorerState,
+  TypeFilter,
+  filterRows,
+  parseExplorerParams,
+  supportedBy,
+  toExplorerParams,
+  toRows,
+} from './domain/standards-filter';
 import { ControlRowComponent } from './ui/control-row.component';
 
 /** Standards explorer (brief 4.2): three tabs, search, type and scanner filters, deep links. */
@@ -39,20 +55,33 @@ export class StandardsExplorerComponent {
     scanner: this.scanner(),
   }));
   protected readonly visible = computed(() => filterRows(this.rows, this.state()));
-  protected readonly total = computed(() => this.rows.filter((r) => r.standard === this.standard()).length);
-  protected readonly count = computed(() => fill(this.labels.count, { shown: this.visible().length, total: this.total() }));
+  protected readonly total = computed(
+    () => this.rows.filter((r) => r.standard === this.standard()).length,
+  );
+  protected readonly count = computed(() =>
+    fill(this.labels.count, { shown: this.visible().length, total: this.total() }),
+  );
   protected readonly highlighted = computed(() => {
     const h = this.highlight();
     return h ? supportedBy(this.rows, h) : [];
   });
-  protected readonly highlightIds = computed(() => new Set(this.highlighted().map((r) => `${r.standard}:${r.id}`)));
+  protected readonly highlightIds = computed(
+    () => new Set(this.highlighted().map((r) => `${r.standard}:${r.id}`)),
+  );
   protected readonly highlightText = computed(() =>
-    fill(this.labels.highlight, { scanner: this.scannerLabel(this.highlight() ?? ''), count: this.highlighted().length }),
+    fill(this.labels.highlight, {
+      scanner: this.scannerLabel(this.highlight() ?? ''),
+      count: this.highlighted().length,
+    }),
   );
   protected readonly tabs = computed<TabItem[]>(() =>
     this.copy.standards.map((s) => {
       const n = this.highlighted().filter((r) => r.standard === s.key).length;
-      return { id: s.key, label: s.label, ...(this.highlight() ? { badge: fill(this.labels.highlightTab, { count: n }) } : {}) };
+      return {
+        id: s.key,
+        label: s.label,
+        ...(this.highlight() ? { badge: fill(this.labels.highlightTab, { count: n }) } : {}),
+      };
     }),
   );
   protected readonly typeOptions: { id: TypeFilter; label: string }[] = [

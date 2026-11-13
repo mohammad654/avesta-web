@@ -12,8 +12,14 @@ describe('placeholders (brief 7.4)', () => {
 
   it('replaces filled keys deeply and leaves open ones visible', () => {
     const values = new Map([['KVK_NUMBER', '12345678']]);
-    const input = { a: 'KvK [KVK_NUMBER] · BTW [BTW_NUMBER]', list: ['[KVK_NUMBER]', 3, null, true] };
-    expect(resolvePlaceholders(input, values)).toEqual({ a: 'KvK 12345678 · BTW [BTW_NUMBER]', list: ['12345678', 3, null, true] });
+    const input = {
+      a: 'KvK [KVK_NUMBER] · BTW [BTW_NUMBER]',
+      list: ['[KVK_NUMBER]', 3, null, true],
+    };
+    expect(resolvePlaceholders(input, values)).toEqual({
+      a: 'KvK 12345678 · BTW [BTW_NUMBER]',
+      list: ['12345678', 3, null, true],
+    });
     expect(resolvePlaceholders(input, new Map())).toBe(input);
   });
 });

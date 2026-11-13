@@ -26,31 +26,71 @@ const PAIRS: [string, string, string, string][] = [
   selector: 'app-dev-ui',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CodeBlockComponent, PhTagComponent, StatusBadgeComponent],
-  styles: `.swatch { display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 600; }`,
+  styles: `
+    .swatch {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+  `,
   template: `
-    <section class="section"><div class="container">
-      <h1>Design tokens</h1>
-      <div class="table-wrap"><table>
-        <caption>Colour pairs and WCAG contrast ratios</caption>
-        <thead><tr><th scope="col">Pair</th><th scope="col">Sample</th><th scope="col">Ratio</th><th scope="col">Use</th></tr></thead>
-        <tbody>
-          @for (p of pairs; track p.name) {
-            <tr><th scope="row">{{ p.name }}</th>
-              <td><span class="swatch" [style.color]="p.fg" [style.background]="p.bg">Aa</span></td>
-              <td>{{ p.ratio }} : 1</td><td>{{ p.use }}</td></tr>
-          }
-        </tbody>
-      </table></div>
-      <h2>Components</h2>
-      <p><button class="btn btn--primary" type="button">Primary</button> <button class="btn btn--ghost" type="button">Ghost</button></p>
-      <p><app-status-badge status="pass" label="Pass" /> <app-status-badge status="partial" label="Partial" />
-        <app-status-badge status="warn" label="Warn" /> <app-status-badge status="fail" label="Fail" />
-        <app-status-badge status="not-assessed" label="Not assessed" /></p>
-      <p>Placeholder: <app-ph token="[KVK_NUMBER]" /></p>
-      <app-code-block code="avesta-proof verify report.json --pubkey avesta-proof.pub  # offline" />
-    </div></section>
+    <section class="section">
+      <div class="container">
+        <h1>Design tokens</h1>
+        <div class="table-wrap">
+          <table>
+            <caption>
+              Colour pairs and WCAG contrast ratios
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Pair</th>
+                <th scope="col">Sample</th>
+                <th scope="col">Ratio</th>
+                <th scope="col">Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (p of pairs; track p.name) {
+                <tr>
+                  <th scope="row">{{ p.name }}</th>
+                  <td>
+                    <span class="swatch" [style.color]="p.fg" [style.background]="p.bg">Aa</span>
+                  </td>
+                  <td>{{ p.ratio }} : 1</td>
+                  <td>{{ p.use }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        <h2>Components</h2>
+        <p>
+          <button class="btn btn--primary" type="button">Primary</button>
+          <button class="btn btn--ghost" type="button">Ghost</button>
+        </p>
+        <p>
+          <app-status-badge status="pass" label="Pass" />
+          <app-status-badge status="partial" label="Partial" />
+          <app-status-badge status="warn" label="Warn" />
+          <app-status-badge status="fail" label="Fail" />
+          <app-status-badge status="not-assessed" label="Not assessed" />
+        </p>
+        <p>Placeholder: <app-ph token="[KVK_NUMBER]" /></p>
+        <app-code-block
+          code="avesta-proof verify report.json --pubkey avesta-proof.pub  # offline"
+        />
+      </div>
+    </section>
   `,
 })
 export class DevUiComponent {
-  protected readonly pairs = PAIRS.map(([name, fg, bg, use]) => ({ name, fg, bg, use, ratio: contrastRatio(fg, bg) }));
+  protected readonly pairs = PAIRS.map(([name, fg, bg, use]) => ({
+    name,
+    fg,
+    bg,
+    use,
+    ratio: contrastRatio(fg, bg),
+  }));
 }

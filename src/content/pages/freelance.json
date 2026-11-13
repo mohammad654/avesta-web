@@ -28,9 +28,21 @@
       "heading": "What I do",
       "columns": 3,
       "items": [
-        { "title": "Test automation", "body": "pytest, Robot Framework, Selenium, Playwright [CONFIRM_PLAYWRIGHT], JUnit, Google Test, Postman. From zero to a suite your team trusts.", "icon": "check" },
-        { "title": "Python engineering", "body": "Tooling, data handling and test benches for high-tech and hardware-adjacent software.", "icon": "code" },
-        { "title": "CI/CD and quality", "body": "Docker, Jenkins, GitHub Actions and GitLab CI pipelines with quality gates that catch problems early.", "icon": "branch" }
+        {
+          "title": "Test automation",
+          "body": "pytest, Robot Framework, Selenium, Playwright [CONFIRM_PLAYWRIGHT], JUnit, Google Test, Postman. From zero to a suite your team trusts.",
+          "icon": "check"
+        },
+        {
+          "title": "Python engineering",
+          "body": "Tooling, data handling and test benches for high-tech and hardware-adjacent software.",
+          "icon": "code"
+        },
+        {
+          "title": "CI/CD and quality",
+          "body": "Docker, Jenkins, GitHub Actions and GitLab CI pipelines with quality gates that catch problems early.",
+          "icon": "branch"
+        }
       ]
     },
     {
@@ -38,7 +50,10 @@
       "id": "experience",
       "heading": "Experience.",
       "items": [
-        { "title": "Capgemini Engineering, consultant, 2023 to 2026:", "body": "client work at ASML on Python calibration software; built a C/C++ code-quality platform (Docker, CI/CD). [CONFIRM_EMPLOYER_NAMES]" },
+        {
+          "title": "Capgemini Engineering, consultant, 2023 to 2026:",
+          "body": "client work at ASML on Python calibration software; built a C/C++ code-quality platform (Docker, CI/CD). [CONFIRM_EMPLOYER_NAMES]"
+        },
         { "title": "Avesta Tech, founder,", "body": "October 2026 to present." }
       ]
     },

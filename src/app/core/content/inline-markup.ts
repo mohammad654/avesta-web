@@ -23,7 +23,8 @@ export function parseInline(source: string): InlineToken[] {
     if (index > last) tokens.push({ type: 'text', text: source.slice(last, index) });
     const [whole, code, label, href, lang, langText, ph] = match;
     if (code !== undefined) tokens.push({ type: 'code', text: code });
-    else if (label !== undefined && href !== undefined) tokens.push({ type: 'link', text: label, href });
+    else if (label !== undefined && href !== undefined)
+      tokens.push({ type: 'link', text: label, href });
     else if (lang !== undefined && langText !== undefined) {
       tokens.push({ type: 'lang', text: langText, lang, dir: RTL_LANGS.has(lang) ? 'rtl' : 'ltr' });
     } else if (ph !== undefined) tokens.push({ type: 'ph', text: ph });

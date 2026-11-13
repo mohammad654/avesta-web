@@ -118,10 +118,18 @@
   "scoreLabel": "Readiness score: {percent}%",
   "exit": {
     "body": "The CRA may not apply to you. Check with counsel.",
-    "cta": { "label": "See the Quality Scan", "href": "/services/quality-scan", "variant": "primary" }
+    "cta": {
+      "label": "See the Quality Scan",
+      "href": "/services/quality-scan",
+      "variant": "primary"
+    }
   },
   "ctas": {
-    "book": { "label": "Book a CRA Readiness Scan", "href": "/services/cra-readiness-scan", "variant": "primary" },
+    "book": {
+      "label": "Book a CRA Readiness Scan",
+      "href": "/services/cra-readiness-scan",
+      "variant": "primary"
+    },
     "email": "Email me this result",
     "restart": "Start again"
   },

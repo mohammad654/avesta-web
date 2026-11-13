@@ -6,8 +6,15 @@
     <span id="sev-label" class="filters__label">{{ l.severity }}</span>
     <div class="filters__chips">
       @for (s of severities; track s.key) {
-        <button type="button" class="chip" [attr.aria-pressed]="f.severities.includes(s.key)" (click)="toggleSeverity(s.key)">
-          @if (f.severities.includes(s.key)) {<app-icon class="chip__check" name="check" />}
+        <button
+          type="button"
+          class="chip"
+          [attr.aria-pressed]="f.severities.includes(s.key)"
+          (click)="toggleSeverity(s.key)"
+        >
+          @if (f.severities.includes(s.key)) {
+            <app-icon class="chip__check" name="check" />
+          }
           {{ l[s.label] }} ({{ counts()[s.key] }})
         </button>
       }
@@ -43,8 +50,15 @@
     </div>
     <div class="field">
       <label for="rf-q">{{ l.search }}</label>
-      <input id="rf-q" class="input" type="search" autocomplete="off" [value]="f.query" [attr.placeholder]="l.searchHint"
-        (input)="patch({ query: value($event) })" />
+      <input
+        id="rf-q"
+        class="input"
+        type="search"
+        autocomplete="off"
+        [value]="f.query"
+        [attr.placeholder]="l.searchHint"
+        (input)="patch({ query: value($event) })"
+      />
     </div>
     <div class="field">
       <label for="rf-sort">{{ l.sort }}</label>
@@ -56,12 +70,25 @@
     </div>
   </div>
   <div class="filters__toggles">
-    <label class="checkbox"><input type="checkbox" [checked]="f.kevOnly" (change)="patch({ kevOnly: checked($event) })" /><span>{{ l.kev }}</span></label>
+    <label class="checkbox"
+      ><input
+        type="checkbox"
+        [checked]="f.kevOnly"
+        (change)="patch({ kevOnly: checked($event) })"
+      /><span>{{ l.kev }}</span></label
+    >
     <label class="checkbox" [class.is-disabled]="!hasBaseline()">
-      <input type="checkbox" [checked]="f.newOnly" [disabled]="!hasBaseline()" [attr.aria-describedby]="hasBaseline() ? null : 'rf-new-hint'"
-        (change)="patch({ newOnly: checked($event) })" />
+      <input
+        type="checkbox"
+        [checked]="f.newOnly"
+        [disabled]="!hasBaseline()"
+        [attr.aria-describedby]="hasBaseline() ? null : 'rf-new-hint'"
+        (change)="patch({ newOnly: checked($event) })"
+      />
       <span>{{ l.isNew }}</span>
-      @if (!hasBaseline()) {<span id="rf-new-hint" class="micro" role="tooltip">({{ l.needsBaseline }})</span>}
+      @if (!hasBaseline()) {
+        <span id="rf-new-hint" class="micro" role="tooltip">({{ l.needsBaseline }})</span>
+      }
     </label>
   </div>
 </fieldset>

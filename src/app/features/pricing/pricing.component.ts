@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { AnnouncerService } from '../../core/a11y/announcer.service';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { fill } from '../../core/content/format';
@@ -14,7 +21,13 @@ import { ProductCalculatorComponent } from './ui/product-calculator.component';
 @Component({
   selector: 'app-pricing',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TabsComponent, PlanCardComponent, ProductCalculatorComponent, ServicesTableComponent, InlineTextComponent],
+  imports: [
+    TabsComponent,
+    PlanCardComponent,
+    ProductCalculatorComponent,
+    ServicesTableComponent,
+    InlineTextComponent,
+  ],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.scss',
 })
@@ -49,7 +62,8 @@ export class PricingComponent {
     );
     effect(() => {
       const billing = this.billing();
-      if (ready()) this.announcer.announce(fill(this.labels.announce, { billing: this.labels[billing] }));
+      if (ready())
+        this.announcer.announce(fill(this.labels.announce, { billing: this.labels[billing] }));
     });
   }
 
@@ -58,6 +72,8 @@ export class PricingComponent {
     event.preventDefault();
     const next: Billing = this.billing() === 'monthly' ? 'yearly' : 'monthly';
     this.billing.set(next);
-    (event.currentTarget as HTMLElement).querySelector<HTMLElement>(`[data-billing="${next}"]`)?.focus();
+    (event.currentTarget as HTMLElement)
+      .querySelector<HTMLElement>(`[data-billing="${next}"]`)
+      ?.focus();
   }
 }

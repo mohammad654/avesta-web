@@ -11,12 +11,34 @@ import { InlineTextComponent } from '../../shared/ui/inline-text.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CtaComponent, PhTagComponent, InlineTextComponent],
   styles: `
-    aside { padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-navy); color: var(--color-cream); }
-    h2 { font-size: var(--fs-h3); }
-    dl { margin: var(--space-6) 0 0; display: grid; gap: var(--space-4); }
-    dt { font-family: var(--font-label); font-size: var(--fs-label); letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold); }
-    dd { margin: var(--space-1) 0 0; overflow-wrap: anywhere; }
-    a { color: var(--color-cream); }
+    aside {
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      background: var(--color-navy);
+      color: var(--color-cream);
+    }
+    h2 {
+      font-size: var(--fs-h3);
+    }
+    dl {
+      margin: var(--space-6) 0 0;
+      display: grid;
+      gap: var(--space-4);
+    }
+    dt {
+      font-family: var(--font-label);
+      font-size: var(--fs-label);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+    dd {
+      margin: var(--space-1) 0 0;
+      overflow-wrap: anywhere;
+    }
+    a {
+      color: var(--color-cream);
+    }
   `,
   template: `
     <aside class="on-dark" aria-labelledby="contact-side-title">
@@ -27,7 +49,15 @@ import { InlineTextComponent } from '../../shared/ui/inline-text.component';
           @let h = d.href ? href(d.href) : null;
           <div>
             <dt>{{ d.label }}</dt>
-            <dd>@if (h && h.kind === 'external') {<a [href]="h.href">{{ d.value }}</a>} @else if (h && h.kind === 'placeholder') {<app-ph [token]="d.value" />} @else {<app-text [text]="d.value" />}</dd>
+            <dd>
+              @if (h && h.kind === 'external') {
+                <a [href]="h.href">{{ d.value }}</a>
+              } @else if (h && h.kind === 'placeholder') {
+                <app-ph [token]="d.value" />
+              } @else {
+                <app-text [text]="d.value" />
+              }
+            </dd>
           </div>
         }
       </dl>

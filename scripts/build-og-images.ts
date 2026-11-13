@@ -12,7 +12,11 @@ const font = (file: string) =>
   `data:font/woff2;base64,${readFileSync(join(ROOT, 'public/assets/fonts', file)).toString('base64')}`;
 const SUN = `<svg viewBox="542 200 116 116" width="150" height="150"><circle cx="600" cy="258" r="52" fill="none" stroke="#C9A461" stroke-width="3"/><path d="M600 214q0 44 44 44-44 0-44 44 0-44-44-44 44 0 44-44Z" fill="#C9A461"/><g fill="#C9A461"><circle cx="637" cy="221" r="6"/><circle cx="563" cy="295" r="6"/><circle cx="551" cy="240" r="4"/></g></svg>`;
 const MARK = readFileSync(join(ROOT, 'public/favicon.svg'), 'utf8');
-const strip = (s: string) => s.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/`/g, '').replace(/\{lang:[a-z]+\|([^}]+)\}/g, '$1');
+const strip = (s: string) =>
+  s
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/`/g, '')
+    .replace(/\{lang:[a-z]+\|([^}]+)\}/g, '$1');
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
 /** First sentence, so the subtitle never stops mid-word. */
@@ -53,7 +57,9 @@ if (process.argv.includes('--brand')) {
     [512, 'public/assets/brand/avesta-logo-512.png'],
   ] as const) {
     await tab.setViewportSize({ width: size, height: size });
-    await tab.setContent(`<html><body style="margin:0;background:#0E1A33">${MARK.replace('<svg', `<svg width="${size}" height="${size}"`)}</body></html>`);
+    await tab.setContent(
+      `<html><body style="margin:0;background:#0E1A33">${MARK.replace('<svg', `<svg width="${size}" height="${size}"`)}</body></html>`,
+    );
     await tab.screenshot({ path: join(ROOT, out) });
     console.log(`wrote ${out}`);
   }

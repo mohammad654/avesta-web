@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Injector, afterNextRender, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Injector,
+  afterNextRender,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import { AnnouncerService } from '../../core/a11y/announcer.service';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { fill } from '../../core/content/format';
@@ -34,7 +43,9 @@ export class CraCheckerComponent {
   protected readonly progress = computed(() =>
     fill(this.copy.progress, { current: this.index() + 1, total: this.questions.length }),
   );
-  protected readonly progressPercent = computed(() => ((this.index() + 1) / this.questions.length) * 100);
+  protected readonly progressPercent = computed(
+    () => ((this.index() + 1) / this.questions.length) * 100,
+  );
   protected readonly outcome = computed(() => scoreCra(this.questions, this.answers()));
   protected readonly result = computed(() => {
     const o = this.outcome();

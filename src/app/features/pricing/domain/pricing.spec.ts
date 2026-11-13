@@ -1,8 +1,20 @@
 import { Plan } from '../../../core/content/content.models';
-import { clampProducts, parseBilling, parseView, planPrice, suggestBusiness, teamTotal } from './pricing';
+import {
+  clampProducts,
+  parseBilling,
+  parseView,
+  planPrice,
+  suggestBusiness,
+  teamTotal,
+} from './pricing';
 
 const plan = (monthly: number | null, yearly: number | null): Plan => ({
-  id: 'team', name: 'Team', for: 'One product', includes: [], monthly, yearly,
+  id: 'team',
+  name: 'Team',
+  for: 'One product',
+  includes: [],
+  monthly,
+  yearly,
   cta: { label: 'Book a demo', href: '/contact', variant: 'primary' },
 });
 
@@ -13,7 +25,11 @@ describe('pricing (brief 4.5)', () => {
   });
 
   it('shows the per-month equivalent for yearly billing', () => {
-    expect(planPrice(plan(100, 1000), 'yearly')).toEqual({ kind: 'yearly', perMonth: 83.33, billedYearly: 1000 });
+    expect(planPrice(plan(100, 1000), 'yearly')).toEqual({
+      kind: 'yearly',
+      perMonth: 83.33,
+      billedYearly: 1000,
+    });
     expect(planPrice(plan(100, 1000), 'monthly')).toEqual({ kind: 'monthly', perMonth: 100 });
   });
 

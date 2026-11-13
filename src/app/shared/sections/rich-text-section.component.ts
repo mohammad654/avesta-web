@@ -11,7 +11,12 @@ import { SectionComponent } from './section.component';
   imports: [SectionComponent, SectionHeadingComponent, CtaComponent, InlineTextComponent],
   template: `
     @let s = section();
-    <app-section [sectionId]="s.id" [tone]="s.tone" [labelled]="!!s.heading" [centered]="!!s.centered">
+    <app-section
+      [sectionId]="s.id"
+      [tone]="s.tone"
+      [labelled]="!!s.heading"
+      [centered]="!!s.centered"
+    >
       @if (s.heading) {
         <app-section-heading [sectionId]="s.id" [heading]="s.heading" />
       }

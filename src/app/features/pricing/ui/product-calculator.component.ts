@@ -10,9 +10,19 @@ import { Billing, clampProducts, suggestBusiness, teamTotal } from '../domain/pr
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [InlineTextComponent],
   styles: `
-    .calc { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); align-items: end; }
-    .input { width: 8rem; }
-    output { display: block; font-weight: 600; }
+    .calc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4) var(--space-6);
+      align-items: end;
+    }
+    .input {
+      width: 8rem;
+    }
+    output {
+      display: block;
+      font-weight: 600;
+    }
   `,
   template: `
     <section class="card" aria-labelledby="calc-title">
@@ -20,8 +30,16 @@ import { Billing, clampProducts, suggestBusiness, teamTotal } from '../domain/pr
       <div class="calc">
         <div class="field">
           <label for="calc-products">{{ labels().calculatorLabel }}</label>
-          <input id="calc-products" class="input" type="number" inputmode="numeric" min="1" max="999"
-            [value]="products()" (input)="setProducts($event)" />
+          <input
+            id="calc-products"
+            class="input"
+            type="number"
+            inputmode="numeric"
+            min="1"
+            max="999"
+            [value]="products()"
+            (input)="setProducts($event)"
+          />
         </div>
         <div>
           <output for="calc-products" aria-live="polite">{{ total() }}</output>

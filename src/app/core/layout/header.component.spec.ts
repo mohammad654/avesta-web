@@ -13,8 +13,17 @@ describe('HeaderComponent (brief 2.2)', () => {
   it('renders the logo link, five nav items and the two buttons', async () => {
     const { el } = await setup();
     expect(el.querySelector('.header__logo')!.getAttribute('aria-label')).toBe('Avesta Tech home');
-    expect([...el.querySelectorAll('.nav__link')].map(text)).toEqual(['Product', 'Services', 'Pricing', 'Trust', 'About']);
-    expect([...el.querySelectorAll('.header__ctas a')].map(text)).toEqual(['CRA check', 'Book a call']);
+    expect([...el.querySelectorAll('.nav__link')].map(text)).toEqual([
+      'Product',
+      'Services',
+      'Pricing',
+      'Trust',
+      'About',
+    ]);
+    expect([...el.querySelectorAll('.header__ctas a')].map(text)).toEqual([
+      'CRA check',
+      'Book a call',
+    ]);
   });
 
   it('opens a dropdown with the toggle and closes it with Escape, returning focus', async () => {

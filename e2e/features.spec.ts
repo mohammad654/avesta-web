@@ -65,11 +65,15 @@ test.describe('without JavaScript', () => {
     await page.goto('/');
     const summary = page.locator('summary', { hasText: 'Does my source code leave my company?' });
     await summary.click();
-    await expect(page.getByText('Only the signed results move, and only if you send them.')).toBeVisible();
+    await expect(
+      page.getByText('Only the signed results move, and only if you send them.'),
+    ).toBeVisible();
     // Real no-JS browsers apply the <noscript> styles; here the narrow layout lists every step.
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/how-it-works');
     await expect(page.getByText('Duplicate findings are merged')).toBeVisible();
-    await expect(page.getByText('Your CI can fail the build on high-severity findings.')).toBeVisible();
+    await expect(
+      page.getByText('Your CI can fail the build on high-severity findings.'),
+    ).toBeVisible();
   });
 });

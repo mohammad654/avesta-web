@@ -40,10 +40,26 @@
       "heading": "Values",
       "columns": 2,
       "items": [
-        { "title": "Proof over promises", "body": "If we cannot show it, we do not claim it.", "icon": "check" },
-        { "title": "Honest by default", "body": "Partial is partial. Expired is expired. We would rather lose a sale than mislead an auditor.", "icon": "shield" },
-        { "title": "Your code, your control", "body": "Local-first tools and written permission before we scan anything.", "icon": "lock" },
-        { "title": "Engineering first", "body": "We fix things. Every finding comes with the way to solve it.", "icon": "wrench" }
+        {
+          "title": "Proof over promises",
+          "body": "If we cannot show it, we do not claim it.",
+          "icon": "check"
+        },
+        {
+          "title": "Honest by default",
+          "body": "Partial is partial. Expired is expired. We would rather lose a sale than mislead an auditor.",
+          "icon": "shield"
+        },
+        {
+          "title": "Your code, your control",
+          "body": "Local-first tools and written permission before we scan anything.",
+          "icon": "lock"
+        },
+        {
+          "title": "Engineering first",
+          "body": "We fix things. Every finding comes with the way to solve it.",
+          "icon": "wrench"
+        }
       ]
     },
     {

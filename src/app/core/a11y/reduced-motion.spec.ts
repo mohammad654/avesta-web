@@ -7,7 +7,11 @@ describe('injectReducedMotion', () => {
   it('follows prefers-reduced-motion and its changes', () => {
     let listener: ((e: { matches: boolean }) => void) | undefined;
     const remove = vi.fn();
-    vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: (_: string, l: typeof listener) => (listener = l), removeEventListener: remove }));
+    vi.stubGlobal('matchMedia', () => ({
+      matches: true,
+      addEventListener: (_: string, l: typeof listener) => (listener = l),
+      removeEventListener: remove,
+    }));
     const reduced = TestBed.runInInjectionContext(() => injectReducedMotion());
     expect(reduced()).toBe(true);
     listener!({ matches: false });

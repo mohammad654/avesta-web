@@ -5,7 +5,9 @@ import { CONTENT, DIST, SiteJson, domain, readJson, resolveValues } from './lib/
 
 const site = readJson<SiteJson>(join(CONTENT, 'site.json'));
 const origin = `https://${domain()}`;
-const expires = new Date(Date.now() + 365 * 24 * 3600 * 1000).toISOString().replace(/\.\d{3}Z$/, '.000Z');
+const expires = new Date(Date.now() + 365 * 24 * 3600 * 1000)
+  .toISOString()
+  .replace(/\.\d{3}Z$/, '.000Z');
 const body = [
   `Contact: mailto:${resolveValues(site.settings.securityEmail)}`,
   `Expires: ${expires}`,

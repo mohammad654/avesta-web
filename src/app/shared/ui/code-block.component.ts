@@ -16,11 +16,22 @@ interface CodeLine {
   styleUrl: './code-block.component.scss',
   template: `
     <div class="code on-dark">
-      <button type="button" class="btn btn--ghost btn--small code__copy" [attr.aria-label]="micro.copyLabel" (click)="copy()">
-        <app-icon name="copy" /><span aria-hidden="true">{{ copied() ? micro.copied : micro.copy }}</span>
+      <button
+        type="button"
+        class="btn btn--ghost btn--small code__copy"
+        [attr.aria-label]="micro.copyLabel"
+        (click)="copy()"
+      >
+        <app-icon name="copy" /><span aria-hidden="true">{{
+          copied() ? micro.copied : micro.copy
+        }}</span>
       </button>
       <span class="visually-hidden" aria-live="polite">{{ copied() ? micro.copied : '' }}</span>
-      <pre tabindex="0" [attr.aria-label]="label()"><code>@for (line of lines(); track $index) {<span>{{ line.code }}</span>@if (line.comment) {<span class="code__comment">{{ line.comment }}</span>}{{ '\n' }}}</code></pre>
+      <pre
+        tabindex="0"
+        [attr.aria-label]="label()"
+      ><code>@for (line of lines(); track $index) {<span>{{ line.code }}</span>@if (line.comment) {<span class="code__comment">{{ line.comment }}</span>}{{ '
+' }}}</code></pre>
     </div>
   `,
 })
@@ -37,7 +48,9 @@ export class CodeBlockComponent {
       .split('\n')
       .map((line) => {
         const at = line.search(/(^|\s)#/);
-        return at < 0 ? { code: line, comment: '' } : { code: line.slice(0, at), comment: line.slice(at) };
+        return at < 0
+          ? { code: line, comment: '' }
+          : { code: line.slice(0, at), comment: line.slice(at) };
       }),
   );
 

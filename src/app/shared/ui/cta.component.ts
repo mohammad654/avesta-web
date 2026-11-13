@@ -15,13 +15,33 @@ import { PhTagComponent } from './ph-tag.component';
   template: `
     @let t = target();
     @if (t.kind === 'internal') {
-      <a [routerLink]="t.path" [queryParams]="t.queryParams" [fragment]="t.fragment" [class]="classes()"
-        [attr.aria-label]="cta().ariaLabel ?? null" [appPreloadOnHover]="t.path">{{ cta().label }}@if (cta().variant === 'link') {<app-icon name="arrow" />}</a>
+      <a
+        [routerLink]="t.path"
+        [queryParams]="t.queryParams"
+        [fragment]="t.fragment"
+        [class]="classes()"
+        [attr.aria-label]="cta().ariaLabel ?? null"
+        [appPreloadOnHover]="t.path"
+        >{{ cta().label }}
+        @if (cta().variant === 'link') {
+          <app-icon name="arrow" />
+        }
+      </a>
     } @else if (t.kind === 'external') {
-      <a [href]="t.href" [class]="classes()" [attr.download]="t.download ? '' : null"
-        [attr.aria-label]="cta().ariaLabel ?? null">{{ cta().label }}@if (t.download) {<app-icon name="download" />}</a>
+      <a
+        [href]="t.href"
+        [class]="classes()"
+        [attr.download]="t.download ? '' : null"
+        [attr.aria-label]="cta().ariaLabel ?? null"
+        >{{ cta().label }}
+        @if (t.download) {
+          <app-icon name="download" />
+        }
+      </a>
     } @else {
-      <span [class]="classes()" aria-disabled="true">{{ cta().label }} <app-ph [token]="t.token" /></span>
+      <span [class]="classes()" aria-disabled="true"
+        >{{ cta().label }} <app-ph [token]="t.token"
+      /></span>
     }
   `,
 })

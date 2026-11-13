@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, input, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  inject,
+  input,
+  model,
+} from '@angular/core';
 
 export interface TabItem {
   id: string;
@@ -17,14 +24,31 @@ export interface TabItem {
   template: `
     <div role="tablist" class="tabs" [attr.aria-label]="label()">
       @for (tab of tabs(); track tab.id) {
-        <button type="button" role="tab" class="tabs__tab" [id]="prefix() + '-tab-' + tab.id"
-          [attr.aria-selected]="tab.id === selected()" [attr.aria-controls]="prefix() + '-panel'"
-          [tabIndex]="tab.id === selected() ? 0 : -1" (click)="selected.set(tab.id)" (keydown)="onKey($event)">
-          {{ tab.label }}@if (tab.badge) {<span class="badge">{{ tab.badge }}</span>}
+        <button
+          type="button"
+          role="tab"
+          class="tabs__tab"
+          [id]="prefix() + '-tab-' + tab.id"
+          [attr.aria-selected]="tab.id === selected()"
+          [attr.aria-controls]="prefix() + '-panel'"
+          [tabIndex]="tab.id === selected() ? 0 : -1"
+          (click)="selected.set(tab.id)"
+          (keydown)="onKey($event)"
+        >
+          {{ tab.label }}
+          @if (tab.badge) {
+            <span class="badge">{{ tab.badge }}</span>
+          }
         </button>
       }
     </div>
-    <div role="tabpanel" class="tabs__panel" [id]="prefix() + '-panel'" [attr.aria-labelledby]="prefix() + '-tab-' + selected()" tabindex="0">
+    <div
+      role="tabpanel"
+      class="tabs__panel"
+      [id]="prefix() + '-panel'"
+      [attr.aria-labelledby]="prefix() + '-tab-' + selected()"
+      tabindex="0"
+    >
       <ng-content />
     </div>
   `,
@@ -44,7 +68,9 @@ export class TabsComponent {
     event.preventDefault();
     const id = ids[next]!;
     this.selected.set(id);
-    this.host.nativeElement.querySelector<HTMLElement>(`#${this.prefix()}-tab-${CSS.escape(id)}`)?.focus();
+    this.host.nativeElement
+      .querySelector<HTMLElement>(`#${this.prefix()}-tab-${CSS.escape(id)}`)
+      ?.focus();
   }
 }
 

@@ -4,11 +4,17 @@ import { TabsComponent, nextIndex } from './tabs.component';
 
 @Component({
   imports: [TabsComponent],
-  template: `<app-tabs [tabs]="tabs" label="Standards" prefix="t" [(selected)]="selected"><p>{{ selected() }}</p></app-tabs>`,
+  template: `<app-tabs [tabs]="tabs" label="Standards" prefix="t" [(selected)]="selected"
+    ><p>{{ selected() }}</p></app-tabs
+  >`,
 })
 class HostComponent {
-  tabs = [{ id: 'a', label: 'A' }, { id: 'b', label: 'B' }, { id: 'c', label: 'C', badge: '2' }];
-  selected = signal('a');
+  tabs = [
+    { id: 'a', label: 'A' },
+    { id: 'b', label: 'B' },
+    { id: 'c', label: 'C', badge: '2' },
+  ];
+  readonly selected = signal('a');
 }
 
 describe('TabsComponent (WAI-ARIA tabs)', () => {

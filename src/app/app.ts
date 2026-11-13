@@ -19,12 +19,20 @@ import { HeaderComponent } from './core/layout/header.component';
   `,
   styles: `
     .skip-link {
-      position: absolute; left: var(--space-4); top: -100px; z-index: 100;
-      padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm);
-      background: var(--color-gold); color: var(--color-navy); font-weight: 600;
+      position: absolute;
+      left: var(--space-4);
+      top: -100px;
+      z-index: 100;
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-sm);
+      background: var(--color-gold);
+      color: var(--color-navy);
+      font-weight: 600;
       --focus-color: var(--color-cream);
     }
-    .skip-link:focus { top: var(--space-2); }
+    .skip-link:focus {
+      top: var(--space-2);
+    }
   `,
 })
 export class App {
@@ -40,7 +48,8 @@ export class App {
         takeUntilDestroyed(),
       )
       .subscribe((e) => {
-        if (!e.urlAfterRedirects.includes('#')) doc.getElementById('main')?.focus({ preventScroll: true });
+        if (!e.urlAfterRedirects.includes('#'))
+          doc.getElementById('main')?.focus({ preventScroll: true });
       });
   }
 }

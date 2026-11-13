@@ -19,9 +19,7 @@
     {
       "kind": "richText",
       "id": "review",
-      "paragraphs": [
-        "[LEGAL_REVIEW]"
-      ]
+      "paragraphs": ["[LEGAL_REVIEW]"]
     },
     {
       "kind": "richText",

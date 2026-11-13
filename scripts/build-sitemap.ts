@@ -21,4 +21,6 @@ const robots = staging
   ? 'User-agent: *\nDisallow: /\n'
   : `User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`;
 writeFileSync(join(DIST, 'robots.txt'), robots);
-console.log(`sitemap.xml: ${urls.length} URLs; robots.txt (${staging ? 'staging, noindex' : 'production'})`);
+console.log(
+  `sitemap.xml: ${urls.length} URLs; robots.txt (${staging ? 'staging, noindex' : 'production'})`,
+);

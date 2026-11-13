@@ -19,17 +19,13 @@
     {
       "kind": "richText",
       "id": "review",
-      "paragraphs": [
-        "[LEGAL_REVIEW]"
-      ]
+      "paragraphs": ["[LEGAL_REVIEW]"]
     },
     {
       "kind": "richText",
       "id": "s1",
       "heading": "Our target",
-      "paragraphs": [
-        "This website aims to meet WCAG 2.2 level AA, and at least WCAG 2.1 level AA."
-      ]
+      "paragraphs": ["This website aims to meet WCAG 2.2 level AA, and at least WCAG 2.1 level AA."]
     },
     {
       "kind": "richText",
@@ -51,9 +47,7 @@
       "kind": "richText",
       "id": "s4",
       "heading": "Date",
-      "paragraphs": [
-        "This statement was last reviewed on [A11Y_STATEMENT_DATE]."
-      ]
+      "paragraphs": ["This statement was last reviewed on [A11Y_STATEMENT_DATE]."]
     }
   ]
 }

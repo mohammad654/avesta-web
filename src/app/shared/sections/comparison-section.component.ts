@@ -10,8 +10,12 @@ import { SectionComponent } from './section.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionComponent, SectionHeadingComponent, InlineTextComponent],
   styles: `
-    td:last-child { font-weight: 500; }
-    th[scope='row'] { white-space: nowrap; }
+    td:last-child {
+      font-weight: 500;
+    }
+    th[scope='row'] {
+      white-space: nowrap;
+    }
   `,
   template: `
     @let s = section();
@@ -19,7 +23,11 @@ import { SectionComponent } from './section.component';
       <app-section-heading [sectionId]="s.id" [heading]="s.heading" />
       <div class="table-wrap">
         <table>
-          <caption class="visually-hidden">{{ s.caption }}</caption>
+          <caption class="visually-hidden">
+            {{
+              s.caption
+            }}
+          </caption>
           <thead>
             <tr>
               <td class="visually-hidden">{{ topic }}</td>

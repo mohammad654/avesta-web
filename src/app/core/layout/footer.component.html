@@ -15,7 +15,9 @@
           <h2 class="eyebrow">{{ column.heading }}</h2>
           <ul class="plain-list">
             @for (link of column.links; track link.href) {
-              <li><a [routerLink]="link.href">{{ link.label }}</a></li>
+              <li>
+                <a [routerLink]="link.href">{{ link.label }}</a>
+              </li>
             }
           </ul>
         </nav>
@@ -28,7 +30,9 @@
       <p><app-text [text]="footer.bottom" /></p>
       <ul class="plain-list footer__inline">
         @for (link of footer.legal; track link.href) {
-          <li><a [routerLink]="link.href">{{ link.label }}</a></li>
+          <li>
+            <a [routerLink]="link.href">{{ link.label }}</a>
+          </li>
         }
         @for (link of footer.social; track link.label) {
           @let h = href(link.href);
@@ -47,11 +51,15 @@
             @if (lang.active) {
               <span aria-current="true" class="footer__lang">{{ lang.label }}</span>
             } @else {
-              <span class="footer__lang footer__lang--off" aria-disabled="true">{{ lang.label }}</span>
+              <span class="footer__lang footer__lang--off" aria-disabled="true">{{
+                lang.label
+              }}</span>
             }
           </li>
         }
-        <li><a [routerLink]="[]" fragment="top">{{ footer.backToTop }}</a></li>
+        <li>
+          <a [routerLink]="[]" fragment="top">{{ footer.backToTop }}</a>
+        </li>
       </ul>
     </div>
   </div>

@@ -7,7 +7,11 @@ import { Tone } from '../../core/content/content.models';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { style: 'display:contents' },
   template: `
-    <section [class]="classes()" [attr.aria-labelledby]="labelled() ? sectionId() + '-title' : null" [id]="sectionId()">
+    <section
+      [class]="classes()"
+      [attr.aria-labelledby]="labelled() ? sectionId() + '-title' : null"
+      [id]="sectionId()"
+    >
       <div class="container"><ng-content /></div>
     </section>
   `,

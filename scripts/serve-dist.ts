@@ -9,12 +9,32 @@ import { brotliCompressSync, gzipSync } from 'node:zlib';
 import { DIST } from './lib/site';
 
 const TYPES: Record<string, string> = {
-  '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
-  '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.xml': 'application/xml',
-  '.txt': 'text/plain; charset=utf-8', '.webmanifest': 'application/manifest+json', '.md': 'text/markdown; charset=utf-8',
-  '.sarif': 'application/json', '.pub': 'text/plain; charset=utf-8',
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'text/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.woff2': 'font/woff2',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain; charset=utf-8',
+  '.webmanifest': 'application/manifest+json',
+  '.md': 'text/markdown; charset=utf-8',
+  '.sarif': 'application/json',
+  '.pub': 'text/plain; charset=utf-8',
 };
-const COMPRESS = new Set(['.html', '.js', '.css', '.json', '.svg', '.xml', '.txt', '.webmanifest', '.md', '.sarif']);
+const COMPRESS = new Set([
+  '.html',
+  '.js',
+  '.css',
+  '.json',
+  '.svg',
+  '.xml',
+  '.txt',
+  '.webmanifest',
+  '.md',
+  '.sarif',
+]);
 
 /** Parses _headers into [pattern, headers] rules. */
 function rules(): [RegExp, [string, string][]][] {
@@ -24,8 +44,16 @@ function rules(): [RegExp, [string, string][]][] {
   for (const block of readFileSync(file, 'utf8').split(/\n(?=\/)/)) {
     const [pattern, ...lines] = block.trim().split('\n');
     if (!pattern) continue;
-    const re = new RegExp('^' + pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$');
-    out.push([re, lines.map((l) => l.trim()).filter(Boolean).map((l) => [l.slice(0, l.indexOf(':')), l.slice(l.indexOf(':') + 1).trim()])]);
+    const re = new RegExp(
+      '^' + pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$',
+    );
+    out.push([
+      re,
+      lines
+        .map((l) => l.trim())
+        .filter(Boolean)
+        .map((l) => [l.slice(0, l.indexOf(':')), l.slice(l.indexOf(':') + 1).trim()]),
+    ]);
   }
   return out;
 }
@@ -33,7 +61,11 @@ const RULES = rules();
 
 function resolveFile(urlPath: string): { file: string; status: number } {
   const clean = normalize(decodeURIComponent(urlPath)).replace(/^(\.\.[/\\])+/, '');
-  const candidates = [join(DIST, clean), join(DIST, clean, 'index.html'), join(DIST, `${clean}.html`)];
+  const candidates = [
+    join(DIST, clean),
+    join(DIST, clean, 'index.html'),
+    join(DIST, `${clean}.html`),
+  ];
   const hit = candidates.find((c) => c.startsWith(DIST) && existsSync(c) && statSync(c).isFile());
   return hit ? { file: hit, status: 200 } : { file: join(DIST, '404.html'), status: 404 };
 }
@@ -47,13 +79,24 @@ createServer((req, res) => {
   res.statusCode = status;
   res.setHeader('Content-Type', TYPES[ext] ?? 'application/octet-stream');
   for (const [re, headers] of RULES) {
-    if (re.test(url.pathname)) for (const [k, v] of headers) if (k !== 'Strict-Transport-Security' && !v.includes('upgrade-insecure')) res.setHeader(k, v);
-    if (re.test(url.pathname)) for (const [k, v] of headers) if (k === 'Content-Security-Policy') res.setHeader(k, v.replace('; upgrade-insecure-requests', ''));
+    if (re.test(url.pathname))
+      for (const [k, v] of headers)
+        if (k !== 'Strict-Transport-Security' && !v.includes('upgrade-insecure'))
+          res.setHeader(k, v);
+    if (re.test(url.pathname))
+      for (const [k, v] of headers)
+        if (k === 'Content-Security-Policy')
+          res.setHeader(k, v.replace('; upgrade-insecure-requests', ''));
   }
   const accept = String(req.headers['accept-encoding'] ?? '');
   if (COMPRESS.has(ext)) {
-    if (accept.includes('br')) { body = brotliCompressSync(body); res.setHeader('Content-Encoding', 'br'); }
-    else if (accept.includes('gzip')) { body = gzipSync(body); res.setHeader('Content-Encoding', 'gzip'); }
+    if (accept.includes('br')) {
+      body = brotliCompressSync(body);
+      res.setHeader('Content-Encoding', 'br');
+    } else if (accept.includes('gzip')) {
+      body = gzipSync(body);
+      res.setHeader('Content-Encoding', 'gzip');
+    }
     res.setHeader('Vary', 'Accept-Encoding');
   }
   res.setHeader('Content-Length', body.length);

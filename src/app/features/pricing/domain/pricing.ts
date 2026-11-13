@@ -13,16 +13,26 @@ export function planPrice(plan: Plan, billing: Billing): PlanPrice {
   if (billing === 'yearly') {
     return plan.yearly === null
       ? { kind: 'contact' }
-      : { kind: 'yearly', perMonth: Math.round((plan.yearly / 12) * 100) / 100, billedYearly: plan.yearly };
+      : {
+          kind: 'yearly',
+          perMonth: Math.round((plan.yearly / 12) * 100) / 100,
+          billedYearly: plan.yearly,
+        };
   }
   return plan.monthly === null ? { kind: 'contact' } : { kind: 'monthly', perMonth: plan.monthly };
 }
 
 /** Team price × number of products; null while the Team price is not set. */
-export function teamTotal(plan: Plan | undefined, billing: Billing, products: number): number | null {
+export function teamTotal(
+  plan: Plan | undefined,
+  billing: Billing,
+  products: number,
+): number | null {
   if (!plan) return null;
   const price = planPrice(plan, billing);
-  return price.kind === 'contact' ? null : Math.round(price.perMonth * clampProducts(products) * 100) / 100;
+  return price.kind === 'contact'
+    ? null
+    : Math.round(price.perMonth * clampProducts(products) * 100) / 100;
 }
 
 export function suggestBusiness(products: number, threshold: number): boolean {

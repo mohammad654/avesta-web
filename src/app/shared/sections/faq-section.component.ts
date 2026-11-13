@@ -15,10 +15,18 @@ import { SectionComponent } from './section.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionComponent, SectionHeadingComponent, InlineTextComponent],
   styles: `
-    .faq { max-width: 52rem; }
-    .faq summary { font-size: var(--fs-h4); }
-    .faq__answer { padding: 0 0 var(--space-5); }
-    .faq__answer p { margin: 0; }
+    .faq {
+      max-width: 52rem;
+    }
+    .faq summary {
+      font-size: var(--fs-h4);
+    }
+    .faq__answer {
+      padding: 0 0 var(--space-5);
+    }
+    .faq__answer p {
+      margin: 0;
+    }
   `,
   template: `
     @let s = section();
@@ -28,7 +36,9 @@ import { SectionComponent } from './section.component';
         @for (item of items(); track item.id) {
           <details class="disclosure" [id]="'faq-' + item.id">
             <summary>{{ item.question }}</summary>
-            <div class="faq__answer"><p><app-text [text]="item.answer" /></p></div>
+            <div class="faq__answer">
+              <p><app-text [text]="item.answer" /></p>
+            </div>
           </details>
         }
       </div>

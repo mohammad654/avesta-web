@@ -2,15 +2,30 @@
   <div class="explorer__filters">
     <div class="field">
       <label for="explorer-search">{{ labels.search }}</label>
-      <input id="explorer-search" class="input" type="search" autocomplete="off" [value]="queryInput()"
-        [attr.placeholder]="labels.searchHint" (input)="onSearch($any($event.target).value)" />
+      <input
+        id="explorer-search"
+        class="input"
+        type="search"
+        autocomplete="off"
+        [value]="queryInput()"
+        [attr.placeholder]="labels.searchHint"
+        (input)="onSearch($any($event.target).value)"
+      />
     </div>
     <div class="field" role="radiogroup" aria-labelledby="explorer-type-label">
       <span id="explorer-type-label" class="explorer__label">{{ labels.type }}</span>
       <div class="chips">
         @for (option of typeOptions; track option.id) {
-          <button type="button" role="radio" class="chip" [attr.aria-checked]="type() === option.id"
-            [tabIndex]="type() === option.id ? 0 : -1" (click)="type.set(option.id)">{{ option.label }}</button>
+          <button
+            type="button"
+            role="radio"
+            class="chip"
+            [attr.aria-checked]="type() === option.id"
+            [tabIndex]="type() === option.id ? 0 : -1"
+            (click)="type.set(option.id)"
+          >
+            {{ option.label }}
+          </button>
         }
       </div>
     </div>
@@ -28,7 +43,9 @@
   @if (highlight(); as h) {
     <div class="explorer__highlight" role="status">
       <span>{{ highlightText() }}</span>
-      <button type="button" class="btn btn--ghost btn--small" (click)="highlight.set(null)">{{ labels.clearHighlight }}</button>
+      <button type="button" class="btn btn--ghost btn--small" (click)="highlight.set(null)">
+        {{ labels.clearHighlight }}
+      </button>
     </div>
   }
 
@@ -38,15 +55,22 @@
       <ul class="plain-list explorer__list">
         @for (row of visible(); track row.standard + row.id) {
           <li>
-            <app-control-row [row]="row" [labels]="labels" [scanners]="copy.scanners"
-              [highlighted]="highlightIds().has(row.standard + ':' + row.id)" (highlightScanner)="highlight.set($event)" />
+            <app-control-row
+              [row]="row"
+              [labels]="labels"
+              [scanners]="copy.scanners"
+              [highlighted]="highlightIds().has(row.standard + ':' + row.id)"
+              (highlightScanner)="highlight.set($event)"
+            />
           </li>
         }
       </ul>
     } @else {
       <div class="explorer__empty">
         <p>{{ labels.empty }}</p>
-        <button type="button" class="btn btn--ghost btn--small" (click)="clear()">{{ labels.clear }}</button>
+        <button type="button" class="btn btn--ghost btn--small" (click)="clear()">
+          {{ labels.clear }}
+        </button>
       </div>
     }
   </app-tabs>

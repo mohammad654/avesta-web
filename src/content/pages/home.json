@@ -73,10 +73,22 @@
       "tone": "navy",
       "heading": "From commit to evidence in four steps.",
       "steps": [
-        { "title": "Scan.", "body": "Eight scanners check code, dependencies, secrets, complexity, tests and repository hygiene." },
-        { "title": "Prioritise.", "body": "Findings that attackers are using right now (CISA KEV) come first, then likelihood (EPSS), then severity." },
-        { "title": "Map.", "body": "Each finding is tied to the controls it affects in ISO/IEC 27001, IEC 62443-4-1 and the CRA." },
-        { "title": "Prove.", "body": "The report is signed and linked into a tamper-evident history your auditor can check offline." }
+        {
+          "title": "Scan.",
+          "body": "Eight scanners check code, dependencies, secrets, complexity, tests and repository hygiene."
+        },
+        {
+          "title": "Prioritise.",
+          "body": "Findings that attackers are using right now (CISA KEV) come first, then likelihood (EPSS), then severity."
+        },
+        {
+          "title": "Map.",
+          "body": "Each finding is tied to the controls it affects in ISO/IEC 27001, IEC 62443-4-1 and the CRA."
+        },
+        {
+          "title": "Prove.",
+          "body": "The report is signed and linked into a tamper-evident history your auditor can check offline."
+        }
       ],
       "ctas": [{ "label": "See how it works", "href": "/how-it-works", "variant": "ghost" }]
     },
@@ -86,12 +98,37 @@
       "heading": "Everything an auditor asks for. Nothing they have to take on trust.",
       "columns": 3,
       "items": [
-        { "title": "Verdict per control", "body": "Pass, partial, warn or fail for every mapped control, with the exact fix per finding.", "icon": "check" },
-        { "title": "Exploit-aware priority", "body": "\"These 2 of your 140 findings are being used in attacks right now.\" Start there.", "tag": "Example", "icon": "alert" },
-        { "title": "Signed and chained", "body": "Ed25519 signatures and a hash-chained ledger. Edit an old report and the check fails.", "icon": "lock" },
-        { "title": "Evidence that expires", "body": "Pen tests, threat models and accepted risks carry an end date, so nothing quietly goes stale.", "icon": "clock" },
-        { "title": "CRA technical file", "body": "A draft structured on Annex VII, built from real scan data, plus a CycloneDX SBOM.", "icon": "file" },
-        { "title": "Trust page and badge", "body": "A one-page trust statement to answer customer security questionnaires faster.", "icon": "badge" }
+        {
+          "title": "Verdict per control",
+          "body": "Pass, partial, warn or fail for every mapped control, with the exact fix per finding.",
+          "icon": "check"
+        },
+        {
+          "title": "Exploit-aware priority",
+          "body": "\"These 2 of your 140 findings are being used in attacks right now.\" Start there.",
+          "tag": "Example",
+          "icon": "alert"
+        },
+        {
+          "title": "Signed and chained",
+          "body": "Ed25519 signatures and a hash-chained ledger. Edit an old report and the check fails.",
+          "icon": "lock"
+        },
+        {
+          "title": "Evidence that expires",
+          "body": "Pen tests, threat models and accepted risks carry an end date, so nothing quietly goes stale.",
+          "icon": "clock"
+        },
+        {
+          "title": "CRA technical file",
+          "body": "A draft structured on Annex VII, built from real scan data, plus a CycloneDX SBOM.",
+          "icon": "file"
+        },
+        {
+          "title": "Trust page and badge",
+          "body": "A one-page trust statement to answer customer security questionnaires faster.",
+          "icon": "badge"
+        }
       ]
     },
     {
@@ -112,7 +149,9 @@
       "paragraphs": [
         "ISO/IEC 27001:2022 Annex A · IEC 62443-4-1 · EU Cyber Resilience Act (Regulation (EU) 2024/2847)"
       ],
-      "ctas": [{ "label": "Open the standards explorer", "href": "/product/standards", "variant": "ghost" }],
+      "ctas": [
+        { "label": "Open the standards explorer", "href": "/product/standards", "variant": "ghost" }
+      ],
       "note": "Mappings are indicative and reviewed against the current standard text. Avesta produces audit-ready evidence; certification comes from accredited bodies."
     },
     {
@@ -120,9 +159,18 @@
       "id": "who-for",
       "heading": "Built for teams that ship regulated software.",
       "items": [
-        { "title": "Connected-product makers.", "body": "Industrial IoT, building automation, energy, medical devices and automotive suppliers facing the CRA and IEC 62443." },
-        { "title": "B2B software companies.", "body": "Answer enterprise ISO 27001 evidence requests without a two-week scramble." },
-        { "title": "Consultancies and audit partners.", "body": "One repeatable evidence tool for every client." }
+        {
+          "title": "Connected-product makers.",
+          "body": "Industrial IoT, building automation, energy, medical devices and automotive suppliers facing the CRA and IEC 62443."
+        },
+        {
+          "title": "B2B software companies.",
+          "body": "Answer enterprise ISO 27001 evidence requests without a two-week scramble."
+        },
+        {
+          "title": "Consultancies and audit partners.",
+          "body": "One repeatable evidence tool for every client."
+        }
       ]
     },
     {
@@ -138,7 +186,11 @@
       "heading": "Start with a CRA Readiness Scan.",
       "body": "One scan, one technical-file draft, one hour with an engineer to walk you through the gaps. Fixed price, delivered in days.",
       "ctas": [
-        { "label": "Book a readiness scan", "href": "/contact?topic=cra-scan", "variant": "primary" },
+        {
+          "label": "Book a readiness scan",
+          "href": "/contact?topic=cra-scan",
+          "variant": "primary"
+        },
         { "label": "Try the free checker first", "href": "/cra-readiness", "variant": "ghost" }
       ],
       "priceOf": "cra-readiness-scan",

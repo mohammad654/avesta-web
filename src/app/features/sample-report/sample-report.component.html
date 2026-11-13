@@ -1,4 +1,7 @@
-<p class="banner" role="note"><span class="badge badge--dark">{{ demoBadge }}</span>{{ labels.banner }}</p>
+<p class="banner" role="note">
+  <span class="badge badge--dark">{{ demoBadge }}</span
+  >{{ labels.banner }}
+</p>
 
 <app-report-summary [report]="report" [copy]="copy" />
 
@@ -6,15 +9,24 @@
   <h2 id="report-title">{{ labels.reportHeading }}</h2>
   <app-tabs [tabs]="tabs" [label]="labels.tablist" prefix="report" [(selected)]="tab">
     @if (tab() === 'findings') {
-      <app-report-filters [(filters)]="filters" [(sort)]="sort" [copy]="copy" [counts]="counts"
-        [scanners]="scanners" [categories]="categories" [hasBaseline]="hasBaseline" />
+      <app-report-filters
+        [(filters)]="filters"
+        [(sort)]="sort"
+        [copy]="copy"
+        [counts]="counts"
+        [scanners]="scanners"
+        [categories]="categories"
+        [hasBaseline]="hasBaseline"
+      />
       <p class="count" aria-hidden="true">{{ countText() }}</p>
       @if (visible().length) {
         <app-findings-table [findings]="visible()" [copy]="copy" [sortLabel]="sortLabel()" />
       } @else {
         <div class="empty">
           <p>{{ labels.empty }}</p>
-          <button type="button" class="btn btn--ghost btn--small" (click)="clear()">{{ labels.clear }}</button>
+          <button type="button" class="btn btn--ghost btn--small" (click)="clear()">
+            {{ labels.clear }}
+          </button>
         </div>
       }
     } @else {

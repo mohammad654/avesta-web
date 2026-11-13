@@ -18,23 +18,36 @@ for (const path of publishedRoutes()) {
     descriptions.add(description);
     expect(html).toContain('<html lang="en"');
     expect(html).toMatch(/<link rel="canonical" href="https:\/\/[^"]+">/);
-    for (const tag of ['og:title', 'og:description', 'og:url', 'og:image', 'og:image:alt', 'og:locale', 'og:type']) {
+    for (const tag of [
+      'og:title',
+      'og:description',
+      'og:url',
+      'og:image',
+      'og:image:alt',
+      'og:locale',
+      'og:type',
+    ]) {
       expect(html, tag).toContain(`property="${tag}"`);
     }
     expect(html).toContain('name="twitter:card" content="summary_large_image"');
     expect(html).toContain('"@type":"Organization"');
     if (path !== '/') expect(html).toContain('"@type":"BreadcrumbList"');
-    for (const block of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
+    for (const block of html.matchAll(
+      /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+    )) {
       expect(() => JSON.parse(block[1]!)).not.toThrow();
     }
   });
 
   test(`headings ${path}`, async ({ page }) => {
     await page.goto(path);
-    const levels = await page.$$eval('main h1, main h2, main h3, main h4', (hs) => hs.map((h) => Number(h.tagName[1])));
+    const levels = await page.$$eval('main h1, main h2, main h3, main h4', (hs) =>
+      hs.map((h) => Number(h.tagName[1])),
+    );
     expect(levels.filter((l) => l === 1)).toHaveLength(1);
     levels.forEach((level, i) => {
-      if (i > 0) expect(level - levels[i - 1]!, `skipped level at heading ${i}`).toBeLessThanOrEqual(1);
+      if (i > 0)
+        expect(level - levels[i - 1]!, `skipped level at heading ${i}`).toBeLessThanOrEqual(1);
     });
   });
 }
@@ -44,7 +57,9 @@ test('robots.txt, sitemap.xml and security.txt are published', async ({ request 
   const sitemap = await (await request.get('/sitemap.xml')).text();
   expect(sitemap).toContain('<lastmod>');
   expect(sitemap).not.toContain('/404');
-  expect(await (await request.get('/.well-known/security.txt')).text()).toMatch(/Contact: .*\nExpires: /);
+  expect(await (await request.get('/.well-known/security.txt')).text()).toMatch(
+    /Contact: .*\nExpires: /,
+  );
 });
 
 test('the 404 page is noindex', async ({ request }) => {

@@ -10,9 +10,21 @@ import { SectionComponent } from './section.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionComponent, CtaComponent, InlineTextComponent, ReportCardComponent],
   styles: `
-    .hero { display: grid; gap: var(--space-7); align-items: center; }
-    @media (min-width: 960px) { .hero--visual { grid-template-columns: 1.3fr 1fr; } }
-    .hero__meta { margin-top: var(--space-5); font-size: var(--fs-small); color: var(--color-muted-on-dark); }
+    .hero {
+      display: grid;
+      gap: var(--space-7);
+      align-items: center;
+    }
+    @media (min-width: 960px) {
+      .hero--visual {
+        grid-template-columns: 1.3fr 1fr;
+      }
+    }
+    .hero__meta {
+      margin-top: var(--space-5);
+      font-size: var(--fs-small);
+      color: var(--color-muted-on-dark);
+    }
   `,
   template: `
     @let s = section();

@@ -22,10 +22,21 @@ import { WordmarkComponent } from './wordmark.component';
 @Component({
   selector: 'app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive, PreloadOnHoverDirective, CtaComponent, IconComponent, MobileMenuComponent, WordmarkComponent],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    PreloadOnHoverDirective,
+    CtaComponent,
+    IconComponent,
+    MobileMenuComponent,
+    WordmarkComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  host: { '(document:keydown.escape)': 'closeDropdown(true)', '(document:click)': 'onDocumentClick($event)' },
+  host: {
+    '(document:keydown.escape)': 'closeDropdown(true)',
+    '(document:click)': 'onDocumentClick($event)',
+  },
 })
 export class HeaderComponent {
   private readonly content = inject(CONTENT_PROVIDER);
@@ -38,7 +49,10 @@ export class HeaderComponent {
 
   constructor() {
     inject(Router)
-      .events.pipe(filter((e) => e instanceof NavigationEnd), takeUntilDestroyed())
+      .events.pipe(
+        filter((e) => e instanceof NavigationEnd),
+        takeUntilDestroyed(),
+      )
       .subscribe(() => {
         this.openDropdown.set(null);
         this.menuOpen.set(false);
@@ -74,7 +88,8 @@ export class HeaderComponent {
 
   protected onDocumentClick(event: MouseEvent): void {
     const target = event.target as Node | null;
-    if (target && !this.host.nativeElement.querySelector('.nav')?.contains(target)) this.closeDropdown();
+    if (target && !this.host.nativeElement.querySelector('.nav')?.contains(target))
+      this.closeDropdown();
   }
 
   protected closeMenu(): void {

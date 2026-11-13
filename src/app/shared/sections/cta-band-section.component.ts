@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, isDevMode } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  isDevMode,
+} from '@angular/core';
 import { CONTENT_PROVIDER } from '../../core/content/content-provider.token';
 import { CtaBandSection } from '../../core/content/content.models';
 import { fill, formatPrice } from '../../core/content/format';

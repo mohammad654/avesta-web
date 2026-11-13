@@ -22,13 +22,25 @@
     </ol>
     <div class="actions">
       <app-cta [cta]="c.ctas.book" />
-      <button type="button" class="btn btn--ghost" [attr.aria-expanded]="emailOpen()" aria-controls="cra-email" (click)="emailOpen.set(!emailOpen())">
+      <button
+        type="button"
+        class="btn btn--ghost"
+        [attr.aria-expanded]="emailOpen()"
+        aria-controls="cra-email"
+        (click)="emailOpen.set(!emailOpen())"
+      >
         {{ c.ctas.email }}
       </button>
-      <button type="button" class="btn btn--link" (click)="restart.emit()">{{ c.ctas.restart }}</button>
+      <button type="button" class="btn btn--link" (click)="restart.emit()">
+        {{ c.ctas.restart }}
+      </button>
     </div>
     @if (emailOpen()) {
-      <app-cra-email-form id="cra-email" [copy]="c.email" [payload]="{ band: r.band, percent: r.percent, answers: answers() }" />
+      <app-cra-email-form
+        id="cra-email"
+        [copy]="c.email"
+        [payload]="{ band: r.band, percent: r.percent, answers: answers() }"
+      />
     }
     <p class="footnote">{{ c.disclaimer }}</p>
   </div>

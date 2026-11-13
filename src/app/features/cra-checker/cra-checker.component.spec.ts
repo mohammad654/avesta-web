@@ -11,7 +11,8 @@ describe('CraCheckerComponent (brief 4.1)', () => {
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     const click = async (selector: string | HTMLElement) => {
-      const node = typeof selector === 'string' ? el.querySelector<HTMLElement>(selector)! : selector;
+      const node =
+        typeof selector === 'string' ? el.querySelector<HTMLElement>(selector)! : selector;
       node.click();
       await fixture.whenStable();
     };
@@ -21,14 +22,17 @@ describe('CraCheckerComponent (brief 4.1)', () => {
       radio.dispatchEvent(new Event('change'));
       await fixture.whenStable();
     };
-    const button = (label: string) => [...el.querySelectorAll<HTMLButtonElement>('button')].find((b) => text(b) === label)!;
+    const button = (label: string) =>
+      [...el.querySelectorAll<HTMLButtonElement>('button')].find((b) => text(b) === label)!;
     return { fixture, el, click, choose, button, send };
   }
 
   it('shows the intro with one H1 and the start button', async () => {
     const { el } = await setup();
     expect(el.querySelectorAll('h1')).toHaveLength(1);
-    expect(text(el.querySelector('h1'))).toBe('How ready is your product for the Cyber Resilience Act?');
+    expect(text(el.querySelector('h1'))).toBe(
+      'How ready is your product for the Cyber Resilience Act?',
+    );
     expect(text(el.querySelector('.cra__start'))).toBe('Start the check');
   });
 
@@ -46,10 +50,14 @@ describe('CraCheckerComponent (brief 4.1)', () => {
     await click(button('See my result'));
     expect(text(el.querySelector('#cra-result-title'))).toBe('You have a strong foundation.');
     expect(el.querySelectorAll('.result__actions li')).toHaveLength(3);
-    expect(text(el.querySelector('.result__actions li'))).toBe('Publish a vulnerability disclosure policy and a security.txt file.');
+    expect(text(el.querySelector('.result__actions li'))).toBe(
+      'Publish a vulnerability disclosure policy and a security.txt file.',
+    );
     expect(el.querySelector('.result__critical')).toBeNull();
     expect(text(el.querySelector('app-cra-result'))).toContain('Book a CRA Readiness Scan');
-    expect(text(el.querySelector('app-cra-result'))).toContain('not legal advice or an assessment of conformity');
+    expect(text(el.querySelector('app-cra-result'))).toContain(
+      'not legal advice or an assessment of conformity',
+    );
   });
 
   it('goes back a question and back to the intro', async () => {
@@ -69,7 +77,9 @@ describe('CraCheckerComponent (brief 4.1)', () => {
     await click('.cra__start');
     await choose(2);
     await click(button('Next'));
-    expect(text(el.querySelector('#cra-exit-title'))).toBe('The CRA may not apply to you. Check with counsel.');
+    expect(text(el.querySelector('#cra-exit-title'))).toBe(
+      'The CRA may not apply to you. Check with counsel.',
+    );
     expect(el.querySelector('a[href="/services/quality-scan"]')).not.toBeNull();
   });
 
@@ -82,7 +92,9 @@ describe('CraCheckerComponent (brief 4.1)', () => {
       await choose(q === 3 ? 2 : 0); // Q3 = 0 → critical
     }
     await click(button('See my result'));
-    expect(text(el.querySelector('.result__critical'))).toContain('Two things need attention first');
+    expect(text(el.querySelector('.result__critical'))).toContain(
+      'Two things need attention first',
+    );
     expect(send).not.toHaveBeenCalled();
     await click(button('Email me this result'));
     await click(button('Send my result'));
@@ -94,7 +106,10 @@ describe('CraCheckerComponent (brief 4.1)', () => {
     await fixture.whenStable();
     await click(button('Send my result'));
     await fixture.whenStable();
-    expect(send).toHaveBeenCalledWith('cra-result', expect.objectContaining({ email: 'cto@example.com', consent: true, band: 'strong' }));
+    expect(send).toHaveBeenCalledWith(
+      'cra-result',
+      expect.objectContaining({ email: 'cto@example.com', consent: true, band: 'strong' }),
+    );
     expect(TestBed.inject(FORM_GATEWAY)).toBeDefined();
     expect(text(el.querySelector('app-cra-email-form [role=status]'))).toContain('Thank you');
   });

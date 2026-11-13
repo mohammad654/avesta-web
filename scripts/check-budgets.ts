@@ -12,7 +12,9 @@ const KB = 1024;
 const gz = (file: string) => gzipSync(readFileSync(join(DIST, file)), { level: 9 }).length;
 const home = readFileSync(join(DIST, 'index.html'), 'utf8');
 const initial = new Set([
-  ...[...home.matchAll(/(?:href|src)="((?:main|chunk|styles)-[^"]+\.(?:js|css))"/g)].map((m) => m[1]!),
+  ...[...home.matchAll(/(?:href|src)="((?:main|chunk|styles)-[^"]+\.(?:js|css))"/g)].map(
+    (m) => m[1]!,
+  ),
 ]);
 const initialGz = [...initial].reduce((sum, f) => sum + gz(f), 0);
 const lazy = readdirSync(DIST).filter((f) => f.endsWith('.js') && !initial.has(f));
@@ -28,6 +30,8 @@ let failed = false;
 for (const [name, size, warn, error] of rows) {
   const status = size > error ? 'FAIL' : size > warn ? 'WARN' : 'pass';
   if (status === 'FAIL') failed = true;
-  console.log(`${status.padEnd(4)}  ${name}: ${(size / KB).toFixed(1)} kB (warn ${warn / KB}, error ${error / KB})`);
+  console.log(
+    `${status.padEnd(4)}  ${name}: ${(size / KB).toFixed(1)} kB (warn ${warn / KB}, error ${error / KB})`,
+  );
 }
 if (failed) process.exit(1);

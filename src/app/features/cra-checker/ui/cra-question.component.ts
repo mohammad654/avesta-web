@@ -11,11 +11,19 @@ import { InlineTextComponent } from '../../../shared/ui/inline-text.component';
   template: `
     @let q = question();
     <fieldset class="question">
-      <legend><h2 class="question__text" tabindex="-1" [id]="'q-' + q.id">{{ q.text }}</h2></legend>
+      <legend>
+        <h2 class="question__text" tabindex="-1" [id]="'q-' + q.id">{{ q.text }}</h2>
+      </legend>
       <div class="options">
         @for (option of q.options; track option.label) {
           <label class="option" [class.is-selected]="selected() === $index">
-            <input type="radio" [name]="'cra-q-' + q.id" [value]="$index" [checked]="selected() === $index" (change)="choose.emit($index)" />
+            <input
+              type="radio"
+              [name]="'cra-q-' + q.id"
+              [value]="$index"
+              [checked]="selected() === $index"
+              (change)="choose.emit($index)"
+            />
             <span>{{ option.label }}</span>
           </label>
         }

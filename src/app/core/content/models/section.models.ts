@@ -2,12 +2,7 @@ import { Cta, HasSeo } from './seo.models';
 
 export type Tone = 'light' | 'navy' | 'quiet';
 export type FeatureId =
-  | 'craChecker'
-  | 'standards'
-  | 'pipeline'
-  | 'sampleReport'
-  | 'pricing'
-  | 'contactForm';
+  'craChecker' | 'standards' | 'pipeline' | 'sampleReport' | 'pricing' | 'contactForm';
 
 interface SectionBase {
   /** Stable id; used for the heading id and aria-labelledby. */

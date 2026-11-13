@@ -41,7 +41,10 @@
       ],
       "steps": [
         { "day": "Day 1", "text": "Kick-off call and scope." },
-        { "day": "Days 2 to 3", "text": "Scan in your environment (we guide your team, or run it on a machine you provide)." },
+        {
+          "day": "Days 2 to 3",
+          "text": "Scan in your environment (we guide your team, or run it on a machine you provide)."
+        },
         { "day": "Day 4", "text": "We review findings and draft the plan." },
         { "day": "Day 5", "text": "Walkthrough and handover." }
       ],

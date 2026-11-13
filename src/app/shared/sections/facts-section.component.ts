@@ -11,9 +11,23 @@ import { SectionComponent } from './section.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionComponent, SectionHeadingComponent, InlineTextComponent],
   styles: `
-    dl { display: flex; flex-wrap: wrap; gap: var(--space-5) var(--space-8); margin: 0; }
-    dt { font-family: var(--font-label); font-size: var(--fs-label); letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold); }
-    dd { margin: var(--space-1) 0 0; font-weight: 600; }
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-5) var(--space-8);
+      margin: 0;
+    }
+    dt {
+      font-family: var(--font-label);
+      font-size: var(--fs-label);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+    dd {
+      margin: var(--space-1) 0 0;
+      font-weight: 600;
+    }
   `,
   template: `
     @let s = section();

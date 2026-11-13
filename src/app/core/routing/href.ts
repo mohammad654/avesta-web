@@ -17,5 +17,7 @@ export function parseHref(href: string): ParsedHref {
   const [beforeHash, fragment] = href.split('#', 2);
   const [path = '/', query = ''] = (beforeHash ?? '').split('?', 2);
   const queryParams = Object.fromEntries(new URLSearchParams(query));
-  return fragment ? { kind: 'internal', path, queryParams, fragment } : { kind: 'internal', path, queryParams };
+  return fragment
+    ? { kind: 'internal', path, queryParams, fragment }
+    : { kind: 'internal', path, queryParams };
 }

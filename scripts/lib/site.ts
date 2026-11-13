@@ -29,7 +29,10 @@ export function readJson<T>(file: string): T {
 /** Applies the founder's filled values from site.json, like the app does. */
 export function resolveValues(text: string): string {
   const site = readJson<SiteJson>(join(CONTENT, 'site.json'));
-  return text.replace(/\[([A-Z0-9_]+)\]/g, (token, key: string) => site.placeholders[key]?.trim() || token);
+  return text.replace(
+    /\[([A-Z0-9_]+)\]/g,
+    (token, key: string) => site.placeholders[key]?.trim() || token,
+  );
 }
 
 export function domain(): string {
@@ -42,7 +45,13 @@ interface PageJson {
 }
 
 interface ServicesJson {
-  services: { slug: string; name: string; promise: string; href?: string; seo: { title: string; path: string; priority?: number } }[];
+  services: {
+    slug: string;
+    name: string;
+    promise: string;
+    href?: string;
+    seo: { title: string; path: string; priority?: number };
+  }[];
 }
 
 /** Every route from the content files (brief 2.1): pages plus service slugs. */
@@ -85,7 +94,9 @@ export function slugFor(path: string): string {
 /** Last commit date of a file (ISO date), or today when it is not committed yet. */
 export function gitDate(file: string): string {
   try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', relative(ROOT, file)], { cwd: ROOT })
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', relative(ROOT, file)], {
+      cwd: ROOT,
+    })
       .toString()
       .trim();
     if (out) return out;
@@ -129,5 +140,7 @@ export function visibleText(html: string): string {
 }
 
 export function jsonLdBlocks(html: string): string[] {
-  return [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1] ?? '');
+  return [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(
+    (m) => m[1] ?? '',
+  );
 }

@@ -4,13 +4,14 @@ import { ReportFinding, SampleReportCopy, Severity } from '../../../core/content
 import { fill } from '../../../core/content/format';
 import { IconComponent } from '../../../shared/ui/icon.component';
 
-const SEV_LABEL: Record<Severity, 'sevCritical' | 'sevHigh' | 'sevMedium' | 'sevLow' | 'sevInfo'> = {
-  CRITICAL: 'sevCritical',
-  HIGH: 'sevHigh',
-  MEDIUM: 'sevMedium',
-  LOW: 'sevLow',
-  INFO: 'sevInfo',
-};
+const SEV_LABEL: Record<Severity, 'sevCritical' | 'sevHigh' | 'sevMedium' | 'sevLow' | 'sevInfo'> =
+  {
+    CRITICAL: 'sevCritical',
+    HIGH: 'sevHigh',
+    MEDIUM: 'sevMedium',
+    LOW: 'sevLow',
+    INFO: 'sevInfo',
+  };
 const EXPLORER = new Set(['ISO27001', 'IEC62443', 'CRA']);
 
 /** A real table (brief 6.4) with expandable detail rows. */
@@ -26,7 +27,9 @@ export class FindingsTableComponent {
   readonly copy = input.required<SampleReportCopy>();
   readonly sortLabel = input.required<string>();
   protected readonly open = signal<ReadonlySet<string>>(new Set());
-  protected readonly caption = computed(() => fill(this.copy().labels.tableCaption, { sort: this.sortLabel() }));
+  protected readonly caption = computed(() =>
+    fill(this.copy().labels.tableCaption, { sort: this.sortLabel() }),
+  );
 
   protected sev(s: Severity): string {
     return this.copy().labels[SEV_LABEL[s]];

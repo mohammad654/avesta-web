@@ -9,14 +9,21 @@ import { SectionComponent } from './section.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionComponent, InlineTextComponent],
   styles: `
-    summary h2 { margin: 0; font-size: var(--fs-h3); }
-    ul { padding-bottom: var(--space-5); }
+    summary h2 {
+      margin: 0;
+      font-size: var(--fs-h3);
+    }
+    ul {
+      padding-bottom: var(--space-5);
+    }
   `,
   template: `
     @let s = section();
     <app-section [sectionId]="s.id" [tone]="s.tone">
       <details class="disclosure">
-        <summary><h2 [id]="s.id + '-title'">{{ s.heading }}</h2></summary>
+        <summary>
+          <h2 [id]="s.id + '-title'">{{ s.heading }}</h2>
+        </summary>
         <ul class="check-list">
           @for (item of s.items; track $index) {
             <li><app-text [text]="item" /></li>

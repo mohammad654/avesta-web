@@ -11,18 +11,47 @@ import { SectionComponent } from './section.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SectionComponent, CtaComponent, IconComponent, InlineTextComponent],
   styles: `
-    .row { display: grid; gap: var(--space-5); align-items: start; padding-block: var(--space-6); border-bottom: 1px solid var(--color-line); }
-    .row:first-child { padding-top: 0; }
-    @media (min-width: 768px) {
-      .row { grid-template-columns: 96px minmax(0, 1fr); gap: var(--space-7); }
-      .row:nth-child(even) { grid-template-columns: minmax(0, 1fr) 96px; }
-      .row:nth-child(even) .row__icon { order: 2; }
+    .row {
+      display: grid;
+      gap: var(--space-5);
+      align-items: start;
+      padding-block: var(--space-6);
+      border-bottom: 1px solid var(--color-line);
     }
-    .row__icon { display: grid; place-items: center; width: 96px; height: 96px; border-radius: var(--radius-lg);
-      background: var(--color-navy); color: var(--color-gold); }
-    .row__icon app-icon { width: 40px; height: 40px; }
-    h2 { font-size: var(--fs-h3); }
-    p { margin-bottom: 0; }
+    .row:first-child {
+      padding-top: 0;
+    }
+    @media (min-width: 768px) {
+      .row {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: var(--space-7);
+      }
+      .row:nth-child(even) {
+        grid-template-columns: minmax(0, 1fr) 96px;
+      }
+      .row:nth-child(even) .row__icon {
+        order: 2;
+      }
+    }
+    .row__icon {
+      display: grid;
+      place-items: center;
+      width: 96px;
+      height: 96px;
+      border-radius: var(--radius-lg);
+      background: var(--color-navy);
+      color: var(--color-gold);
+    }
+    .row__icon app-icon {
+      width: 40px;
+      height: 40px;
+    }
+    h2 {
+      font-size: var(--fs-h3);
+    }
+    p {
+      margin-bottom: 0;
+    }
   `,
   template: `
     @let s = section();
