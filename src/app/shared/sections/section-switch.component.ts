@@ -15,8 +15,11 @@ import { HeroSectionComponent } from './hero-section.component';
 import { ListSectionComponent } from './list-section.component';
 import { RichTextSectionComponent } from './rich-text-section.component';
 import { ServicesSectionComponent } from './services-section.component';
+import { ImagePairSectionComponent } from './image-pair-section.component';
+import { StatsSectionComponent } from './stats-section.component';
 import { StepsSectionComponent } from './steps-section.component';
 import { TableSectionComponent } from './table-section.component';
+import { TestimonialsSectionComponent } from './testimonials-section.component';
 
 /**
  * The section registry (brief 7.1, open/closed): one case per `Section.kind`. Pages never change
@@ -42,6 +45,9 @@ import { TableSectionComponent } from './table-section.component';
     FactsSectionComponent,
     CodeSectionComponent,
     ServicesSectionComponent,
+    StatsSectionComponent,
+    ImagePairSectionComponent,
+    TestimonialsSectionComponent,
     FeatureHostComponent,
   ],
   host: { style: 'display:contents' },
@@ -95,6 +101,15 @@ import { TableSectionComponent } from './table-section.component';
       }
       @case ('services') {
         <app-services-section [section]="s" />
+      }
+      @case ('stats') {
+        <app-stats-section [section]="s" />
+      }
+      @case ('imagePair') {
+        <app-image-pair-section [section]="s" />
+      }
+      @case ('testimonials') {
+        <app-testimonials-section [section]="s" />
       }
       @case ('feature') {
         <app-feature-host [section]="s" />

@@ -76,6 +76,11 @@
     "A11Y_STATEMENT_DATE": "",
     "LEGAL_REVIEW": ""
   },
+  "utilityBar": {
+    "label": "Contact",
+    "emailLabel": "Email:",
+    "location": "Utrecht, the Netherlands"
+  },
   "nav": {
     "label": "Main",
     "menu": "Menu",
@@ -272,11 +277,15 @@
     "languages": [
       {
         "label": "English",
-        "active": true
+        "active": true,
+        "short": "EN",
+        "lang": "en"
       },
       {
         "label": "Nederlands (coming soon)",
-        "active": false
+        "active": false,
+        "short": "NL",
+        "lang": "nl"
       }
     ],
     "disclaimer": "Avesta Proof produces audit-ready evidence. Certification is issued only by accredited bodies.",
@@ -320,6 +329,7 @@
     },
     "reportVerdicts": "Verdict per control",
     "reportSignature": "Ed25519 signature",
-    "reportRow": "{standard}: {counts}"
+    "reportRow": "{standard}: {counts}",
+    "breadcrumbLabel": "Breadcrumb"
   }
 }

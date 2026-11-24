@@ -58,7 +58,7 @@
           </li>
         }
         <li>
-          <a [routerLink]="[]" fragment="top">{{ footer.backToTop }}</a>
+          <a [href]="topHref()" (click)="scrollToTop($event)">{{ footer.backToTop }}</a>
         </li>
       </ul>
     </div>

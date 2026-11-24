@@ -76,7 +76,7 @@ import { SectionComponent } from './section.component';
             width="480"
             height="600"
             [alt]="s.photoAlt"
-            sizes="(min-width: 960px) 320px, 100vw"
+            sizes="(min-width: 960px) 34vw, 100vw"
           />
         } @else {
           <div class="founder__empty" role="img" [attr.aria-label]="s.photoAlt">

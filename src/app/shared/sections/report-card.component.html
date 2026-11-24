@@ -1,6 +1,15 @@
 @let r = report();
 <div class="visual">
-  <app-sun-mark class="visual__sun" [size]="360" />
+  <div class="farenji" aria-hidden="true">
+    @for (row of bars; track $index) {
+      <div class="farenji__row">
+        @for (b of row; track $index) {
+          <span class="farenji__bar" [style.left.%]="b.left" [style.width.%]="b.width"></span>
+        }
+      </div>
+    }
+  </div>
+  <app-sun-mark class="visual__sun" [size]="240" />
   <figure class="sheet">
     <div class="sheet__head">
       <div>
@@ -21,7 +30,7 @@
     </div>
 
     <figcaption class="sheet__label">{{ micro.reportVerdicts }}</figcaption>
-    <ul class="sheet__rows">
+    <ul class="sheet__rows" [style.--longest]="longest()">
       @for (row of rows(); track row.label) {
         <li class="sheet__row">
           <span class="sheet__std" aria-hidden="true">{{ row.label }}</span>
@@ -40,7 +49,6 @@
       }
     </ul>
 
-    <div class="sheet__belt"></div>
     <p class="sheet__sig">
       <span>{{ micro.reportSignature }}</span>
       <span class="mono">{{ fingerprint() }}…</span>

@@ -27,6 +27,7 @@ export interface SiteContent {
   settings: SiteSettings;
   /** Fill values here; "" means still open. Keys match the [KEY] tokens in all content. */
   placeholders: Record<string, string>;
+  utilityBar: { label: string; emailLabel: string; location: string };
   nav: {
     items: NavItem[];
     ctas: Cta[];
@@ -42,7 +43,8 @@ export interface SiteContent {
     bottom: string;
     legal: { label: string; href: string }[];
     social: { label: string; href: string }[];
-    languages: { label: string; active: boolean }[];
+    /** `short` is the visible code (EN/NL); `lang` the BCP 47 tag for the label. */
+    languages: { label: string; active: boolean; short: string; lang: string }[];
     languageLabel: string;
     disclaimer: string;
     backToTop: string;
@@ -60,6 +62,7 @@ export interface SiteContent {
     loading: string;
     homeLogoAlt: string;
     breadcrumbHome: string;
+    breadcrumbLabel: string;
     exampleTag: string;
     excludingVat: string;
     contactUs: string;

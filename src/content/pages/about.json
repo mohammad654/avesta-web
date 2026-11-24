@@ -35,6 +35,33 @@
       ]
     },
     {
+      "kind": "steps",
+      "id": "scan-verify-sign",
+      "tone": "navy",
+      "heading": "Scan, verify, sign.",
+      "steps": [
+        {
+          "title": "Scan.",
+          "body": "Scanners run inside your repository and write structured results. Nothing is uploaded."
+        },
+        {
+          "title": "Verify.",
+          "body": "Findings are tagged with the ISO/IEC 27001, IEC 62443-4-1 and CRA controls they affect, and each control gets a verdict."
+        },
+        {
+          "title": "Sign.",
+          "body": "The report is fingerprinted, signed with Ed25519, and linked to the previous scan in the ledger."
+        }
+      ],
+      "ctas": [
+        {
+          "label": "See how it works",
+          "href": "/how-it-works",
+          "variant": "ghost"
+        }
+      ]
+    },
+    {
       "kind": "featureGrid",
       "id": "values",
       "heading": "Values",
@@ -77,8 +104,16 @@
       "photo": "[FOUNDER_PHOTO]",
       "photoAlt": "Mohammad Ali Shikhi, founder of Avesta Tech",
       "ctas": [
-        { "label": "Talk to Mohammad", "href": "/contact", "variant": "primary" },
-        { "label": "Hire him as a freelancer", "href": "/freelance", "variant": "ghost" }
+        {
+          "label": "Talk to Mohammad",
+          "href": "/contact",
+          "variant": "primary"
+        },
+        {
+          "label": "Hire him as a freelancer",
+          "href": "/freelance",
+          "variant": "ghost"
+        }
       ]
     },
     {
@@ -88,10 +123,22 @@
       "heading": "Company facts",
       "hideHeading": true,
       "items": [
-        { "label": "Founded", "value": "October 2026" },
-        { "label": "Based in", "value": "Utrecht, the Netherlands" },
-        { "label": "KvK", "value": "[KVK_NUMBER]" },
-        { "label": "Languages", "value": "EN, NL, AR, KU, TR" }
+        {
+          "label": "Founded",
+          "value": "October 2026"
+        },
+        {
+          "label": "Based in",
+          "value": "Utrecht, the Netherlands"
+        },
+        {
+          "label": "KvK",
+          "value": "[KVK_NUMBER]"
+        },
+        {
+          "label": "Languages",
+          "value": "EN, NL, AR, KU, TR"
+        }
       ]
     }
   ]

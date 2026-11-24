@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { Section } from '../../core/content/content.models';
 import { HeroSectionComponent } from './hero-section.component';
 import { SectionSwitchComponent } from './section-switch.component';
@@ -18,7 +18,7 @@ import { SectionSwitchComponent } from './section-switch.component';
     }
   `,
   template: `
-    @for (s of sections(); track s.id; let first = $first) {
+    @for (s of visible(); track s.id; let first = $first) {
       @if (first && s.kind === 'hero') {
         <app-hero-section [section]="s" />
       } @else {
@@ -33,4 +33,8 @@ import { SectionSwitchComponent } from './section-switch.component';
 })
 export class SectionRendererComponent {
   readonly sections = input.required<readonly Section[]>();
+  /** Sections with nothing to show (testimonials before any real quote exists) are skipped. */
+  protected readonly visible = computed(() =>
+    this.sections().filter((s) => s.kind !== 'testimonials' || s.items.length > 0),
+  );
 }

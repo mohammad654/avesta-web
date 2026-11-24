@@ -28,7 +28,7 @@ import { SectionComponent } from './section.component';
   `,
   template: `
     @let s = section();
-    <app-section [sectionId]="s.id" tone="navy">
+    <app-section [sectionId]="s.id" tone="navy" [textured]="s.visual !== 'reportCard'">
       <div class="hero" [class.hero--visual]="s.visual">
         <div>
           @if (s.eyebrow) {

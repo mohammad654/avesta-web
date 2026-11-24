@@ -32,6 +32,14 @@
   a {
     display: inline-block;
     padding: 2px 0;
+    font-size: var(--fs-h3);
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-gold);
+    }
   }
 }
 

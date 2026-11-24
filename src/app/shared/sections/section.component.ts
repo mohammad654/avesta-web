@@ -21,7 +21,11 @@ export class SectionComponent {
   readonly tone = input<Tone | undefined>('light');
   readonly labelled = input(true);
   readonly centered = input(false);
+  readonly compact = input(false);
+  /** False when the section draws its own Farenji figure instead of the tiled bar texture. */
+  readonly textured = input(true);
   protected readonly classes = computed(
-    () => `section section--${this.tone() ?? 'light'}${this.centered() ? ' center' : ''}`,
+    () =>
+      `section section--${this.tone() ?? 'light'}${this.centered() ? ' center' : ''}${this.compact() ? ' section--compact' : ''}${this.textured() ? '' : ' section--plain'}`,
   );
 }

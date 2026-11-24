@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { CONTENT_PROVIDER } from '../content/content-provider.token';
 import { Page, Seo, Service } from '../content/content.models';
@@ -16,6 +16,7 @@ import {
   service,
   softwareApplication,
 } from './json-ld.builders';
+import { Crumb, breadcrumbTrail } from './breadcrumb-trail';
 
 const SUFFIX = /\s*\|\s*Avesta (Tech|Proof)\s*$/;
 const PREFIX = /^Avesta Tech\s*\|\s*/;
@@ -27,6 +28,9 @@ export class SeoService {
   private readonly meta = inject(Meta);
   private readonly doc = inject(DOCUMENT);
   private readonly content = inject(CONTENT_PROVIDER);
+  private readonly trailState = signal<readonly Crumb[]>([]);
+  /** The current page's breadcrumb trail, set with the head tags (empty on Home and 404). */
+  readonly trail = this.trailState.asReadonly();
 
   applyPage(page: Page): void {
     const faqIds = page.sections.flatMap((s) => (s.kind === 'faq' ? s.faqIds : []));
@@ -46,13 +50,13 @@ export class SeoService {
   private jsonLdFor(seo: Seo, faqIds: readonly string[]): JsonLd[] {
     const site = this.content.site();
     const blocks: JsonLd[] = [organizationGraph(site)];
-    if (seo.path !== '/' && !seo.noindex) {
-      const home = this.content.chrome().microcopy.breadcrumbHome;
-      const trail = [{ name: home, path: '/' }];
-      if (seo.parent) trail.push(seo.parent);
-      trail.push({ name: seo.breadcrumb ?? ogTitle(seo), path: seo.path });
-      blocks.push(breadcrumbList(site, trail));
-    }
+    const trail = breadcrumbTrail(
+      seo,
+      this.content.chrome().microcopy.breadcrumbHome,
+      ogTitle(seo),
+    );
+    this.trailState.set(trail);
+    if (trail.length) blocks.push(breadcrumbList(site, trail));
     if (seo.schema?.includes('person')) blocks.push(person(site));
     if (seo.schema?.includes('softwareApplication')) blocks.push(softwareApplication(site));
     if (faqIds.length) blocks.push(faqPage(this.content.faq(faqIds)));

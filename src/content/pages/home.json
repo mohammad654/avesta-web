@@ -30,6 +30,30 @@
       "visual": "reportCard"
     },
     {
+      "kind": "stats",
+      "id": "at-a-glance",
+      "heading": "Avesta Proof in numbers",
+      "hideHeading": true,
+      "items": [
+        {
+          "value": 3,
+          "label": "standards in one scan"
+        },
+        {
+          "value": 8,
+          "label": "scanners in every run"
+        },
+        {
+          "value": 7,
+          "label": "outputs from one run"
+        },
+        {
+          "value": 1,
+          "label": "command for your auditor to verify it offline"
+        }
+      ]
+    },
+    {
       "kind": "featureGrid",
       "id": "problem",
       "heading": "Regulation is here. Your scanner still only gives you a list.",
@@ -55,16 +79,22 @@
       "layout": "strip"
     },
     {
-      "kind": "featureGrid",
+      "kind": "imagePair",
       "id": "two-doors",
       "heading": "One company. Two ways to work with us.",
-      "columns": 2,
       "items": [
         {
+          "media": {
+            "kind": "image",
+            "webp": "/assets/img/avesta-proof-sample-report-summary.webp",
+            "avif": "/assets/img/avesta-proof-sample-report-summary.avif",
+            "alt": "Avesta Proof report summary showing score 68, grade C, and 10 findings on a demo project",
+            "width": 1000,
+            "height": 1000
+          },
           "eyebrow": "Avesta Proof",
           "title": "The evidence engine for software regulation.",
           "body": "Scan a repository, get a verdict per control in three standards, a signed report, an SBOM and a CRA technical-file draft. Every week, in your own CI.",
-          "icon": "shield",
           "cta": {
             "label": "Explore Avesta Proof",
             "href": "/product",
@@ -72,10 +102,31 @@
           }
         },
         {
+          "media": {
+            "kind": "timeline",
+            "label": "Working with us",
+            "steps": [
+              {
+                "text": "A 20-minute call to understand your product."
+              },
+              {
+                "text": "A written scope with a fixed price and a date."
+              },
+              {
+                "text": "The work, with a short update at the halfway point."
+              },
+              {
+                "text": "Handover and a walkthrough."
+              },
+              {
+                "text": "Optional: we keep your evidence current every month.",
+                "optional": true
+              }
+            ]
+          },
           "eyebrow": "Engineering services",
           "title": "Quality work, done properly and at a fixed price.",
           "body": "Readiness scans, test automation, accessibility audits and AI assistant testing, delivered by engineers who have built software for high-tech machines.",
-          "icon": "wrench",
           "cta": {
             "label": "See our services",
             "href": "/services",
@@ -205,6 +256,12 @@
       "id": "faq",
       "heading": "Frequently asked questions",
       "faqIds": ["G1", "G2", "G3", "G4", "G5", "G6"]
+    },
+    {
+      "kind": "testimonials",
+      "id": "testimonials",
+      "heading": "What clients say",
+      "items": []
     },
     {
       "kind": "ctaBand",

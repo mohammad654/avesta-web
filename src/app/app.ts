@@ -4,18 +4,33 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, skip } from 'rxjs';
 import { CONTENT_PROVIDER } from './core/content/content-provider.token';
+import { BackToTopComponent } from './core/layout/back-to-top.component';
+import { BreadcrumbComponent } from './core/layout/breadcrumb.component';
 import { FooterComponent } from './core/layout/footer.component';
 import { HeaderComponent } from './core/layout/header.component';
+import { UtilityBarComponent } from './core/layout/utility-bar.component';
 
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [
+    RouterOutlet,
+    UtilityBarComponent,
+    HeaderComponent,
+    BreadcrumbComponent,
+    FooterComponent,
+    BackToTopComponent,
+  ],
   template: `
     <a id="top" class="skip-link" href="#main">{{ skipLink }}</a>
+    <app-utility-bar />
     <app-header />
-    <main id="main" tabindex="-1"><router-outlet /></main>
+    <main id="main" tabindex="-1">
+      <app-breadcrumb />
+      <router-outlet />
+    </main>
     <app-footer />
+    <app-back-to-top />
   `,
   styles: `
     .skip-link {

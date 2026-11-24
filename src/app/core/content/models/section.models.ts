@@ -161,6 +161,33 @@ export interface ServicesSection extends SectionBase {
   note?: string;
 }
 
+/** Four large figures. Every value must be a number stated in the brief. */
+export interface StatsSection extends SectionBase {
+  kind: 'stats';
+  heading: string;
+  hideHeading?: boolean;
+  items: { value: number; label: string }[];
+}
+
+/** A raster image (AVIF + WebP) or a diagram drawn in HTML, so its text stays real text. */
+export type PairMedia =
+  | { kind: 'image'; webp: string; avif: string; alt: string; width: number; height: number }
+  | { kind: 'timeline'; label: string; steps: { text: string; optional?: boolean }[] };
+
+/** Two columns, one picture or diagram on each side, each with its own heading and CTA. */
+export interface ImagePairSection extends SectionBase {
+  kind: 'imagePair';
+  heading: string;
+  items: { media: PairMedia; eyebrow?: string; title: string; body: string; cta?: Cta }[];
+}
+
+/** Rendered only when `items` holds real, consented quotes (brief Appendix A). */
+export interface TestimonialsSection extends SectionBase {
+  kind: 'testimonials';
+  heading: string;
+  items: { quote: string; name: string; role?: string; company?: string }[];
+}
+
 export interface FeatureSection extends SectionBase {
   kind: 'feature';
   feature: FeatureId;
@@ -184,6 +211,9 @@ export type Section =
   | FactsSection
   | CodeSection
   | ServicesSection
+  | StatsSection
+  | ImagePairSection
+  | TestimonialsSection
   | FeatureSection;
 
 export type SectionKind = Section['kind'];

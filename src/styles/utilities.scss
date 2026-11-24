@@ -37,9 +37,21 @@
   }
 }
 
+// A navy section that draws the Farenji bars as a figure (the Home hero) skips the tile, and
+// clips the figure's wings at the viewport edge instead of scrolling sideways.
+.section--plain {
+  background-image: none;
+  overflow-x: clip;
+}
+
 .section--quiet {
   background: var(--color-cream);
   text-align: center;
+}
+
+// A short strip (the stat row): half the usual section padding.
+.section.section--compact {
+  padding-block: var(--space-7);
 }
 
 .section--light + .section--light,
